@@ -18,220 +18,17 @@
 
 
 <script type="text/javascript" charset="utf-8" src="./js/jq.ui.min.js"></script> 
-
+<script type="text/javascript" charset="utf-8" src="./js/jq.mobi.min.js"></script> 
+<script type="text/javascript" charset="utf-8" src="./js/facebook.js"></script> 
 <script src="http://www.parsecdn.com/js/parse-1.2.2.min.js"></script>
-
-
-
-<!-- include touch.js on desktop browsers only -->
-<script>
-
-
-if(!((window.DocumentTouch&&document instanceof DocumentTouch)||'ontouchstart' in window)){
-    var script=document.createElement("script");
-    script.src="js/jq.desktopBrowsers.js";
-    var tag=$("head").append(script);
-}
-
-$(document).ready(function(){
-
-});
-
-</script>
-
-
-
-
-<script type="text/javascript">
-    /* This function runs once the page is loaded, but appMobi is not yet active */
-	//var webRoot="";
-	$.ui.autoLaunch=false;
-    $.ui.resetScrollers=false;
-    var init = function(){
-	   Parse.initialize("oYbOnjMnGkcIwgjQmqdQjRaconjc22brfxi8gzHy", "li40sI8Adub5Ya9Hivw5KYHiHtUmL9YGQvRww0KU");
-	   $.ui.backButtonText="Back";  
-	   window.setTimeout(function(){$.ui.launch();},1500);
-       //$.ui.removeFooterMenu(); This would remove the bottom nav menu
-    };
-    document.addEventListener("DOMContentLoaded",init,false);  
-	$.ui.ready(function(){console.log('ready');});
-   
-    
-	
-    /* This code is used to run as soon as appMobi activates */
-    var onDeviceReady=function(){
-		AppMobi.device.setRotateOrientation("portrait");
-        AppMobi.device.setAutoRotate(false);
-		//webRoot=AppMobi.webRoot;
-	    //hide splash screen
-	    AppMobi.device.hideSplashScreen();	
-    };
-
-    document.addEventListener("appMobi.device.ready",onDeviceReady,false);    
-	function showHide(obj,objToHide){
-		var el=$("#"+objToHide)[0];
-		
-		if(obj.className=="expanded"){
-			obj.className="collapsed";
-		}
-		else{
-			obj.className="expanded";
-		}
-		$(el).toggle();
-		
-	}
-
-	function testParse(){
-		var TestObject = Parse.Object.extend("TestObject");
-		var testObject = new TestObject();
-		testObject.save({foo: "bar", foo2: "ciao"}, {
-		  success: function(object) {
-		    alert("yay! it worked");
-		  }
-		});
-	}
-
-	function signUp(){
-
-		var familyName = document.getElementById("familyName").value;
-		var firstName = document.getElementById("firstName").value;
-		var birthDate = document.getElementById("birthDate").value;
-		var passwordNew = document.getElementById("passwordNew").value;
-		var userEmail = document.getElementById("userEmail").value;
-		var sex = document.getElementById("male");
-
-		var user = new Parse.User();
-
-		user.set("username", userEmail);
-		user.set("password", passwordNew);
-		user.set("email", userEmail);
-		user.set("familyName", familyName);
-		user.set("firstName", firstName);
-		user.set("birthDate", birthDate);
-
-		if (sex.checked==true) {
-		            user.set("sex", "male");
-					}
-				else {
-					user.set("sex", "female");
-					}
-		  
-		user.signUp(null, {
-		  success: function(user) {
-		    alert("signup riuscito");
-		    
-		  },
-		  error: function(user, error) {
-		    // Show the error message somewhere and let the user try again.
-		    alert("Error: " + error.code + " " + error.message);
-		  }
-		});
-
-	}
-
-
-	function login(){
-		var username = document.getElementById("loginName").value;
-		var passwd= document.getElementById("loginPassword").value;
-
-		Parse.User.logIn(username, passwd, {
-		  success: function(user) {
-		    // Do stuff after successful login.
-		    alert("login effettuato");
-		  },
-		  error: function(user, error) {
-		    // The login failed. Check error to see why.
-			alert("login failed");
-		  }
-		});
-	}
-
-
-	function getUserContacts () {
-
-	}
-
-	  	function contactsReceived() {
-	      var table = document.getElementById("contacts");
-	      table.innerHTML = '';
-
-		  var peeps = AppMobi.contacts.getContactList();
-			// Simple syntax to create a new subclass of Parse.Object.
-			var UserContacts = Parse.Object.extend("UserContacts");
-			// Create a new instance
-			var userContacts = new UserContacts();
-
-	      //for(var i=0;i<peeps.length;i++) {
-	        for(var i=0;i<5;i++) {
-	        
-				var peep = AppMobi.contacts.getContactData(peeps[i]);
-				var tr = document.createElement("tr");
-		        tr.setAttribute('style', 'background-color:#B8BFD8');
-		               
-		        var msg = document.createElement("td");
-		        msg.innerHTML = peep.name;
-		        tr.appendChild(msg);
-		         
-		        var msg = document.createElement("td");
-		        msg.innerHTML = peep.phones;
-		        tr.appendChild(msg);
-		        table.appendChild(tr);
-		         
-		        var msg = document.createElement("td");
-		        msg.innerHTML = peep.emails;
-		        tr.appendChild(msg);
-		        table.appendChild(tr);
-						
-				userContacts.set("name"+i, peep.name);
-				userContacts.set("phones"+i, peep.phones);
-				userContacts.set("emails"+i, peep.emails);
-
-	    	}
-		  
-		    userContacts.save(null, {
-			  success: function(userContacts) {
-			      alert("salvataggio effettuato");
-			  },
-			  error: function(userContacts, error) {
-			 	    alert("Error: " + error.code + " " + error.message);
-			  }
-			});
-
-
-   		}
-
-    /* Event Handlers */
-    document.addEventListener('appMobi.contacts.get', contactsReceived, false);
-
-   
-    function smsSend()
-    {
-    var xmlHttp = null;
-
-    xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", "https://www.freevoipdeal.com/myaccount/sendsms.php?username=baubau2013&password=password&from=baubau2013&to=+33650530458&text=questo e' un sms di prova", true );
-    xmlHttp.send();
-    return xmlHttp.responseText;
-    }
-   
-
-	document.addEventListener("appMobi.facebook.login",function(e){
-		if (e.success == true){ 
-		console.log("Facebook Log in Successful"); 
-		}
-		else { 
-		console.log("Unsuccessful Login"); 
-		}
-	},false);
-
-</script>
+<script type="text/javascript" charset="utf-8" src="./js/code.js"></script> 
 
 </head>
+
 <body>
 
 
     <div id="jQUi">
-
 
         <!-- this is the splashscreen; see jq.ui.css -->
         <!-- funziona su Chrome, ma non nella app -->
@@ -277,16 +74,31 @@ $(document).ready(function(){
 				
 				<a  class="button" href="javascript:;" onclick="AppMobi.contacts.getContacts();">Show Contacts from Adressbook and upload to server</a>
 				<a  class="button" href="javascript:;" onclick="AppMobi.contacts.chooseContact();">Choose Contacts from Adressbook</a>
+				<a  class="button" href="#fbcontactspage" onclick="fbContactsImport();">Import Facebook contacts</a>
+
 				<a  class="button" href="javascript:;" onclick="smsSend();">Send a test sms</a>
 				<ul >
 				</ul>
-
+				
 				<table id="contacts" border="1" width="100%"><caption>Contact List</caption></table>
-						
+				
+
+			
 			</div>
 
 			<!-- ------------------end of import contacts page------------------------ -->
 
+
+			<!-- ------------------Facebook import contacts page------------------------ -->
+
+			<div title="Facebook Contacts" id="fbcontactspage" class="panel"  data-footer='footerui' data-tab="navbar_ui">
+
+				<div id="fbcontacts2">
+				</div>
+				
+			</div>
+
+			<!-- ------------------End of Facebook import contacts page------------------------ -->
 
 
 			<!-- ------------------How it Works page------------------------ -->
@@ -313,13 +125,27 @@ $(document).ready(function(){
 			<!-- ------------------end of how it Works page------------------------ -->
 
 
+			<!-- ------------------Dashboard page------------------------ -->
+
+			<div title="Dashboard" id="dashboard" class="panel"  data-footer='footerui' data-tab="navbar_ui">
+				---Under constuction----<br>
+
+
+
+			</div>
+
+			<!-- ------------------end of Dashboard page------------------------ -->
+
+
 			<!-- ------------------Login page------------------------ -->
 
 			<div id="login" title="Login" class="panel" data-footer='footerui'>
 			
-				<a  class="button" href="javascript:;" onclick="AppMobi.facebook.login("publish_stream,publish_actions,offline_access");">Login with Facebook</a>
+				<a  class="button" href="javascript:;" onclick="facebookAPI.login(loginComplete);">Login with Facebook</a>
+				<a  class="button" href="javascript:;" onclick="facebookAPI.logout(logoutComplete);">Logout with Facebook</a>
 
-
+			
+ 
 				<form>
 				    <fieldset>
 				        <legend>Login</legend>
@@ -329,6 +155,7 @@ $(document).ready(function(){
 				        <br/>
 				        <label for="password">Password</label>
 				        <br/>	<span><input type="password" id="loginPassword" class='jq-ui-forms' /></span>
+				        <!-- span is needed for android password fix -->
 				        <br/>
 			  			<p>
 			            <input type="checkbox" value="check" id="check2" checked class="jq-ui-forms" />
@@ -336,7 +163,6 @@ $(document).ready(function(){
 				        </p>
 						<a  class="button" href="javascript:;" onclick="login();">Login</a>
 
-				        <!-- span is needed for android password fix -->
 				   
 				   	</fieldset>
 				</form>
@@ -347,6 +173,15 @@ $(document).ready(function(){
 					<ul>
 					<li><a href="#newaccount" >Create new Account</a></li>
 					</ul>
+				<br>
+				<br>
+				<br>
+
+
+					<!-- <table id="fbcontacts" border="1" width="100%"><caption>Contact List</caption></table> -->
+
+
+
 			</div>
 			<!-- ------------------End of login page------------------------ -->
 
