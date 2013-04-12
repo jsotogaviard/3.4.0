@@ -17,6 +17,12 @@ $(document).ready(function(){
     $.ui.resetScrollers=false;
     var init = function(){
 	   Parse.initialize("oYbOnjMnGkcIwgjQmqdQjRaconjc22brfxi8gzHy", "li40sI8Adub5Ya9Hivw5KYHiHtUmL9YGQvRww0KU");
+	   StackMob.init({
+		    appName: "html5rocks",
+		    clientSubdomain: "something",
+		    publicKey: "1234abcdef",
+		    apiVersion: 0
+		});
 	   $.ui.backButtonText="Back";  
 	   window.setTimeout(function(){$.ui.launch();},1500);
        //$.ui.removeFooterMenu(); This would remove the bottom nav menu
