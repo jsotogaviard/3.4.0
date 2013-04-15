@@ -21,6 +21,8 @@
 <script type="text/javascript" charset="utf-8" src="./js/jq.mobi.min.js"></script> 
 <script type="text/javascript" charset="utf-8" src="./js/facebook.js"></script> 
 <script src="http://www.parsecdn.com/js/parse-1.2.2.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.9.1-bundled-min.js"></script>
 <script type="text/javascript" charset="utf-8" src="./js/code.js"></script> 
 
 </head>
@@ -253,10 +255,25 @@
 
         </div> <!-- content -->
 
+        <!-- The setting page -->
+        <div id="settings" title="settings" class="panel"  data-footer='footerui' data-tab="navbar_ui">
+        	The settings
+        </div>
+
+        <!-- The setting page -->
+        <div id="contacts_page" title="contacts" class="panel"  data-footer='footerui' data-tab="navbar_ui">
+        	Set here the contacts
+        </div>
+
+        <!-- The setting page -->
+        <div id="chat" title="chat" class="panel"  data-footer='footerui' data-tab="navbar_ui">
+        	The chat
+        </div>
+
         <!-- bottom navbar.  Add additional tabs here -->
         <div id="navbar">
             <a href="#settings" id='navbar_settings' class='icon settings' >Settings</a>
-            <a href="#contacs" id='navbar_contacts' class='icon user' >Contacts</a>
+            <a href="#contacts_page" id='navbar_contacts' class='icon user' >Contacts</a>
             <a href="#main" id='navbar_home' class='icon home' >home</a>
             <a href="#dashboard" id='navbar_dashboard' class='icon heart' >Dashboard</a>
             <a href="#chat" id='navbar_others' class='icon chat' >Chat</a>

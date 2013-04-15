@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>My page</title>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.9.1-bundled-min.js"></script>
+<script type="text/javascript">
+	StackMob.init({
+	    publicKey:       "3b740361-3f37-436b-8eff-fc68084f80aa",
+	    apiVersion:      0
+	});
+</script>
+
+<script type="text/javascript">
+	var user = new StackMob.User({ username: 'Bill Watterson', password: 'weirdosfromanotherplanet', profession: 'cartoonist'  });
+	user.create({
+    success: function(model) {
+        console.debug('User object is saved, username: ' + model.get('username'));
+    },
+    error: function(model, response) {
+        console.debug(response);
+        alert(response.error);
+    }
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>

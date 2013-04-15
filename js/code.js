@@ -13,16 +13,20 @@ $(document).ready(function(){
 
     /* This function runs once the page is loaded, but appMobi is not yet active */
 	//var webRoot="";
-	$.ui.autoLaunch=false;
-    $.ui.resetScrollers=false;
+	jq.ui.autoLaunch=false;
+    jq.ui.resetScrollers=false;
     var init = function(){
 	   Parse.initialize("oYbOnjMnGkcIwgjQmqdQjRaconjc22brfxi8gzHy", "li40sI8Adub5Ya9Hivw5KYHiHtUmL9YGQvRww0KU");
-	   $.ui.backButtonText="Back";  
-	   window.setTimeout(function(){$.ui.launch();},1500);
-       //$.ui.removeFooterMenu(); This would remove the bottom nav menu
+	   StackMob.init({
+		    publicKey: "3b740361-3f37-436b-8eff-fc68084f80aa",
+		    apiVersion: 0
+		});
+	   jq.ui.backButtonText="Back";  
+	   window.setTimeout(function(){jq.ui.launch();},1500);
+       //jq.ui.removeFooterMenu(); This would remove the bottom nav menu
     };
     document.addEventListener("DOMContentLoaded",init,false);  
-	$.ui.ready(function(){console.log('ready');});
+	jq.ui.ready(function(){console.log('ready');});
    
     
 	
@@ -63,59 +67,62 @@ $(document).ready(function(){
 
 	function signUp(){
 
-		var familyName = document.getElementById("familyName").value;
-		var firstName = document.getElementById("firstName").value;
-		var birthDate = document.getElementById("birthDate").value;
-		var passwordNew = document.getElementById("passwordNew").value;
-		var userEmail = document.getElementById("userEmail").value;
-		var sex = document.getElementById("male");
+		var familyName_ = document.getElementById("familyName").value;
+		var firstName_ = document.getElementById("firstName").value;
+		var birthDate_ = document.getElementById("birthDate").value;
+		var passwordNew_ = document.getElementById("passwordNew").value;
+		var userEmail_ = document.getElementById("userEmail").value;
+		var sex_ = document.getElementById("male");
+		var real_sex;
+		if(sex_.checked == true){
+			real_sex = "male";
+		} else {
+			real_sex = "female";
+		}
 
-		var user = new Parse.User();
-
-		user.set("username", userEmail);
-		user.set("password", passwordNew);
-		user.set("email", userEmail);
-		user.set("familyName", familyName);
-		user.set("firstName", firstName);
-		user.set("birthDate", birthDate);
-
-		if (sex.checked==true) {
-		            user.set("sex", "male");
-					}
-				else {
-					user.set("sex", "female");
-					}
-		  
-		user.signUp(null, {
-		  success: function(user) {
-		    alert("signup riuscito");
-		    
-		  },
-		  error: function(user, error) {
-		    // Show the error message somewhere and let the user try again.
-		    alert("Error: " + error.code + " " + error.message);
-		  }
+		var user = new StackMob.User({ 
+			username: userEmail_, 
+			password: passwordNew_, 
+			familyName: familyName_ ,
+			firstName: firstName_ ,
+			birthDate : birthDate_,
+			sex : real_sex
+		});
+		user.create({
+	    success: function(model) {
+	        console.debug('User object is saved, username: ' + model.get('username'));
+	        alert('successful sign up of ' + model.get('username'))
+	        jq.ui.loadContent("dashboard",false,false,"pop");
+	    },
+	    error: function(model, response) {
+	        console.debug(response);
+	        alert(response.error);
+	    }
 		});
 
 	}
 
 
 	function login(){
-		var username = document.getElementById("loginName").value;
+		var username_ = document.getElementById("loginName").value;
 		var passwd= document.getElementById("loginPassword").value;
 
-		Parse.User.logIn(username, passwd, {
-		  success: function(user) {
-		    // Do stuff after successful login.
-		    alert("login effettuato");
-		    $.ui.loadContent("dashboard",false,false,"pop");
-		    
-		  },
-		  error: function(user, error) {
-		    // The login failed. Check error to see why.
-			alert("login failed");
-		  }
+		var user = new StackMob.User({
+			username : username_,
+			password : passwd
 		});
+		user.login(true, {
+			success: function(model){
+				console.log('Successful log ');
+				alert('successful sign up of ' + model);
+				jq.ui.loadContent("dashboard", false, false, "pop");
+			},
+			error: function(model, error){
+				console.log('Error '  + error.error);
+				alert(response.error);
+			}
+		});
+
 	}
 
 
@@ -214,7 +221,7 @@ $(document).ready(function(){
 
 	document.addEventListener("appMobi.facebook.request.response",function(e) {
         alert("Facebook User Friends Data Returned");
-   	    $.ui.loadContent("fbcontactspage",false,false,"pop");
+   	    jq.ui.loadContent("fbcontactspage",false,false,"pop");
 
         if (e.success == true) {
                 var data = e.data.data;
@@ -227,7 +234,7 @@ $(document).ready(function(){
                 outHTML += "</tr>";	                                 
                 }
                 outHTML += "</table>";
-                $("#fbcontacts2").append(outHTML);
+                jq("#fbcontacts2").append(outHTML);
 
                 /*
                 var TestObjectFB = Parse.Object.extend("testObjectFB");
