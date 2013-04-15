@@ -80,7 +80,8 @@ $(document).ready(function(){
 			real_sex = "female";
 		}
 
-		var user = new StackMob.User({ username: userEmail_, 
+		var user = new StackMob.User({ 
+			username: userEmail_, 
 			password: passwordNew_, 
 			familyName: familyName_ ,
 			firstName: firstName_ ,
@@ -91,6 +92,7 @@ $(document).ready(function(){
 	    success: function(model) {
 	        console.debug('User object is saved, username: ' + model.get('username'));
 	        alert('successful sign up of ' + model.get('username'))
+	        jq.ui.loadContent("dashboard",false,false,"pop");
 	    },
 	    error: function(model, response) {
 	        console.debug(response);
@@ -98,52 +100,29 @@ $(document).ready(function(){
 	    }
 		});
 
-		/*var user = new Parse.User();
-
-		user.set("username", userEmail);
-		user.set("password", passwordNew);
-		user.set("email", userEmail);
-		user.set("familyName", familyName);
-		user.set("firstName", firstName);
-		user.set("birthDate", birthDate);
-
-		if (sex.checked==true) {
-		            user.set("sex", "male");
-					}
-				else {
-					user.set("sex", "female");
-					}
-		  
-		user.signUp(null, {
-		  success: function(user) {
-		    alert("signup riuscito");
-		    
-		  },
-		  error: function(user, error) {
-		    // Show the error message somewhere and let the user try again.
-		    alert("Error: " + error.code + " " + error.message);
-		  }
-		});*/
-
 	}
 
 
 	function login(){
-		var username = document.getElementById("loginName").value;
+		var username_ = document.getElementById("loginName").value;
 		var passwd= document.getElementById("loginPassword").value;
 
-		Parse.User.logIn(username, passwd, {
-		  success: function(user) {
-		    // Do stuff after successful login.
-		    alert("login effettuato");
-		    jq.ui.loadContent("dashboard",false,false,"pop");
-		    
-		  },
-		  error: function(user, error) {
-		    // The login failed. Check error to see why.
-			alert("login failed");
-		  }
+		var user = new StackMob.User({
+			username : username_,
+			password : passwd
 		});
+		user.login(true, {
+			success: function(model){
+				console.log('Successful log ');
+				alert('successful sign up of ' + model);
+				jq.ui.loadContent("dashboard", false, false, "pop");
+			},
+			error: function(model, error){
+				console.log('Error '  + error.error);
+				alert(response.error);
+			}
+		});
+
 	}
 
 
