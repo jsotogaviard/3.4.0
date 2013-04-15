@@ -125,6 +125,27 @@ $(document).ready(function(){
 
 	}
 
+	function forgotPassword(){
+		var email = document.getElementById("email").value;
+		
+
+		var user = new StackMob.User({
+			username : email,
+		});
+		user.logout({
+			success: function(model){
+				console.log('Successful log out ');
+				alert('successful log out ' + model);
+				//jq.ui.loadContent("dashboard", false, false, "pop");
+			},
+			error: function(model, error){
+				console.log('Error '  + error.error);
+				alert(response.error);
+			}
+		});
+
+	}
+
 
 	function getUserContacts () {
 
