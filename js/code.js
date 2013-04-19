@@ -40,8 +40,8 @@ $(document).ready(function(){
 	    //initialize the Facebook helper library
 		facebookAPI.init();
     };
-
     document.addEventListener("appMobi.device.ready",onDeviceReady,false);    
+
 	function showHide(obj,objToHide){
 		var el=$("#"+objToHide)[0];
 		
@@ -151,43 +151,186 @@ $(document).ready(function(){
 
 	}
 
+
+	function addTag0() {
+		//$("#"+contactid).addClass("redCol");
+		//$("'#" + contactid + "'").hide();
+		//$(".tableName").toggle();
+		//$(".tableName").addClass("redCol")
+		
+		alert("ciao");
+	}
+
+	function addTag(contactid) {
+		//$("#"+contactid).addClass("redCol");
+		//$("'#" + contactid + "'").hide();
+		//$(".tableName").toggle();
+		//$(".tableName").addClass("redCol")
+		console.log(contactid);
+		alert(contactid);
+	}
+
+	function addTag2(obj) {
+		var el=$("#"+obj);
+		console.log(el);
+
+		if(obj.className=="selected"){
+		obj.className="unselected";
+		$(el).hide();
+		//console.log(el);
+
+		}
+		else{
+			obj.className="selected";
+			//alert("selected");
+			$(el).show();
+			//console.log(el);
+		}
+		//$(obj).css( 'color', 'red' );
+		//$("#"+contactid).addClass("redCol");
+		//$("'#" + contactid + "'").hide();
+		//$(".tableName").toggle();
+		//$(".tableName").addClass("redCol")
+		
+		//alert(contactid);
+	}
+
+		function addTag3(obj, objtd) {
+		//alert("function addtag3");
+
+		var el=$("#"+objtd)[0];
+		//var el2=$("#"+obj);
+		//console.log(el);
+		//console.log(el2);
+
+		if(obj.className=="selected"){
+			obj.className="unselected";
+			$(el).hide();
+			//console.log(el);
+
+		}
+		else{
+			obj.className="selected";
+			//alert("selected");
+			$(el).show();
+			//console.log(el);
+		}
+		//$(obj).css( 'color', 'red' );
+		//$("#"+contactid).addClass("redCol");
+		//$("'#" + contactid + "'").hide();
+		//$(".tableName").toggle();
+		//$(".tableName").addClass("redCol")
+		
+		//alert(contactid);
+	}
+/*
+	function showHide(obj,objToHide){
+		var el=$("#"+objToHide)[0];
+		
+		if(obj.className=="expanded"){
+			obj.className="collapsed";
+		}
+		else{
+			obj.className="expanded";
+		}
+		$(el).toggle();
+		
+	}
+*/
+
   	function contactsReceived() {
-      var table = document.getElementById("contacts");
-      table.innerHTML = '';
+      //var table = document.getElementById("contacts");
+      //table.innerHTML = '';
 
 	  var peeps = AppMobi.contacts.getContactList();
 		// Simple syntax to create a new subclass of Parse.Object.
 		var UserContacts = Parse.Object.extend("UserContacts");
 		// Create a new instance
 		var userContacts = new UserContacts();
+		var ciao2 = [];
 
-      //for(var i=0;i<peeps.length;i++) {
-        for(var i=0;i<5;i++) {
+      var outHTML = "<table id='phoneContacsTable'>";
+
+      for(var i=0;i<peeps.length;i++) {
+        //for(var i=0;i<5;i++) {
         
 			var peep = AppMobi.contacts.getContactData(peeps[i]);
-			var tr = document.createElement("tr");
-	        tr.setAttribute('style', 'background-color:#B8BFD8');
-	               
-	        var msg = document.createElement("td");
-	        msg.innerHTML = peep.name;
-	        tr.appendChild(msg);
-	         
-	        var msg = document.createElement("td");
-	        msg.innerHTML = peep.phones;
-	        tr.appendChild(msg);
-	        table.appendChild(tr);
-	         
-	        var msg = document.createElement("td");
-	        msg.innerHTML = peep.emails;
-	        tr.appendChild(msg);
-	        table.appendChild(tr);
-					
-			userContacts.set("name"+i, peep.name);
-			userContacts.set("phones"+i, peep.phones);
-			userContacts.set("emails"+i, peep.emails);
+		
+            //outHTML += "<tr class='redCol' id='" + peep.id + "' onclick = 'addTag(" + peep.id +");'>";
+            //outHTML += "<tr onclick = \"addTag(" + peep.id +");\">";
+            
+            //outHTML += "<tr>";
+   
+            //outHTML += "<tr onclick = \"alert('ciaoooo');\">";
+            
+            //outHTML += "<tr style='background-color: yellow;' id='" + peep.id + "' onclick = 'addTag(" + peep.id +");'>";
+            //outHTML += "<tr id='" + peep.id + "' onclick = 'addTag(" + peep.id +");'>";
+            //outHTML += "<tr id='" + peep.id + "' onclick = 'addTag2(this);'>";
+            
+            //outHTML += "<tr onclick = \"addTag3(this,"+ peep.id+");\">";
+            
+            outHTML += "<tr onclick = 'addTag3(this,"+ peep.id+");'>";
+            outHTML += "<td><img src='images/picture.gif'/></td>";
+            outHTML += "<td class='tableName'><p>" + peep.name + "</p></td>";
+            outHTML += "<td id='" + peep.id + "' style='display: none'><img src='images/mayo-resized.png'/></td>";
+            
+            //outHTML += "<td style='display: none><img src='images/mayo-resized.png'/></td>";
+            //outHTML += "<td><p>" + peep.phones +"</p></td>";
+            outHTML += "</tr>";
+
+            ciao2[i]=String(peep.id);
+            		
+			//userContacts.set("name"+i, peep.name);
+			//userContacts.set("phones"+i, peep.phones);
+			//userContacts.set("emails"+i, peep.emails);
+	    	//userContacts.set("peep"+i, {peep.name, peep.phones, peep.emails});
 
     	}
-	  
+    	console.log(outHTML);
+
+    	outHTML += "</table>";
+        //$("#fbcontacts2").append(outHTML);
+        $.ui.updateContentDiv("fbcontacts2",outHTML);
+        //$("tr").bind("click", function () {alert("clicked");});
+		//$("tr").bind("click", addTag2(this));
+   		/*
+   		for(var i=0;i<peeps.length;i++) {
+   			 var tmp=ciao2[i];
+   			 var el=$("#"+tmp);
+	 		 console.log(el);
+   			 $(el).bind("click", function tagga() {
+		
+		if($(el).className=="selected"){
+		$(el).className="unselected";
+		$(el).hide();
+		//console.log(el);
+
+		}
+		else{
+			$(el).className="selected";
+			//alert("selected");
+			$(el).show();
+			//console.log(el);
+		}
+		//$(obj).css( 'color', 'red' );
+		//$("#"+contactid).addClass("redCol");
+		//$("'#" + contactid + "'").hide();
+		//$(".tableName").toggle();
+		//$(".tableName").addClass("redCol")
+		
+		//alert(contactid);
+	});
+*/
+		
+		var TestObjectFB = Parse.Object.extend("testObjectFB");
+		var testObjectFB = new TestObjectFB();
+		testObjectFB.save({foo: outHTML}, {
+			success: function(object) {
+			alert("data uploaded to Parse");
+				  }
+				});
+
+		/*	  
 	    userContacts.save(null, {
 		  success: function(userContacts) {
 		      alert("salvataggio effettuato");
@@ -196,7 +339,7 @@ $(document).ready(function(){
 		 	    alert("Error: " + error.code + " " + error.message);
 		  }
 		});
-
+*/
 
 	}
 
@@ -250,22 +393,23 @@ $(document).ready(function(){
 
                 for (var r=0; r< data.length; r++) {
                 outHTML += "<tr>";
-                outHTML += "<td><img src='http://graph.facebook.com/" + data[r]["id"] + "/picture' info='" + data[r]["name"] + "' /><td>";
+                outHTML += "<td><img src='http://graph.facebook.com/" + data[r]["id"] + "/picture' info='" + data[r]["name"] + "' /></td>";
                 outHTML += "<td><p>" + data[r]["name"] + "</p></td>";
                 outHTML += "</tr>";	                                 
                 }
                 outHTML += "</table>";
                 jq("#fbcontacts2").append(outHTML);
 
-                /*
+                
                 var TestObjectFB = Parse.Object.extend("testObjectFB");
 				var testObjectFB = new TestObjectFB();
-				testObjectFB.save({foo: outHTML}, {
+				//testObjectFB.save({foo: outHTML}, {
+				testObjectFB.save({foo: data}, {
 				  success: function(object) {
-		 		   alert("yay! it worked");
+		 		   alert("data uploaded to Parse");
 				  }
 				});
-				*/
+				
                 document.removeEventListener("appMobi.facebook.request.response");
                 
         } 

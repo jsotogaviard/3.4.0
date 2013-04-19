@@ -327,7 +327,7 @@ if (!window.jq || typeof (jq) !== "function") {
         * @title $.isFunction(param)
         */
         $.isFunction = function(obj) {
-            return typeof obj === "function";
+            return typeof obj === "function" && !(obj instanceof RegExp);
         };
         /**
         * Checks to see if the parameter is a object
@@ -1108,8 +1108,7 @@ if (!window.jq || typeof (jq) !== "function") {
                     return window.innerHeight;
                 if(this[0].nodeType==this[0].DOCUMENT_NODE)
                     return this[0].documentElement['offsetheight'];
-                else
-                {
+                else{
                     var tmpVal=this.css("height").replace("px","");
                     if(tmpVal)
                         return tmpVal
@@ -1135,11 +1134,11 @@ if (!window.jq || typeof (jq) !== "function") {
                 if(this[0].nodeType==this[0].DOCUMENT_NODE)
                     return this[0].documentElement['offsetwidth'];
                 else{
-                     var tmpVal=this.css("width").replace("px","");
-                    if(tmpVal)
+                    var tmpVal=this.css("width").replace("px","");
+					if(tmpVal)
                         return tmpVal
                     else
-                        return this.offset().width;
+					   return this.offset().width;
                 }
             },
             /**
@@ -1452,7 +1451,7 @@ if (!window.jq || typeof (jq) !== "function") {
         
         function empty() {
         }
-        var ajaxSettings = {
+        $.ajaxSettings = {
             type: 'GET',
             beforeSend: empty,
             success: empty,
@@ -1537,9 +1536,9 @@ if (!window.jq || typeof (jq) !== "function") {
             try {
 				
                 var settings = opts || {};
-                for (var key in ajaxSettings) {
+                for (var key in $.ajaxSettings) {
                     if (typeof(settings[key]) == 'undefined')
-                        settings[key] = ajaxSettings[key];
+                        settings[key] = $.ajaxSettings[key];
                 }
                 
                 if (!settings.url)

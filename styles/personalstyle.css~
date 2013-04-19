@@ -1,0 +1,2 @@
+tr.redCol { background-color: red; }
+tr.blueCol { background-color: transparent; }

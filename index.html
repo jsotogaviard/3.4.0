@@ -8,9 +8,9 @@
 
 
 <link rel="stylesheet" type="text/css" href="styles/icons.css" /> 
+<link rel="stylesheet" type="text/css" href="styles/personalstyle.css" /> 
 
 <link rel="stylesheet"  type="text/css" href="themes/jq.ui.css" title="default" />
-
 
 
 <script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/appmobi.js"></script> 
@@ -24,6 +24,11 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.9.1-bundled-min.js"></script>
 <script type="text/javascript" charset="utf-8" src="./js/code.js"></script> 
+
+<!--
+<script src="http://debug-software.intel.com/target/target-script-min.js#6b5cba14-8dbd-a797-7733-fc79aac96cbf"></script>
+-->
+
 
 </head>
 
@@ -82,8 +87,11 @@
 				<ul >
 				</ul>
 				
+				<!-- 
 				<table id="contacts" border="1" width="100%"><caption>Contact List</caption></table>
-				
+				-->
+				<div id="contacts">
+				</div>
 
 			
 			</div>
@@ -107,7 +115,8 @@
 
 			<div title="How it Works" id="howitworks" class="panel"  data-footer='footerui' data-tab="navbar_ui">
 
-				<h2 class='expanded' onclick='showHide(this,"jqui_info");'>General information</h2><p id='jqui_info'>
+				<h2 class='expanded' onclick='showHide(this,"jqui_info");'>General information</h2>
+				<p id='jqui_info'>
 				Mayo is ....<br>
 				It works like this:
 				<br>
@@ -310,7 +319,7 @@
 		   <div class='title'>Contacts</div>
 			<ul>
 			   <li> <a href="#importContacts"  >Import contacts</a></li>
-			   <li><a href="#pageXX" >Tag contacts</a></li>
+			   <li><a href="#fbcontactspage" >Show contacts</a></li>
 			</ul>
 	 	   <div class='title'>Dashboard</div>
 			<ul>
