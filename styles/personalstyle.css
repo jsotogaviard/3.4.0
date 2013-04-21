@@ -1,2 +1,6 @@
 tr.selected { background-color: red; }
 tr.unselected { background-color: transparent; }
+/*
+td.selected { background-color: blue; }
+td.unselected { background-color: green; }
+*/

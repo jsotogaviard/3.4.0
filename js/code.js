@@ -162,12 +162,66 @@ $(document).ready(function(){
 	}
 
 	function addTag(contactid) {
-		//$("#"+contactid).addClass("redCol");
-		//$("'#" + contactid + "'").hide();
-		//$(".tableName").toggle();
-		//$(".tableName").addClass("redCol")
+		//$("#"+contactid).addClass("selected");
+		//$("#"+contactid).className="selected";
+		//var el=$("#"+contactid);
+		var x=document.getElementById(contactid);
+		//x.parentNode.setAttribute('style', 'background-color: green');
+
+		//if($(el).parent("tr").attr("class")=="selected"){
+		if(x.parentNode.className=="selected"){
+
+			x.parentNode.className="unselected";
+			x.style.display="none";
+			//console.log(el);
+
+		}
+		else{
+			x.parentNode.className="selected";
+			//alert("selected");
+			x.style.display="block";
+			//console.log(el);
+		}
+
+		/*
+		var tmp= "input[id='"+ contactid +"']";
+		var el=$("input[id='"+ contactid +"']");
 		console.log(contactid);
-		alert(contactid);
+		console.log($(el));
+		console.log($("#"+contactid));
+		console.log(tmp);
+		console.log($(tmp));
+		$("input[id='1311186169045']").parent("tr").css('background-color', 'green');
+		*/
+
+
+		//$(".tableName").toggle();
+		//$(".tableName").addClass("selected")
+		//console.log($(el).parent("tr")[0].className);
+		//console.log($(el).parent("tr").attr("class"));
+		//console.log($(el).parent());
+		//console.log($(el).parent().parent());
+		//$(el).parent("tr").css('background-color', 'green');
+		//$(el).parent("tr").addClass("selected");
+		//$(el).parent("tr").className="selected";
+		//$(el).toggle();
+		//$(el).parent().parent().css('background-color', 'yellow');
+		//alert(contactid);
+		//if($(el).parent("tr")[0].className=="selected"){
+			/*
+		if($(el).parent("tr").attr("class")=="selected"){
+			$(el).parent("tr").removeClass("selected").addClass("unselected");
+			$(el).hide();
+			//console.log(el);
+
+		}
+		else{
+			$(el).parent("tr").removeClass("unselected").addClass("selected");
+			//alert("selected");
+			$(el).show();
+			//console.log(el);
+		}
+		*/
 	}
 
 	function addTag2(obj) {
@@ -257,7 +311,8 @@ $(document).ready(function(){
 			var peep = AppMobi.contacts.getContactData(peeps[i]);
 		
             //outHTML += "<tr class='redCol' id='" + peep.id + "' onclick = 'addTag(" + peep.id +");'>";
-            //outHTML += "<tr onclick = \"addTag(" + peep.id +");\">";
+            
+            ////outHTML += "<tr class='unselected' onclick = \"addTag('" + peep.id +"');\">";
             
             //outHTML += "<tr>";
    
@@ -269,11 +324,12 @@ $(document).ready(function(){
             
             //outHTML += "<tr onclick = \"addTag3(this,"+ peep.id+");\">";
             
-            outHTML += "<tr onclick = 'addTag3(this,"+ peep.id+");'>";
+            //outHTML += "<tr onclick = 'addTag3(this,"+ peep.id+");'>";
+            outHTML += "<tr class='unselected' onclick = \"addTag3(this,'"+ peep.id+"');\">";
             outHTML += "<td><img src='images/picture.gif'/></td>";
             outHTML += "<td class='tableName'><p>" + peep.name + "</p></td>";
-            outHTML += "<td id='" + peep.id + "' style='display: none'><img src='images/mayo-resized.png'/></td>";
-            
+            outHTML += "<td id=\"" + peep.id + "\" style='display: none'><img src='images/mayo-resized.png'/></td>";
+            //outHTML += "<td id=\"" + peep.id + "\"><img src='images/mayo-resized.png'/></td>";
             //outHTML += "<td style='display: none><img src='images/mayo-resized.png'/></td>";
             //outHTML += "<td><p>" + peep.phones +"</p></td>";
             outHTML += "</tr>";
