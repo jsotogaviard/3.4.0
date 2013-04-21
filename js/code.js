@@ -251,22 +251,30 @@ $(document).ready(function(){
 
 		function addTag3(obj, objtd) {
 		//alert("function addtag3");
+ 		//var patt=/./g; 
+ 		var ciao= "1311186\.169047";
+ 		var el2=$("#"+ciao)[0];
+		var ciao2 = ciao.replace(".", "\.");
+		console.log(ciao);
+		console.log(ciao2);
 
-		var el=$("#"+objtd)[0];
+		var el=$("#"+objtd.replace(".", "\."))[0];
 		//var el2=$("#"+obj);
-		//console.log(el);
-		//console.log(el2);
+		console.log(el);
+		console.log(el2);
 
 		if(obj.className=="selected"){
 			obj.className="unselected";
-			$(el).hide();
+			$(el2).hide();
+			//$("#"+objtd.replace(".", "\."))[0].hide();
 			//console.log(el);
 
 		}
 		else{
 			obj.className="selected";
 			//alert("selected");
-			$(el).show();
+			$(el2).show();
+			//$("#"+objtd.replace(".", "\."))[0].show();
 			//console.log(el);
 		}
 		//$(obj).css( 'color', 'red' );
@@ -292,6 +300,7 @@ $(document).ready(function(){
 	}
 */
 
+
   	function contactsReceived() {
       //var table = document.getElementById("contacts");
       //table.innerHTML = '';
@@ -309,10 +318,18 @@ $(document).ready(function(){
         //for(var i=0;i<5;i++) {
         
 			var peep = AppMobi.contacts.getContactData(peeps[i]);
-		
+			if (i==5){
+			var PeepP = Parse.Object.extend("PeepP");
+			var peepp = new PeepP();
+			peepp.save({foo: peep}, {
+			success: function(object) {
+			//alert("data uploaded to Parse");
+				  }
+				});
+			}		
             //outHTML += "<tr class='redCol' id='" + peep.id + "' onclick = 'addTag(" + peep.id +");'>";
             
-            ////outHTML += "<tr class='unselected' onclick = \"addTag('" + peep.id +"');\">";
+            outHTML += "<tr class='unselected' onclick = \"addTag('" + peep.id +"');\">";
             
             //outHTML += "<tr>";
    
@@ -325,7 +342,7 @@ $(document).ready(function(){
             //outHTML += "<tr onclick = \"addTag3(this,"+ peep.id+");\">";
             
             //outHTML += "<tr onclick = 'addTag3(this,"+ peep.id+");'>";
-            outHTML += "<tr class='unselected' onclick = \"addTag3(this,'"+ peep.id+"');\">";
+            ///outHTML += "<tr class='unselected' onclick = \"addTag3(this,'"+ peep.id+"');\">";
             outHTML += "<td><img src='images/picture.gif'/></td>";
             outHTML += "<td class='tableName'><p>" + peep.name + "</p></td>";
             outHTML += "<td id=\"" + peep.id + "\" style='display: none'><img src='images/mayo-resized.png'/></td>";
