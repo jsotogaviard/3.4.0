@@ -2,26 +2,32 @@
 <head>
 	<title>My page</title>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.9.1-bundled-min.js"></script>
-<script type="text/javascript">
-	StackMob.init({
-	    publicKey:       "3b740361-3f37-436b-8eff-fc68084f80aa",
-	    apiVersion:      0
-	});
-</script>
+<script type="text/javascript" charset="utf-8" src="./jq.mobi.js"></script> 
+<script type="text/javascript" charset="utf-8" src="./appmobi_local_bootstrap.js"></script> 
+<script type="text/javascript" charset="utf-8" src="./xhr.js"></script> 	
+
 
 <script type="text/javascript">
-	var user = new StackMob.User({ username: 'Bill Watterson', password: 'weirdosfromanotherplanet', profession: 'cartoonist'  });
-	user.create({
-    success: function(model) {
-        console.debug('User object is saved, username: ' + model.get('username'));
-    },
-    error: function(model, response) {
-        console.debug(response);
-        alert(response.error);
-    }
-});
+	$.ajax({
+              type: "GET",
+              url: "http://www.lefigaro.fr/",
+             
+		       headers : {
+            ETag: '12345'
+       },
+              cache: false,
+              dataType: "text",
+              success: function(result) {
+			    alert(result);
+			   } ,
+			  error: function(error){
+			  	//alert(error);
+			  },
+			   beforeSend: function (xhr){
+		         xhr.setRequestHeader("X-StackMob-Proxy-Plain", "authorizationToken");
+		         xhr.setRequestHeader("toto", "toto");
+		      }
+		 });
 </script>
 </head>
 <body>
