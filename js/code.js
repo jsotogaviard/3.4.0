@@ -139,31 +139,31 @@ function contactsReceived() {
 }
 document.addEventListener('appMobi.contacts.get', contactsReceived, false);
 
-document.addEventListener('appMobi.contacts.choose', function(e){
-	if(e.success == true){
-		var contactid = e.contactid;
-		var peep = AppMobi.contacts.getContactData(contactid);	
-		console.log(peep.emails);
-		jq.ajax({
-          type: "POST",
-          url: "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/rest/mayo/userConnection",
+// document.addEventListener('appMobi.contacts.choose', function(e){
+// 	if(e.success == true){
+// 		var contactid = e.contactid;
+// 		var peep = AppMobi.contacts.getContactData(contactid);	
+// 		console.log(peep.emails);
+// 		jq.ajax({
+//           type: "POST",
+//           url: "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/rest/mayo/userConnection",
 
-          // TODO take care of the case of having only one
-          // email or phone
-          data: ({emails: JSON.stringify(peep.emails) , phones:JSON.stringify(peep.phones)} ),
-          cache: false,
-          dataType: "text",
-          success: function(result) {
-		    alert(result);
-		   },
-		   error: function(error){
-		   	console.log(error);
-		   }
-	 });
+//           // TODO take care of the case of having only one
+//           // email or phone
+//           data: ({emails: JSON.stringify(peep.emails) , phones:JSON.stringify(peep.phones)} ),
+//           cache: false,
+//           dataType: "text",
+//           success: function(result) {
+// 		    alert(result);
+// 		   },
+// 		   error: function(error){
+// 		   	console.log(error);
+// 		   }
+// 	 });
 
-	}
-}
-, false);
+// 	}
+// }
+// , false);
 
 var facebookUserID = "me";  //me = the user currently logged into Facebook
 
@@ -314,6 +314,25 @@ function addTag(contactid) {
 		//alert("selected");
 		x.style.display="block";
 		//console.log(el);
+
+		var peep = AppMobi.contacts.getContactData(contactid);	
+		console.log(peep.emails);
+		jq.ajax({
+          type: "POST",
+          url: "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/rest/mayo/userConnection",
+
+          // TODO take care of the case of having only one
+          // email or phone
+          data: ({emails: JSON.stringify(peep.emails) , phones:JSON.stringify(peep.phones)} ),
+          cache: false,
+          dataType: "text",
+          success: function(result) {
+		    alert(result);
+		   },
+		   error: function(error){
+		   	console.log(error);
+		   }
+	 });
 	}
 
 	/*
