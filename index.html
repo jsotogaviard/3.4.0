@@ -36,34 +36,38 @@
 
         <!-- this is the splashscreen; see jq.ui.css -->
         <!-- funziona su Chrome, ma non nella app -->
-	 	<!--   
+	 	
 	 	<div id="splashscreen" class='ui-loader'>
 	        <img src="images/mayo.png">
 	        <br><br>
 	        <span class='ui-icon ui-icon-loading spin'></span><h1 >Starting app</h1>
 	    </div>
-		-->
+		
 
 
 		<!-- ------------------landing page------------------------ -->
 
         <!-- this is the header div //top right button for to expland the left navigation sidebar -->
-        <div id="header">
+        <!-- TODO Put only when it is not an iphone -->
+        <!-- <div id="header">
          <a id='menubadge' onclick='jq.ui.toggleSideMenu()' style='float:right;margin-top:4px' class='menuButton'></a>
-        </div>
+        </div> -->
 
         
         <div id="content">
 	        <!-- here is where you can add your panels -->
-	        <div title='Home' id="main" class="panel" selected="true" data-load="loadedPanel" data-unload="unloadedPanel" data-tab="navbar_home">
-			<h2 class='expanded' onclick='showHide(this,"main_info");'>Welcome</h2>
-			<p id='main_info'>Welcome to Mayo!<br>Mayo is blabla...<br>To get started please select an option from below.</p>
-			<ul>
+	        <!-- <div title='Mayo' id="main" class="panel" selected="true" data-load="loadedPanel" data-unload="unloadedPanel" data-tab="navbar_home" style="background-image:url('images/app_bg.jpg');background-repeat:no-repeat;"> -->
+			<!-- <h2 class='expanded' onclick='showHide(this,"main_info");'>Welcome</h2>
+			<p id='main_info'>Welcome to Mayo!<br>Mayo is blabla...<br>To get started please select an option from below.</p> -->
+
+			<!-- <ul>
 			 <li><a href="#howitworks" class='icon info big'>How it works</a></li>
 			 <li><a href="#login" class='icon user big'>Login</a></li>
 			  <li><a  class="button" href="javascript:;" onclick="logout();">logout</a></li>
-			 <!-- <li><a  class="button" href="javascript:;" onclick="testParse();">test</a></li> -->
-			</ul> 
+			 <!-- <li><a  class="button" href="javascript:;" onclick="testParse();">test</a></li>
+			</ul>  -->
+
+			<div title='Mayo' id="main" class="panel" style="background-image:url('images/app_bg.jpg');background-repeat:no-repeat;">
 		    </div>
 
 

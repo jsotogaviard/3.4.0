@@ -191,7 +191,7 @@ document.addEventListener("appMobi.facebook.request.response",function(e) {
 /* FUNCTIONS */
 
 function showHide(obj,objToHide){
-	var el=$("#"+objToHide)[0];
+	var el=jq("#"+objToHide)[0];
 	
 	if(obj.className=="expanded"){
 		obj.className="collapsed";
@@ -199,7 +199,7 @@ function showHide(obj,objToHide){
 	else{
 		obj.className="expanded";
 	}
-	$(el).toggle();
+	jq(el).toggle();
 }
 
 function testParse(){
