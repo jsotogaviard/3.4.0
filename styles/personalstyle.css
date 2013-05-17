@@ -1,6 +1,34 @@
+
+/*selected css*/
 tr.selected { background-color: red; }
 tr.unselected { background-color: transparent; }
-/*
-td.selected { background-color: blue; }
-td.unselected { background-color: green; }
-*/
+
+#facebookLogin{
+  position:absolute;
+  top:30%;
+  left:20%;
+  display: inline;
+}
+
+#mainLogin{
+  position:absolute;
+  top:50%;
+  left:20%;
+  display: inline;
+}
+
+#mainNewAccount{
+  position:absolute;
+  top:50%;
+  left:50%;
+  display: inline;
+}
+
+/*#main hr{
+ /* position:absolute;
+  top:60%;
+  left:30%;
+  color:white;
+}*/
+/*#contactInfoArea #phone {
+}*/

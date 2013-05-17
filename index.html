@@ -37,11 +37,11 @@
         <!-- this is the splashscreen; see jq.ui.css -->
         <!-- funziona su Chrome, ma non nella app -->
 	 	
-	 	<div id="splashscreen" class='ui-loader'>
+	 	<!-- <div id="splashscreen" class='ui-loader'>
 	        <img src="images/mayo.png">
 	        <br><br>
 	        <span class='ui-icon ui-icon-loading spin'></span><h1 >Starting app</h1>
-	    </div>
+	    </div> -->
 		
 
 
@@ -67,7 +67,18 @@
 			 <!-- <li><a  class="button" href="javascript:;" onclick="testParse();">test</a></li>
 			</ul>  -->
 
-			<div title='Mayo' id="main" class="panel" style="background-image:url('images/app_bg.jpg');background-repeat:no-repeat;">
+			<div title='Mayo' id="main" class="panel" style="background-image:url('images/app_bg1.jpg');background-repeat:no-repeat;">
+				<div id='facebookLogin' class="img">
+					<a href="#login"><img src="images/facebooklogin.png" alt="Facebook login" width="198" height="45"></a>
+				</div>
+				<div id='mainLogin' class="img">
+					 <a href="#login"><img src="images/login.jpg" alt="Login" width="90" height="80"></a>
+				</div>
+				<div id='mainNewAccount' class="img">
+					 <a href="#newaccount"><img src="images/newAccount.jpg" alt="New Account" width="90" height="80"></a>
+				</div>
+				<!-- <hr> -->
+
 		    </div>
 
 
@@ -293,13 +304,13 @@
         </div>
 
         <!-- bottom navbar.  Add additional tabs here -->
-        <div id="navbar">
+        <!-- <div id="navbar">
             <a href="#settings" id='navbar_settings' class='icon settings' >Settings</a>
             <a href="#contacts_page" id='navbar_contacts' class='icon user' >Contacts</a>
             <a href="#main" id='navbar_home' class='icon home' >home</a>
             <a href="#dashboard" id='navbar_dashboard' class='icon heart' >Dashboard</a>
             <a href="#chat" id='navbar_others' class='icon chat' >Chat</a>
-        </div>
+        </div> -->
 
 
         <!-- this is the default left side nav menu -->
