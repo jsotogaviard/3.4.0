@@ -54,35 +54,31 @@ ORIGIN = {
 	LINKEDIN :2,	
 }
 
-function Contact (origin, id, name) {
+function Contact (origin, id, name, picture) {
 	this.origin = origin;
     this.id = id;
     this.name = name;
+    this.picture = picture;
 }
 
 function contactsReceived() {
 	var peeps = AppMobi.contacts.getContactList();
 	var contacts = [];
-	var outHTML = "<table id='phoneContacsTable'>";
-
+	
 	for(var i=0;i<peeps.length;i++) {
 		var peep = AppMobi.contacts.getContactData(peeps[i]);	
-		var id = peep.id;
-		var name = peep.name;
-		contacts[i] = new Contact(ORIGIN.PHONE, id, name);
-		outHTML += "<tr class='unselected' onclick = \"addTag('" + id +"');\">";
-		outHTML += "<td><img src='images/picture.gif'/></td>";
-		outHTML += "<td class='tableName'><p>" + name + "</p></td>";
-		outHTML += "<td id=\"" + id + "\" style='display: none'><img src='images/mayo-resized.png'/></td>";
-		outHTML += "</tr>";
+		contacts[i] = new Contact(ORIGIN.PHONE, peep.id, peep.name, '');
 	}
-	outHTML += "</table>";
 	
 	// Sort and save contacts
 	sortSaveContacts(contacts);
 
 	// Update the div content
+	var outHTML = buildContactsTable(contacts);
 	jq.ui.updateContentDiv("fbcontacts2",outHTML);
+
+	// Remove the listener
+	document.removeEventListener("appMobi.contacts.get");
 }
 document.addEventListener('appMobi.contacts.get', contactsReceived, false);
 
@@ -103,7 +99,7 @@ document.addEventListener("appMobi.facebook.request.response",function(e) {
 		// the contacts array
 		numContacts = contacts.length;
 		for (var r=0; r< data.length; r++) {
-			contacts[numContacts++] = new Contact(ORIGIN.FACEBOOK, data[r]["id"], data[r]["name"]);
+			contacts[numContacts++] = new Contact(ORIGIN.FACEBOOK, data[r]["id"], data[r]["name"], '');
 		}
 		
 		// Sort and save contacts
@@ -112,7 +108,7 @@ document.addEventListener("appMobi.facebook.request.response",function(e) {
 		// Build the table
 		// And put it in the div
 		var outHTML = buildContactsTable(contacts);
-		jq("#fbcontacts2").append(outHTML);
+		jq.ui.updateContentDiv("fbcontacts2",outHTML);
 
 		document.removeEventListener("appMobi.facebook.request.response");      
 	} 
@@ -147,27 +143,33 @@ function buildContactsTable(contacts){
 	var outHTML = "<table>";
 	for (var r=0; r< contacts.length; r++) {
 		contact = contacts[r];
-		outHTML += "<tr class='unselected' onclick = \"addTag('" + id +"');\">";
-		if (contacts.origin == ORIGIN.FACEBOOK) {
+		outHTML += "<tr class='unselected' onclick = \"addTag('" + contact.id +"');\">";
+		if (contact.origin == ORIGIN.FACEBOOK) {
 			
 			// Add the facebook image
 			outHTML += "<td><img src='http://graph.facebook.com/" + contact.id + "/picture' info='" + contact.name + "' /></td>";
-		} else if(contacts.origin == ORIGIN.PHONE){
+		} else if(contact.origin == ORIGIN.PHONE){
 			
 			// Add a random image
 			outHTML += "<td><img src='images/picture.gif'/></td>";
-		} else if(contacts.origin == ORIGIN.LINKEDIN){
+		} else if(contact.origin == ORIGIN.LINKEDIN){
 			
-			// NOT YET IMPLEMENTED
+			// Add the stored image
+			if (typeof contact.picture === "undefined") {
+				outHTML += "<td><img src='images/picture.gif'/></td>";
+			} else {
+				outHTML += "<td><img src=" + contact.picture + "></td>";
+			}
 			
 		} else {
-			throw new Error(contacts.origin + " impossible");
+			throw new Error(contact.origin + " impossible");
 		}
 		outHTML += "<td class='tableName'><p>" + contact.name + "</p></td>";
 		outHTML += "<td id=\"" + contact.id + "\" style='display: none'><img src='images/mayo-resized.png'/></td>";
 		outHTML += "</tr>";	                                 
 	}
 	outHTML += "</table>";
+	console.log(outHTML);
 	return outHTML;
 }
 
@@ -192,20 +194,15 @@ function showHide(obj,objToHide){
 }
 
 function testParse(){
-	jq.ajax({
-          type: "POST",
-          url: "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/rest/mayo/registerUser",
-          //url: "http://localhost:4567/http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/rest/mayo/registerUser",
-          data: ({mainEmail:'jsotogaviard2@gmail.com', name:'j1' , password:'s1' , emails:'[]' , phones:'[]'} ),
-          cache: false,
-          dataType: "text",
-          success: function(result) {
-		    alert(result);
-		   },
-		   error: function(error){
-		   	console.log(error);
-		   }
-	 });
+	alert("about to log into facebook");
+	document.addEventListener("appMobi.facebook.login",function(e){
+	        if (e.success == true) 
+	        { console.log("Facebook Log in Successful"); } 
+	        else 
+	        { console.log("Unsuccessful Login"); }
+	},false); 
+	AppMobi.facebook.login("publish_stream,publish_actions,offline_access");
+
 }
 
 function signUp(){
@@ -269,20 +266,6 @@ function forgotPassword(){
 }
 
 
-function getUserContacts () {
-
-}
-
-
-function addTag0() {
-	//$("#"+contactid).addClass("redCol");
-	//$("'#" + contactid + "'").hide();
-	//$(".tableName").toggle();
-	//$(".tableName").addClass("redCol")
-	
-	alert("ciao");
-}
-
 function addTag(contactid) {
 	//$("#"+contactid).addClass("selected");
 	//$("#"+contactid).className="selected";
@@ -324,122 +307,7 @@ function addTag(contactid) {
 	 });
 	}
 
-	/*
-	var tmp= "input[id='"+ contactid +"']";
-	var el=$("input[id='"+ contactid +"']");
-	console.log(contactid);
-	console.log($(el));
-	console.log($("#"+contactid));
-	console.log(tmp);
-	console.log($(tmp));
-	$("input[id='1311186169045']").parent("tr").css('background-color', 'green');
-	*/
-
-
-	//$(".tableName").toggle();
-	//$(".tableName").addClass("selected")
-	//console.log($(el).parent("tr")[0].className);
-	//console.log($(el).parent("tr").attr("class"));
-	//console.log($(el).parent());
-	//console.log($(el).parent().parent());
-	//$(el).parent("tr").css('background-color', 'green');
-	//$(el).parent("tr").addClass("selected");
-	//$(el).parent("tr").className="selected";
-	//$(el).toggle();
-	//$(el).parent().parent().css('background-color', 'yellow');
-	//alert(contactid);
-	//if($(el).parent("tr")[0].className=="selected"){
-		/*
-	if($(el).parent("tr").attr("class")=="selected"){
-		$(el).parent("tr").removeClass("selected").addClass("unselected");
-		$(el).hide();
-		//console.log(el);
-
-	}
-	else{
-		$(el).parent("tr").removeClass("unselected").addClass("selected");
-		//alert("selected");
-		$(el).show();
-		//console.log(el);
-	}
-	*/
 }
-
-function addTag2(obj) {
-	var el=$("#"+obj);
-	console.log(el);
-
-	if(obj.className=="selected"){
-	obj.className="unselected";
-	$(el).hide();
-	//console.log(el);
-
-	}
-	else{
-		obj.className="selected";
-		//alert("selected");
-		$(el).show();
-		//console.log(el);
-	}
-	//$(obj).css( 'color', 'red' );
-	//$("#"+contactid).addClass("redCol");
-	//$("'#" + contactid + "'").hide();
-	//$(".tableName").toggle();
-	//$(".tableName").addClass("redCol")
-	
-	//alert(contactid);
-}
-
-	function addTag3(obj, objtd) {
-	//alert("function addtag3");
-		//var patt=/./g; 
-		var ciao= "1311186\.169047";
-		var el2=$("#"+ciao)[0];
-	var ciao2 = ciao.replace(".", "\.");
-	console.log(ciao);
-	console.log(ciao2);
-
-	var el=$("#"+objtd.replace(".", "\."))[0];
-	//var el2=$("#"+obj);
-	console.log(el);
-	console.log(el2);
-
-	if(obj.className=="selected"){
-		obj.className="unselected";
-		$(el2).hide();
-		//$("#"+objtd.replace(".", "\."))[0].hide();
-		//console.log(el);
-
-	}
-	else{
-		obj.className="selected";
-		//alert("selected");
-		$(el2).show();
-		//$("#"+objtd.replace(".", "\."))[0].show();
-		//console.log(el);
-	}
-	//$(obj).css( 'color', 'red' );
-	//$("#"+contactid).addClass("redCol");
-	//$("'#" + contactid + "'").hide();
-	//$(".tableName").toggle();
-	//$(".tableName").addClass("redCol")
-	
-	//alert(contactid);
-}
-/*
-function showHide(obj,objToHide){
-	var el=$("#"+objToHide)[0];
-	
-	if(obj.className=="expanded"){
-		obj.className="collapsed";
-	}
-	else{
-		obj.className="expanded";
-	}
-	$(el).toggle();
-	
-}
-*/
 
 function smsSend(){
 	var xmlHttp = null;
@@ -449,21 +317,6 @@ function smsSend(){
 	xmlHttp.send();
 	return xmlHttp.responseText;
 }
-
-/*
-document.addEventListener("appMobi.facebook.login",function(e){
-	if (e.success == true){ 
-	console.log("Facebook Log in Successful"); 
-	}
-	else { 
-	console.log("Unsuccessful Login"); 
-	}
-},false);
-
-function fbLogin(){
- AppMobi.facebook.login("publish_stream,publish_actions,offline_access");
-}
-*/
 
 function loginComplete() {
 	alert("login is complete");
@@ -477,22 +330,97 @@ function fbContactsImport(){
 	AppMobi.facebook.requestWithGraphAPI(facebookUserID + "/friends","GET","");
 }
 
-/*
-function iconFB(){
-	var tr = document.createElement("tr");
-	tr.setAttribute('style', 'background-color:#B8BFD8');
-    var msg = document.createElement("td");
-		var facebookIcon = document.createElement("img");
+var serviceName = "linkedin1";
 
-	//facebookIcon.setAttribute("style","position:absolute; bottom:50px; right:90px;");
-	facebookIcon.setAttribute("onclick","alert('ciao');");
-	facebookIcon.setAttribute("src","images/Facebook-icon.png");
-	facebookIcon.setAttribute("width","50");
-	facebookIcon.setAttribute("height","50");
-	msg.appendChild(facebookIcon);
-	tr.appendChild(msg);
-	tablefb.appendChild(tr);
-
-	//document.getElementsByTagName("fbcontacts").appendChild(facebookIcon);
+function ddebug(name)
+{
+	console.log(name);
 }
-*/
+//var verificationTimer;
+//var verificationTimeout = 60000;
+function verifyLinkedinCredentials()
+{
+	ddebug("verifying credentials");
+	var parameters = new AppMobi.OAuth.ProtectedDataParameters();
+	parameters.service = serviceName;
+	parameters.url = 'http://api.linkedin.com/v1/people/~?format=json';
+	parameters.id = 'ln_get';
+	parameters.method = 'GET';
+	//clearTimeout(verificationTimer);
+	//verificationTimer = setTimeout(function(){ 
+	//	clearTimeout(verificationTimer);
+		//document.getElementById("divLoggedInAs").innerHTML="Verification Failure";
+		//AppMobi.notification.alert("The verifictaion has timed out.  Please try again later.","Verification Timeout","OK");
+	//},verificationTimeout);
+	
+	//alert(JSON.stringify(parameters));
+
+	AppMobi.oauth.getProtectedData(parameters);
+}
+
+
+	//http://api.linkedin.com/v1/people/~/connections
+
+function getLinkedinContacts(){
+	ddebug("getting contacts");
+	var parameters = new AppMobi.OAuth.ProtectedDataParameters();
+	parameters.service = serviceName;
+	parameters.url = 'http://api.linkedin.com/v1/people/~/connections?format=json';
+	parameters.id = 'ln_get_contacts';
+	parameters.method = 'GET';
+
+	AppMobi.oauth.getProtectedData(parameters);
+}
+
+
+function statusUpdate(evt){
+	ddebug("ID: " + evt.id);
+
+	if (evt.id == "ln_get"){
+		var data = JSON.parse(evt.response);
+		AppMobi.notification.alert("Credentials verified3","Success","OK");
+		console.log(data.firstName);
+	}
+
+	if (evt.id == "ln_get_contacts"){
+		var linkedinData = JSON.parse(evt.response);
+		ddebug(linkedinData.values[0]);
+
+		// Get the contacts locally stored
+		var jsonContacts = AppMobi.cache.getCookie(CONTACTS_COOKIE);
+		contacts = JSON.parse(jsonContacts);
+        numContacts = contacts.length;
+
+        for (var r=1; r< linkedinData.values.length; r++) {
+        	contact = linkedinData.values[r];
+        	ddebug(contact.pictureUrl);
+        	contacts[numContacts] = new Contact(
+        		ORIGIN.LINKEDIN,
+        		numContacts,
+        	 	contact.firstName + " " + contact.lastName,
+        	 	contact.pictureUrl);
+         	numContacts++;	                                 
+        }
+
+        sortSaveContacts(contacts);
+        outHTML = buildContactsTable(contacts);
+        jq.ui.updateContentDiv("fbcontacts2",outHTML);
+
+		//Linkedin contacts received
+		AppMobi.notification.alert("Contacts received3","Success","OK");
+	}
+}
+
+function signOutLinkedin()
+{
+	alert("unauthorizing service");
+	AppMobi.oauth.unauthorizeService(serviceName);
+}
+	
+
+//EVENT HANDLERS
+	
+document.addEventListener("appMobi.oauth.protected.data",statusUpdate,false);  // fired when data comes back from oAuth
+document.addEventListener("appMobi.oauth.busy",function(){ ddebug('oAuth busy');  },false);  // fired if we try to use oAuth when oAuth is already busy with another call
+
+
