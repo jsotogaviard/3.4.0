@@ -23,6 +23,9 @@ var init = function(){
 document.addEventListener("DOMContentLoaded",init,false);  
 jq.ui.ready(function(){console.log('ready');});
 
+/* Variables */
+var CONTACTS_COOKIE = "CONTACT_COOKIE";
+
 /* FUNCTIONS RELATED TO EVENTS */
 
 /* This code is used to run as soon as appMobi activates */
@@ -42,154 +45,140 @@ var onDeviceReady=function(){
 	// FIXME
 	AppMobi.contacts.getContacts();
 };
-document.addEventListener("appMobi.device.ready",onDeviceReady,false);    
+document.addEventListener("appMobi.device.ready",onDeviceReady,false); 
+
+//classes
+ORIGIN = {
+	FACEBOOK : 0,
+	PHONE : 1,
+	LINKEDIN :2,	
+}
+
+function Contact (origin, id, name) {
+	this.origin = origin;
+    this.id = id;
+    this.name = name;
+}
 
 function contactsReceived() {
-  //var table = document.getElementById("contacts");
-  //table.innerHTML = '';
+	var peeps = AppMobi.contacts.getContactList();
+	var contacts = [];
+	var outHTML = "<table id='phoneContacsTable'>";
 
-  var peeps = AppMobi.contacts.getContactList();
-  var ciao2 = [];
-
-  var outHTML = "<table id='phoneContacsTable'>";
-
-  for(var i=0;i<peeps.length;i++) {
-    //for(var i=0;i<5;i++) {
-    
+	for(var i=0;i<peeps.length;i++) {
 		var peep = AppMobi.contacts.getContactData(peeps[i]);	
-        //outHTML += "<tr class='redCol' id='" + peep.id + "' onclick = 'addTag(" + peep.id +");'>";
-        
-        outHTML += "<tr class='unselected' onclick = \"addTag('" + peep.id +"');\">";
-        
-        //outHTML += "<tr>";
-
-        //outHTML += "<tr onclick = \"alert('ciaoooo');\">";
-        
-        //outHTML += "<tr style='background-color: yellow;' id='" + peep.id + "' onclick = 'addTag(" + peep.id +");'>";
-        //outHTML += "<tr id='" + peep.id + "' onclick = 'addTag(" + peep.id +");'>";
-        //outHTML += "<tr id='" + peep.id + "' onclick = 'addTag2(this);'>";
-        
-        //outHTML += "<tr onclick = \"addTag3(this,"+ peep.id+");\">";
-        
-        //outHTML += "<tr onclick = 'addTag3(this,"+ peep.id+");'>";
-        ///outHTML += "<tr class='unselected' onclick = \"addTag3(this,'"+ peep.id+"');\">";
-        outHTML += "<td><img src='images/picture.gif'/></td>";
-        outHTML += "<td class='tableName'><p>" + peep.name + "</p></td>";
-        outHTML += "<td id=\"" + peep.id + "\" style='display: none'><img src='images/mayo-resized.png'/></td>";
-        //outHTML += "<td id=\"" + peep.id + "\"><img src='images/mayo-resized.png'/></td>";
-        //outHTML += "<td style='display: none><img src='images/mayo-resized.png'/></td>";
-        //outHTML += "<td><p>" + peep.phones +"</p></td>";
-        outHTML += "</tr>";
-
-        ciao2[i]=String(peep.id);
-        		
-		//userContacts.set("name"+i, peep.name);
-		//userContacts.set("phones"+i, peep.phones);
-		//userContacts.set("emails"+i, peep.emails);
-    	//userContacts.set("peep"+i, {peep.name, peep.phones, peep.emails});
-
+		var id = peep.id;
+		var name = peep.name;
+		contacts[i] = new Contact(ORIGIN.PHONE, id, name);
+		outHTML += "<tr class='unselected' onclick = \"addTag('" + id +"');\">";
+		outHTML += "<td><img src='images/picture.gif'/></td>";
+		outHTML += "<td class='tableName'><p>" + name + "</p></td>";
+		outHTML += "<td id=\"" + id + "\" style='display: none'><img src='images/mayo-resized.png'/></td>";
+		outHTML += "</tr>";
 	}
-	console.log(outHTML);
-
 	outHTML += "</table>";
-    //$("#fbcontacts2").append(outHTML);
-    $.ui.updateContentDiv("fbcontacts2",outHTML);
-    //$("tr").bind("click", function () {alert("clicked");});
-	//$("tr").bind("click", addTag2(this));
-		/*
-		for(var i=0;i<peeps.length;i++) {
-			 var tmp=ciao2[i];
-			 var el=$("#"+tmp);
- 		 console.log(el);
-			 $(el).bind("click", function tagga() {
 	
-	if($(el).className=="selected"){
-	$(el).className="unselected";
-	$(el).hide();
-	//console.log(el);
+	// Sort and save contacts
+	sortSaveContacts(contacts);
 
-	}
-	else{
-		$(el).className="selected";
-		//alert("selected");
-		$(el).show();
-		//console.log(el);
-	}
-	//$(obj).css( 'color', 'red' );
-	//$("#"+contactid).addClass("redCol");
-	//$("'#" + contactid + "'").hide();
-	//$(".tableName").toggle();
-	//$(".tableName").addClass("redCol")
-	
-	//alert(contactid);
-});
-*/
-
-	/*	  
-    userContacts.save(null, {
-	  success: function(userContacts) {
-	      alert("salvataggio effettuato");
-	  },
-	  error: function(userContacts, error) {
-	 	    alert("Error: " + error.code + " " + error.message);
-	  }
-	});
-*/
-
+	// Update the div content
+	jq.ui.updateContentDiv("fbcontacts2",outHTML);
 }
 document.addEventListener('appMobi.contacts.get', contactsReceived, false);
-
-// document.addEventListener('appMobi.contacts.choose', function(e){
-// 	if(e.success == true){
-// 		var contactid = e.contactid;
-// 		var peep = AppMobi.contacts.getContactData(contactid);	
-// 		console.log(peep.emails);
-// 		jq.ajax({
-//           type: "POST",
-//           url: "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/rest/mayo/userConnection",
-
-//           // TODO take care of the case of having only one
-//           // email or phone
-//           data: ({emails: JSON.stringify(peep.emails) , phones:JSON.stringify(peep.phones)} ),
-//           cache: false,
-//           dataType: "text",
-//           success: function(result) {
-// 		    alert(result);
-// 		   },
-// 		   error: function(error){
-// 		   	console.log(error);
-// 		   }
-// 	 });
-
-// 	}
-// }
-// , false);
 
 var facebookUserID = "me";  //me = the user currently logged into Facebook
 
 document.addEventListener("appMobi.facebook.request.response",function(e) {
-    alert("Facebook User Friends Data Returned");
+	alert("Facebook User Friends Data Returned");
 	jq.ui.loadContent("fbcontactspage",false,false,"pop");
 
-    if (e.success == true) {
-        var data = e.data.data;
-        var outHTML = "<table>";
-
-        for (var r=0; r< data.length; r++) {
-        outHTML += "<tr>";
-        outHTML += "<td><img src='http://graph.facebook.com/" + data[r]["id"] + "/picture' info='" + data[r]["name"] + "' /></td>";
-        outHTML += "<td><p>" + data[r]["name"] + "</p></td>";
-        outHTML += "</tr>";	                                 
-        }
-        outHTML += "</table>";
-        jq("#fbcontacts2").append(outHTML);
+	// load the data that is in the cache
+	var jsonContacts = AppMobi.cache.getCookie(CONTACTS_COOKIE);
+	contacts = JSON.parse(jsonContacts);
+	
+	if (e.success == true) {
+		var data = e.data.data;
 		
-        document.removeEventListener("appMobi.facebook.request.response");      
-    } 
+		// add the facebook contacts to 
+		// the contacts array
+		numContacts = contacts.length;
+		for (var r=0; r< data.length; r++) {
+			contacts[numContacts++] = new Contact(ORIGIN.FACEBOOK, data[r]["id"], data[r]["name"]);
+		}
+		
+		// Sort and save contacts
+		sortSaveContacts(contacts);
+		
+		// Build the table
+		// And put it in the div
+		var outHTML = buildContactsTable(contacts);
+		jq("#fbcontacts2").append(outHTML);
+
+		document.removeEventListener("appMobi.facebook.request.response");      
+	} 
 },false);
 
 /* FUNCTIONS */
 
+/**
+ * Sort and saves the contacts
+ */
+function sortSaveContacts(contacts){
+	// Sort the table
+	contacts.sort(function(a,b){
+		if(a.name.toUpperCase()<b.name.toUpperCase()) return -1;
+		if(a.name.toUpperCase()>b.name.toUpperCase()) return 1;
+		return 0;
+	});
+
+	// Save locally the sorted table
+	// Works if if it's under 5 MB
+	AppMobi.cache.setCookie(CONTACTS_COOKIE,JSON.stringify(contacts),-1);
+}
+
+/**
+ * Helps to build the contacts table
+ * 
+ * @param contacts the contacts
+ * 
+ * @returns the table
+ */
+function buildContactsTable(contacts){
+	var outHTML = "<table>";
+	for (var r=0; r< contacts.length; r++) {
+		contact = contacts[r];
+		outHTML += "<tr class='unselected' onclick = \"addTag('" + id +"');\">";
+		if (contacts.origin == ORIGIN.FACEBOOK) {
+			
+			// Add the facebook image
+			outHTML += "<td><img src='http://graph.facebook.com/" + contact.id + "/picture' info='" + contact.name + "' /></td>";
+		} else if(contacts.origin == ORIGIN.PHONE){
+			
+			// Add a random image
+			outHTML += "<td><img src='images/picture.gif'/></td>";
+		} else if(contacts.origin == ORIGIN.LINKEDIN){
+			
+			// NOT YET IMPLEMENTED
+			
+		} else {
+			throw new Error(contacts.origin + " impossible");
+		}
+		outHTML += "<td class='tableName'><p>" + contact.name + "</p></td>";
+		outHTML += "<td id=\"" + contact.id + "\" style='display: none'><img src='images/mayo-resized.png'/></td>";
+		outHTML += "</tr>";	                                 
+	}
+	outHTML += "</table>";
+	return outHTML;
+}
+
+/**
+ * Show hide function
+ * 
+ * @param obj the object
+ * @param objToHide the object to hide
+ * 
+ * @returns void
+ */
 function showHide(obj,objToHide){
 	var el=$("#"+objToHide)[0];
 	
@@ -452,14 +441,13 @@ function showHide(obj,objToHide){
 }
 */
 
-function smsSend()
-{
-var xmlHttp = null;
+function smsSend(){
+	var xmlHttp = null;
 
-xmlHttp = new XMLHttpRequest();
-xmlHttp.open( "GET", "https://www.freevoipdeal.com/myaccount/sendsms.php?username=baubau2013&password=password&from=baubau2013&to=+33650530458&text=questo e' un sms di prova", true );
-xmlHttp.send();
-return xmlHttp.responseText;
+	xmlHttp = new XMLHttpRequest();
+	xmlHttp.open( "GET", "https://www.freevoipdeal.com/myaccount/sendsms.php?username=baubau2013&password=password&from=baubau2013&to=+33650530458&text=questo e' un sms di prova", true );
+	xmlHttp.send();
+	return xmlHttp.responseText;
 }
 
 /*
