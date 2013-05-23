@@ -54,11 +54,12 @@ ORIGIN = {
 	LINKEDIN :2,	
 }
 
-function Contact (origin, id, name, picture) {
+function Contact (origin, id, name, picture, identificationData) {
 	this.origin = origin;
     this.id = id;
     this.name = name;
     this.picture = picture;
+    this.identificationData = identificationData;
 }
 
 function contactsReceived() {
@@ -99,7 +100,10 @@ document.addEventListener("appMobi.facebook.request.response",function(e) {
 		// the contacts array
 		numContacts = contacts.length;
 		for (var r=0; r< data.length; r++) {
-			contacts[numContacts++] = new Contact(ORIGIN.FACEBOOK, data[r]["id"], data[r]["name"], '');
+			phones = createArray(peep.phones);
+			emails = createArray(peep.emails);
+			identificationData = phones.concat(emails);
+			contacts[numContacts++] = new Contact(ORIGIN.FACEBOOK, data[r]["id"], data[r]["name"], '', identificationData);
 		}
 		
 		// Sort and save contacts
@@ -115,6 +119,17 @@ document.addEventListener("appMobi.facebook.request.response",function(e) {
 },false);
 
 /* FUNCTIONS */
+
+/**
+ * Create an array
+ */
+function createArray(data){
+	if (data instanceof Array) {
+		return data;
+	} else {
+		return [data];
+	}
+}
 
 /**
  * Sort and saves the contacts
@@ -169,7 +184,6 @@ function buildContactsTable(contacts){
 		outHTML += "</tr>";	                                 
 	}
 	outHTML += "</table>";
-	console.log(outHTML);
 	return outHTML;
 }
 
@@ -182,7 +196,7 @@ function buildContactsTable(contacts){
  * @returns void
  */
 function showHide(obj,objToHide){
-	var el=$("#"+objToHide)[0];
+	var el=jq("#"+objToHide)[0];
 	
 	if(obj.className=="expanded"){
 		obj.className="collapsed";
@@ -190,16 +204,17 @@ function showHide(obj,objToHide){
 	else{
 		obj.className="expanded";
 	}
-	$(el).toggle();
+	jq(el).toggle();
 }
 
 function testParse(){
 	alert("about to log into facebook");
 	document.addEventListener("appMobi.facebook.login",function(e){
-	        if (e.success == true) 
-	        { console.log("Facebook Log in Successful"); } 
-	        else 
-	        { console.log("Unsuccessful Login"); }
+		if (e.success == true) {
+			console.log("Facebook Log in Successful"); 
+		} else {
+			console.log("Unsuccessful Login"); 
+		}
 	},false); 
 	AppMobi.facebook.login("publish_stream,publish_actions,offline_access");
 
@@ -265,30 +280,21 @@ function forgotPassword(){
 
 }
 
-
+/**
+ * The add tag function
+ * @param contactid the id of the contact
+ */
 function addTag(contactid) {
-	//$("#"+contactid).addClass("selected");
-	//$("#"+contactid).className="selected";
-	//var el=$("#"+contactid);
 	var x=document.getElementById(contactid);
-	//x.parentNode.setAttribute('style', 'background-color: green');
-
-	//if($(el).parent("tr").attr("class")=="selected"){
 	if(x.parentNode.className=="selected"){
 
 		x.parentNode.className="unselected";
 		x.style.display="none";
-		//console.log(el);
-
-	}
-	else{
+	} else {
 		x.parentNode.className="selected";
-		//alert("selected");
 		x.style.display="block";
-		//console.log(el);
 
 		var peep = AppMobi.contacts.getContactData(contactid);	
-		console.log(peep.emails);
 		jq.ajax({
           type: "POST",
           url: "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/rest/mayo/userConnection",
@@ -336,8 +342,7 @@ function ddebug(name)
 {
 	console.log(name);
 }
-//var verificationTimer;
-//var verificationTimeout = 60000;
+
 function verifyLinkedinCredentials()
 {
 	ddebug("verifying credentials");
@@ -346,20 +351,9 @@ function verifyLinkedinCredentials()
 	parameters.url = 'http://api.linkedin.com/v1/people/~?format=json';
 	parameters.id = 'ln_get';
 	parameters.method = 'GET';
-	//clearTimeout(verificationTimer);
-	//verificationTimer = setTimeout(function(){ 
-	//	clearTimeout(verificationTimer);
-		//document.getElementById("divLoggedInAs").innerHTML="Verification Failure";
-		//AppMobi.notification.alert("The verifictaion has timed out.  Please try again later.","Verification Timeout","OK");
-	//},verificationTimeout);
-	
-	//alert(JSON.stringify(parameters));
 
 	AppMobi.oauth.getProtectedData(parameters);
 }
-
-
-	//http://api.linkedin.com/v1/people/~/connections
 
 function getLinkedinContacts(){
 	ddebug("getting contacts");
@@ -398,7 +392,8 @@ function statusUpdate(evt){
         		ORIGIN.LINKEDIN,
         		numContacts,
         	 	contact.firstName + " " + contact.lastName,
-        	 	contact.pictureUrl);
+        	 	contact.pictureUrl,
+        	 	contact.);
          	numContacts++;	                                 
         }
 
@@ -411,15 +406,13 @@ function statusUpdate(evt){
 	}
 }
 
-function signOutLinkedin()
-{
+function signOutLinkedin(){
 	alert("unauthorizing service");
 	AppMobi.oauth.unauthorizeService(serviceName);
 }
 	
 
 //EVENT HANDLERS
-	
 document.addEventListener("appMobi.oauth.protected.data",statusUpdate,false);  // fired when data comes back from oAuth
 document.addEventListener("appMobi.oauth.busy",function(){ ddebug('oAuth busy');  },false);  // fired if we try to use oAuth when oAuth is already busy with another call
 
