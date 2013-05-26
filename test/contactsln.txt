@@ -1,0 +1,687 @@
+{"_total":190,"values":[{"firstName":"private","id":"private","lastName":"private"},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:g_54"}
+]},"url":"http://api.linkedin.com/v1/people/kYj1Cw7NuY"},"firstName":"Nicolas","headline":"Head of the electrical department - Energy & Construction 
+Fields","id":"kYj1Cw7NuY","industry":"Construction","lastName":"ACHARD","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_y9lKklkOOeBrr-HBYK3_k-NtpErhKlHBOc5fk1zCi7Xr7z0crrTyoPTu-XK01ndUgzPmwNwqOBqt","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=4529022&authType=name&authToken=g_54&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:jnXB"}]}
+,"url":"http://api.linkedin.com/v1/people/67mb8cQUHS"},"firstName":"Marie","headline":"Independent consultant","id":"67mb8cQUHS","industry":"Renewables & 
+Environment","lastName":"Aichagui","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_k14DPH1h9ndzxbT0QPIOPwkSnrmJgTl06l2tPwCKWzsdCLQxHzH3jI9YZYa6OQK15rV1y2yw8G_o","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=1223789&authType=name&authToken=jnXB&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:hbV8"}]}
+,"url":"http://api.linkedin.com/v1/people/jcNbKp8H_o"},"firstName":"Federico","headline":"Logistic & Supply Chain Manager","id":"jcNbKp8H_o","industry":"Logistics and Supply 
+Chain","lastName":"Aimaro","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=518205&authType=name&authToken=hbV8&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"
+_total":1,"values":[{"name":"x-li-auth-token","value":"name:OQTh"}]},"url":"http://api.linkedin.com/v1/people/SI-gE5vknf"},"firstName":"Daniele","headline":"HR Manager - Commercial 
+Operations at Vodafone","id":"SI-gE5vknf","industry":"Telecommunications","lastName":"Aita","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=13441782&authType=name&authToken=OQTh&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{
+"_total":1,"values":[{"name":"x-li-auth-token","value":"name:xy4K"}]},"url":"http://api.linkedin.com/v1/people/4tqh_FIofy"},"firstName":"Riccardo","headline":"Associate Consultant at Active 
+Value Advisors","id":"4tqh_FIofy","industry":"Financial Services","lastName":"Aita","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_gnYATcQ8J4LSl5nVxt4aTvzhJR_GlhFV0BEmTvn86OB-mkrsAKmjfzGmcvij-F69yvyfm-e5Cw0C","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=15569791&authType=name&authToken=xy4K&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:InWB"}]}
+,"url":"http://api.linkedin.com/v1/people/fehmJEvZbe"},"firstName":"M. Taner","headline":"GIS & Location Technology Visionary, S&T Policy, Founder of GIS Fusion, Innovation Management, 
+Knowledge & Tech Transfer","id":"fehmJEvZbe","industry":"Computer Software","lastName":"Aktas, GISP","location":{"country":{"code":"tr"},"name":"Ankara, 
+Turkey"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_CV5yQ4tLr25c2qeZGyN7Qsrwpa3v2qZZhRliQU1Miez51K74apvKHRbB-iTE71MN_JbCWpTHhFHe","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=15379170&authType=name&authToken=InWB&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:gnYC"}]
+},"url":"http://api.linkedin.com/v1/people/jdXq5B2vTz"},"firstName":"Dhafer","headline":"Welding Technology Engineer at Oil Exploration Company, Ministry of 
+Oil-Iraq","id":"jdXq5B2vTz","industry":"Oil & Energy","lastName":"Al 
+Jizawi","location":{"country":{"code":"iq"},"name":"Iraq"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_0-CI4PzAfCrilpS8xv_44ACgiiNuPVg8gznN4AXfp58yuYEhPqtFnlK3DaqPrjyuOA8zcnnPCLXT","siteStand
+ardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=225052723&authType=name&authToken=gnYC&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"value
+s":[{"name":"x-li-auth-token","value":"name:jCgm"}]},"url":"http://api.linkedin.com/v1/people/cKlt5jFxJb"},"firstName":"Emmanuel","headline":"Ingénieur chercheur at EDF 
+R&D","id":"cKlt5jFxJb","industry":"Research","lastName":"Amador","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_fl6WHRCTTWPdgROoSv3sHZ6_TfLo0ZxoSK-9HZ5OYoAVhpeE_B95Q4Ar7T5zyxY6atXBF0R939cB","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=13085656&authType=name&authToken=jCgm&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:NHbO"}]
+},"url":"http://api.linkedin.com/v1/people/eFG5OWQovh"},"firstName":"Patricia","headline":"Latin America Finance and IT Manager at Novo 
+Nordisk","id":"eFG5OWQovh","industry":"Chemicals","lastName":"Amary","location":{"country":{"code":"br"},"name":"São Paulo Area, 
+Brazil"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_uXLP60H_Yo96JnezaC986yW0OH-QMzdzaLA26y4x3D6nQlOvhGzxepulrQtMV-HJSFFSdR6qLK_9","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=588817&authType=name&authToken=NHbO&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:s-YF"}]},
+"url":"http://api.linkedin.com/v1/people/3Pd2L76MJh"},"firstName":"Laura","headline":"International relations consultant","id":"3Pd2L76MJh","industry":"International Trade and 
+Development","lastName":"Amigo","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_RSNOt_HHyrWmw19AJD93t3J6Y1g7WK9AMf8TthWzT9Wxnq3lBwk-p8jRKgjKoBcjVmnhgbcJJD7A","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=102182281&authType=name&authToken=s-YF&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:MS2e"}
+]},"url":"http://api.linkedin.com/v1/people/vpaKHn0uPv"},"firstName":"Marc","headline":"Deputy Director at Bank of 
+Moscow","id":"vpaKHn0uPv","industry":"Banking","lastName":"Bale","location":{"country":{"code":"ru"},"name":"Russian 
+Federation"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_SEVdfpgLb4l5dI_XfDynfxdQbx9XIm-X7aanfxsBZJGqqoLk3uoLT0aMWtnReW1HuW4ch4kQ3e5F","siteStandardProfileRequest":{"url":"http://www.linkedin
+.com/profile/view?id=4987302&authType=name&authToken=MS2e&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:Zy-x
+"}]},"url":"http://api.linkedin.com/v1/people/fh-mjL8wJT"},"firstName":"Dario","headline":"Consultant, Dottore 
+Commercialista","id":"fh-mjL8wJT","industry":"Accounting","lastName":"Balestra","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=9992919&authType=name&authToken=Zy-x&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"
+_total":1,"values":[{"name":"x-li-auth-token","value":"name:HlzX"}]},"url":"http://api.linkedin.com/v1/people/9zUFV5Hd7w"},"firstName":"Paolo","headline":"Security and Compliance at B-Source 
+SA","id":"9zUFV5Hd7w","industry":"Banking","lastName":"Balzarini","location":{"country":{"code":"ch"},"name":"Ticino, 
+Switzerland"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=2462881&authType=name&authToken=HlzX&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"heade
+rs":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:E7QR"}]},"url":"http://api.linkedin.com/v1/people/xIBZEwj4FU"},"firstName":"Antonio","headline":"Management consultant at 
+McKinsey & Company","id":"xIBZEwj4FU","industry":"Management Consulting","lastName":"Barranco","location":{"country":{"code":"br"},"name":"São Paulo Area, 
+Brazil"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_9fXpR8aeObgpbqZTnWQfRij6pCVjwBJTNar_RiDsibaDN1a3sdqrv_MN-2sGHK4Sc26GqkPU-uBe","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=4976526&authType=name&authToken=E7QR&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:b5JB"}]}
+,"url":"http://api.linkedin.com/v1/people/dym_nncI-d"},"firstName":"Géraldine","headline":"Directrice de l'enseigne espace 
+SFR","id":"dym_nncI-d","industry":"Telecommunications","lastName":"Barthe","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_V24ZqXRHwFE7omUysfsbqbRXIiaSoDUy4e2FqQEzq5VgzWupnoHNs6ORLamtWosKRfVQR3ZbyB1v","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=177738406&authType=name&authToken=b5JB&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:ZIha"}
+]},"url":"http://api.linkedin.com/v1/people/lxKdi3gWK6"},"firstName":"Debarshi","headline":"SPICE Modeling Specialist at Texas Instruments, 
+Inc","id":"lxKdi3gWK6","industry":"Semiconductors","lastName":"Basu","location":{"country":{"code":"us"},"name":"Dallas/Fort Worth 
+Area"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_cDHk-hyLbrWYXeTrvSJB-C2oFnxxHITrv2pR-_7s4Pw7c7nKUI4eyiRNd408w28p9aosjXg3a0ue","siteStandardProfileRequest":{"url":"http://www.linkedin.com/p
+rofile/view?id=39367350&authType=name&authToken=ZIha&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:BcFu"}]},
+"url":"http://api.linkedin.com/v1/people/2KqvsAYb39"},"firstName":"Askar","headline":"New Ventures and Negotiation Coordinator at NAOC","id":"2KqvsAYb39","industry":"Oil & 
+Energy","lastName":"Bektassov","location":{"country":{"code":"ng"},"name":"Nigeria"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_HOKl9dQUg_wo39R0epGm9whk0bmeiPE0EJka9wbXh3sZpcgxk48gZI1oAEaB8N
+w1djt7J2vRW8zt","siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=21285639&authType=name&authToken=BcFu&trk=api*a271173*s278883*"}},{"firstName":"private","id":"priv
+ate","lastName":"private"},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:8HFZ"}]},"url":"http://api.linkedin.com/v1/people/rORcEJEGc7"},
+"firstName":"Vincenzo","headline":"Design Engineer at Snecma Groupe Safran","id":"rORcEJEGc7","industry":"Aviation & 
+Aerospace","lastName":"Bertoli","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_3rnHNpkGCkBMpJglizBBNxkGCirMy0pl_tCBNxi-g6XW_UIAS9QXV0BpuSKQ04jgh1N9U4AJxl9a","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=16082718&authType=name&authToken=8HFZ&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:TmTC"}]
+},"url":"http://api.linkedin.com/v1/people/Qihb9K1um4"},"firstName":"Jean-François","headline":"Directeur de Projet at VINCI CONSTRUCTION DOM 
+TOM","id":"Qihb9K1um4","industry":"Construction","lastName":"Bertolino","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_D5pUSV4pos-WNHnoDbDHSZd-EY5Lnano7FHXSMZGvUlzWETET_2BiJ22krLVzdB62QO5CO6uw3qs","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=4956168&authType=name&authToken=TmTC&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:_Knw"}]}
+,"url":"http://api.linkedin.com/v1/people/P5V8mnfEwV"},"firstName":"Pietro","headline":"Executive Manager at 
+SNCF","id":"P5V8mnfEwV","industry":"Transportation/Trucking/Railroad","lastName":"Bevivino","location":{"country":{"code":"fr"},"name":"Besançon Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_8LXTPs47Kn9RMqrxhFcYP4SmK9_nUBhxGGrOPJYy7KBQk1c02iqSjMotYRiW4K3PT66xyY8Ve15q","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=6714990&authType=name&authToken=_Knw&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:9vuP"}]}
+,"url":"http://api.linkedin.com/v1/people/Advi-boIIS"},"firstName":"marina","headline":"commerçante","id":"Advi-boIIS","industry":"Wholesale","lastName":"blanc","location":{"country":{"code":"
+fr"},"name":"Metz Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=193754785&authType=name&authToken=9vuP&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers"
+:{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:-O2d"}]},"url":"http://api.linkedin.com/v1/people/qo4EurlSlZ"},"firstName":"Laura","headline":"Consultant presso 
+Accenture","id":"qo4EurlSlZ","industry":"Information Technology and Services","lastName":"Boniforti","location":{"country":{"code":"it"},"name":"Rome Area, 
+Italy"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=24658077&authType=name&authToken=-O2d&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{
+"_total":1,"values":[{"name":"x-li-auth-token","value":"name:awiT"}]},"url":"http://api.linkedin.com/v1/people/OeWz8BFbjf"},"firstName":"Bruno","headline":"Entrepreneur, 
+Education","id":"OeWz8BFbjf","industry":"Management Consulting","lastName":"Boulay","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_FEYCEmgvN2av5iDkLm2AEDuQNHUvb8Dk5HEjE20Qwm75ZXVXwummXuwesLREXb2e6Wyy5w3mTADG","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=1477107&authType=name&authToken=awiT&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:zEuR"}]}
+,"url":"http://api.linkedin.com/v1/people/s_XJOwBuyZ"},"firstName":"Emanuela","headline":"Engineer","id":"s_XJOwBuyZ","industry":"Oil & Energy","lastName":"Buccafurri - 
+PhD","location":{"country":{"code":"fr"},"name":"Lyon Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_XUxLRH8c5LjMiemDQpYsRwPJb3Iq_mmDQJwsRwr5ZG0XyoMSeg7dvIkwWWwIhW73LZgRq2abBIRj","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=194122006&authType=name&authToken=zEuR&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:8bne"}
+]},"url":"http://api.linkedin.com/v1/people/KDSzyqjKjE"},"firstName":"Diego","headline":"at winter design","id":"KDSzyqjKjE","industry":"Graphic 
+Design","lastName":"Capello","location":{"country":{"code":"it"},"name":"Turin Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_yths_l5Aasqu-4vvyz8d_1Bj2pPut4qvOrqL_1XS1JbySyizrNrnDPK_Gt1PA0zMglGkuN9WosKT","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=35932238&authType=name&authToken=8bne&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:k-6H"}]}
+,"url":"http://api.linkedin.com/v1/people/fuR9vKjSqa"},"firstName":"Andrea","headline":"Senior Project 
+Leader","id":"fuR9vKjSqa","industry":"Semiconductors","lastName":"Cappelletti","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=20505558&authType=name&authToken=k-6H&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{
+"_total":1,"values":[{"name":"x-li-auth-token","value":"name:iTyL"}]},"url":"http://api.linkedin.com/v1/people/71pnxC7Njt"},"firstName":"Mattia","headline":"Marketing Manager at Procter & 
+Gamble","id":"71pnxC7Njt","industry":"Consumer Goods","lastName":"Carlozzo","location":{"country":{"code":"ch"},"name":"Geneva Area, 
+Switzerland"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_OMZdSnvIXs1thutoYJUsSqLLXRLC2utopZunSqczR4At1H5EtxeLiN_RoP5g7wP60sscCPW6BHez","siteStandardProfileRequest":{"url":"http://www.linkedi
+n.com/profile/view?id=8180658&authType=name&authToken=iTyL&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:Xoa
+R"}]},"url":"http://api.linkedin.com/v1/people/wY0__B5dCR"},"firstName":"Cristina","headline":"Consultant at Deloitte","id":"wY0__B5dCR","industry":"Management 
+Consulting","lastName":"Casanova","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_mv6Vd4q2mdKkO44eh-Q5dsz_22FLy4MeuA-5dUNO1E1z_ymHGP99bRhrG3bV00Zk7nXX6p66LGv1","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=37477692&authType=name&authToken=XoaR&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:rWYx"}]}
+,"url":"http://api.linkedin.com/v1/people/-Dtyk7IDQr"},"firstName":"Alessandro","headline":"Capital Markets","id":"-Dtyk7IDQr","industry":"Investment 
+Management","lastName":"Casati","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=25702067&authType=name&authToken=rWYx&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{
+"_total":1,"values":[{"name":"x-li-auth-token","value":"name:IJqi"}]},"url":"http://api.linkedin.com/v1/people/p_SFRH4dkH"},"firstName":"Matteo","headline":"Associate at McQueen 
+Ltd","id":"p_SFRH4dkH","industry":"Investment Banking","lastName":"Castelli","location":{"country":{"code":"gb"},"name":"London, United 
+Kingdom"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=4067828&authType=name&authToken=IJqi&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:qTco"}]},"url":"http://api.linkedin.com/v1/people/01kFr37pvs"},"firstName":"Pablo","headline":"IS&T Mergers and Acquisitions 
+Manager at ALSTOM","id":"01kFr37pvs","industry":"Telecommunications","lastName":"Celada","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_Dv0vDVPAHy16rdkw_17QDZLOHZ6LrfLw7tIoDMN_cg-zfw-ITPfM_JhS69QVPHXb2njwGOo2fXQV","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=5112103&authType=name&authToken=qTco&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:TBLx"}]}
+,"url":"http://api.linkedin.com/v1/people/R6dIG1szJz"},"firstName":"Kevin","headline":"Manager at Smrthomegroup","id":"R6dIG1szJz","industry":"Electrical/Electronic 
+Manufacturing","lastName":"Chan","location":{"country":{"code":"cn"},"name":"China"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=247200455&authType=name&authTo
+ken=TBLx&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:_oMI"}]},"url":"http://api.linkedin.com/v1/people/6My
+BMGoUM8"},"firstName":"Victorien","headline":"Product Manager at EDF","id":"6MyBMGoUM8","industry":"Oil & Energy","lastName":"Charnay","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=7701797&authType=name&authToken=_oMI&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{
+"_total":1,"values":[{"name":"x-li-auth-token","value":"name:J_Pt"}]},"url":"http://api.linkedin.com/v1/people/29gQAjrG4D"},"firstName":"Riccardo","headline":"Performance Improvement at ANAV 
+(Asociación Nuclear Ascó-Vandellòs)","id":"29gQAjrG4D","industry":"Oil & 
+Energy","lastName":"Chiarelli","location":{"country":{"code":"es"},"name":"Spain"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_pl4fenQ3veiGjF7wtcIpezXmBu6Sx3OwYn2Kez61eW-g85dIKBHi6vtjMGQtp60b
+jtVAbtNK20uP","siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=61183707&authType=name&authToken=J_Pt&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"head
+ers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:sTBy"}]},"url":"http://api.linkedin.com/v1/people/hYfef9l8mB"},"firstName":"Jas","headline":"Consulting Professional in HR 
+Services","id":"hYfef9l8mB","industry":"Human Resources","lastName":"Chong","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_FIUn3WOcEyULeSkRWfJW3I2ooRSveSkR527d3oxczOM5BdPUwDws7EIJXvDEIE5c6HMeaSTKkvN9","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=3475407&authType=name&authToken=sTBy&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:5M1m"}]}
+,"url":"http://api.linkedin.com/v1/people/QjFWb96W5s"},"firstName":"Fabrice","headline":"Senior ICT consultant","id":"QjFWb96W5s","industry":"Information Technology and 
+Services","lastName":"Clari","location":{"country":{"code":"fr"},"name":"France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_3Y7SZpKzNklJCb2T_OuOZYAZn89JGXpTixU-ZxGoW6Gdj8I3SZxT90nXZSn6TijSh
+gSPB4K3-fAi","siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=6256795&authType=name&authToken=5M1m&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"header
+s":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:_FhF"}]},"url":"http://api.linkedin.com/v1/people/1ZSj_1QMlQ"},"firstName":"Manuel","headline":"Business Development Manager 
+at South Pole Carbon Asset Management","id":"1ZSj_1QMlQ","industry":"Environmental 
+Services","lastName":"Cocco","location":{"country":{"code":"th"},"name":"Thailand"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_oCf8Sd2yz0OEq_tEkQWxSEVpvRHIq5CEehR0SEw2EOpRI3voQk0uio0GUveqBC_
+QITDYCDJIv-hm","siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=10225225&authType=name&authToken=_FhF&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"hea
+ders":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:9gNV"}]},"url":"http://api.linkedin.com/v1/people/PVXkP3Pzqz"},"firstName":"Bogdan","headline":"Strategy Director at SC 
+ELBA SA","id":"PVXkP3Pzqz","industry":"Automotive","lastName":"COCIAN","location":{"country":{"code":"ro"},"name":"Timis County, 
+Romania"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_LNotM7rSUXf6Ykoibld3MD-hR6ZnYkwib9ODMD-gXiuQThy_WtVYcSQPze4Wj_EfXBHunE8L2P-8","siteStandardProfileRequest":{"url":"http://www.linkedin.co
+m/profile/view?id=2446098&authType=name&authToken=9gNV&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:VGM8"}]
+},"url":"http://api.linkedin.com/v1/people/C_D5swr2L0"},"firstName":"Andrea","headline":"Business Development Manager at Canova Tech 
+Srl","id":"C_D5swr2L0","industry":"Semiconductors","lastName":"Colognese","location":{"country":{"code":"it"},"name":"Venice Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_ZSvRnLsQmFHhdgsYsDcenQMWuGD7WORYVuTknbWvPkJxns2Oqw5c4FjUCfSKoJVtMmBLMhRRv8HM","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=8386018&authType=name&authToken=VGM8&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:eWwL"}]},
+"url":"http://api.linkedin.com/v1/people/TQXxUkCdjz"},"firstName":"Alessandro","headline":"Business Analysis & Information Manager at 
+Amgen","id":"TQXxUkCdjz","industry":"Biotechnology","lastName":"Cossar","location":{"country":{"code":"ch"},"name":"Zürich Area, 
+Switzerland"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_u1nHTOLuGsXwjs3natrUTycACY-Ej0Kna-CBTyklgU6sGUb9hzQXfprxurtvY4lsSrN9mRViW05r","siteStandardProfileRequest":{"url":"http://www.linkedi
+n.com/profile/view?id=16906519&authType=name&authToken=eWwL&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:XT
+_i"}]},"url":"http://api.linkedin.com/v1/people/uO2y0BkNuh"},"firstName":"Guillaume","headline":"Chargé de missions développement durable - La Française des Jeux 
+(FDJ)","id":"uO2y0BkNuh","industry":"Management Consulting","lastName":"COURAULT","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_dtjoY7Q-WPpeK7-3IlOzYDCO51REt2P3wvdvYDX3s9fsSekT5ND6rSKfwgUvAItDHl0qlE9l2QOK","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=124439995&authType=name&authToken=XT_i&trk=api*a271173*s278883*"}},{"firstName":"private","id":"private","lastName":"private"},{"apiStandardProfileRequest":{"headers":{"_total
+":1,"values":[{"name":"x-li-auth-token","value":"name:7DaY"}]},"url":"http://api.linkedin.com/v1/people/2g-WdsCpQQ"},"firstName":"Alexis","headline":"CONSULTANT EN GESTION DE PATRIMOINE chez 
+CYRUS CONSEIL","id":"2g-WdsCpQQ","industry":"Investment Management","lastName":"Crombez","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=65260677&authType=name&authToken=7DaY&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:A4k0"}]},"url":"http://api.linkedin.com/v1/people/Bbsr-Xtt2r"},"firstName":"Vincent","headline":"On-Site Facilities Manager at 
+Air Liquide","id":"Bbsr-Xtt2r","industry":"Management Consulting","lastName":"Dauchy","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=5600128&authType=name&authToken=A4k0&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{
+"_total":1,"values":[{"name":"x-li-auth-token","value":"name:a76v"}]},"url":"http://api.linkedin.com/v1/people/jw1qSC2cwP"},"firstName":"Fabio","headline":"Administrator at EasyStaff 
+s.r.l.","id":"jw1qSC2cwP","industry":"Information Technology and Services","lastName":"De Cesco","location":{"country":{"code":"it"},"name":"Trieste Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_mbFanOMf-FLdznjtm3qlngoftTA5Jnytui1lngMYSFLv6-w-GTcG4jDKyulsslgY7kLrMVbrjoJv","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=17114252&authType=name&authToken=a76v&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:-W2u"}]}
+,"url":"http://api.linkedin.com/v1/people/4UzaT0tBTP"},"firstName":"Agathe","headline":"Purchasing controller, Etam, France","id":"4UzaT0tBTP","industry":"Retail","lastName":"De 
+Mégille","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=16927911&authType=name&authToken=-W2u&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:2F4x"}]},"url":"http://api.linkedin.com/v1/people/UolEcPCWsn"},"firstName":"Renaud","headline":"MBA Candidate at INSEAD Class of 
+2013","id":"UolEcPCWsn","industry":"Computer Software","lastName":"de Saint Sernin","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_cDHk-hmebrJjoelrcdec-_0WFzxxHITrvopR-_7s4Pw7c7nKUI4eyiRNd408w28p9aosjXgySmje","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=13351704&authType=name&authToken=2F4x&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:ta3X"}]
+},"url":"http://api.linkedin.com/v1/people/tf84R1Kygd"},"firstName":"Stéphane","headline":"Manager - Head of Projet Mgmt Departement for Group 
+Life","id":"tf84R1Kygd","industry":"Insurance","lastName":"De Smet","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=4931421&authType=name&authToken=ta3X&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{
+"_total":1,"values":[{"name":"x-li-auth-token","value":"name:fffO"}]},"url":"http://api.linkedin.com/v1/people/-JHS_jSl56"},"firstName":"Cedric","headline":"Senior Application Engineer at 
+Nanocyl","id":"-JHS_jSl56","industry":"Nanotechnology","lastName":"de Villepin","location":{"country":{"code":"be"},"name":"Brussels Area, 
+Belgium"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=4251681&authType=name&authToken=fffO&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:5tHZ"}]},"url":"http://api.linkedin.com/v1/people/B_5pgmLHNc"},"firstName":"Nicolas","headline":"Business Intelligence Manager - 
+RTB at Criteo","id":"B_5pgmLHNc","industry":"Online Media","lastName":"Debernardi","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_mv6VdJkiaSizO4MemlF5dUQi27FLy4Me2N-5dUNO1E1z_ymHGP99bRhrG3bV00Zk7nXX6pQilI-1","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=1578319&authType=name&authToken=5tHZ&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:ZR5F"}]}
+,"url":"http://api.linkedin.com/v1/people/utTzSQN-KR"},"firstName":"Gianluca","headline":"IP Counsel at Philips Lighting","id":"utTzSQN-KR","industry":"Law 
+Enforcement","lastName":"Degano","location":{"country":{"code":"fr"},"name":"Strasbourg Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_oCf8SHorM47I96CEoQWPSEU2vRHIq5CEe_R0SEw2EOpRI3voQk0uio0GUveqBC_QITDYCDMJMxPm","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=22553158&authType=name&authToken=ZR5F&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:Hnfd"}]
+},"url":"http://api.linkedin.com/v1/people/ICSXvNIo36"},"firstName":"Hue","headline":"Docteur Ingénieur Microbiologie Alimentaire","id":"ICSXvNIo36","industry":"Food 
+Production","lastName":"DELHOMME NGUYEN","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=138981836&authType=name&authToken=Hnfd&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers"
+:{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:C3Ja"}]},"url":"http://api.linkedin.com/v1/people/VkxvmZtW9S"},"firstName":"Tommaso","headline":"Consultant in Executive 
+Management / MBA & Engineer","id":"VkxvmZtW9S","industry":"Management Consulting","lastName":"Dell'Erba","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_V24ZqLEdw_E_EIoyVwsFqbJvIiaSoDUyZm2FqQEzq5VgzWupnoHNs6ORLamtWosKRfVQR34xa03v","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=2003322&authType=name&authToken=C3Ja&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:fI1S"}]}
+,"url":"http://api.linkedin.com/v1/people/h1doDb-fDq"},"firstName":"Olivier","headline":"Head of International Pricing & Routing Management at 
+SFR","id":"h1doDb-fDq","industry":"Telecommunications","lastName":"Denquin","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=7170385&authType=name&authToken=fI1S&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{
+"_total":1,"values":[{"name":"x-li-auth-token","value":"name:H-_i"}]},"url":"http://api.linkedin.com/v1/people/jrDr3a7UiW"},"firstName":"Fabrice","headline":"Quantitative Strategist at 
+Hutchin Hill Capital","id":"jrDr3a7UiW","industry":"Banking","lastName":"Deschâtres","location":{"country":{"code":"gb"},"name":"London, United 
+Kingdom"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_mVxsCOBVHRzehavc20jWCynJo0A5haqcuYwLCgz5zMLv0EiBGp7n2jTwX-ls_dzR7JgkSVI0Iff0","siteStandardProfileRequest":{"url":"http://www.linkedin.co
+m/profile/view?id=3654142&authType=name&authToken=H-_i&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:_O_l"}]
+},"url":"http://api.linkedin.com/v1/people/OKVIgKrvFD"},"firstName":"Julien","headline":"Front officer in Structured Finance - Project Finance Spain & 
+Portugal","id":"OKVIgKrvFD","industry":"Investment Banking","lastName":"Devaux","location":{"country":{"code":"es"},"name":"Madrid Area, 
+Spain"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_rVO-LKrcRdXjhCUqt4fTL13zRWrlh3oqtjoSL1KLXuXT05jNypaOwPXIzFKm_6I4AJp2oNa29xZF","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=5103990&authType=name&authToken=_O_l&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:5nvx"}]},
+"url":"http://api.linkedin.com/v1/people/u3-fsnjSdV"},"firstName":"Francesco","headline":"PhD, Assistant Professor at Politecnico di 
+Milano","id":"u3-fsnjSdV","industry":"Research","lastName":"Di Maio","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_Fl0jZWh0R_Sq1hUDLP2aZI8AJ8wMP_UD5KICZo__65xWuFuSwBfA9EcScaIQrks36tjiBSlFkF1m","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=24840733&authType=name&authToken=5nvx&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:5eKH"}]}
+,"url":"http://api.linkedin.com/v1/people/5FH3n-vPoL"},"firstName":"Ananth","headline":"Professor at University of Texas at Austin","id":"5FH3n-vPoL","industry":"Higher 
+Education","lastName":"Dodabalapur","location":{"country":{"code":"us"},"name":"Austin, Texas 
+Area"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_m8msvUfrdQFHc2HxmCaWv4mrW6iWBo4x2GsLv4dunLcMemf0GQYnRZgCbm_nqDJP7_uksxRoBmhi","siteStandardProfileRequest":{"url":"http://www.linkedin.com/p
+rofile/view?id=62738336&authType=name&authToken=5eKH&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:E-qw"}]},
+"url":"http://api.linkedin.com/v1/people/dmUzKXETTh"},"firstName":"Mathias","headline":"Junior Portfolio Manager at ANIMA sgr","id":"dmUzKXETTh","industry":"Investment 
+Management","lastName":"Domini","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_ncgMlQ1OdqI-Ymzp9K0ElX-jwt7rtDzpqvW6lLP3NBUhSWGyVASv05Ff5pffAoqrBqxbYCTUdqpP","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=4847628&authType=name&authToken=E-qw&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:b8De"}]},
+"url":"http://api.linkedin.com/v1/people/diUZ5F-w7k"},"firstName":"Fabien","headline":"Project Manager, Medical 
+device","id":"diUZ5F-w7k","industry":"Pharmaceuticals","lastName":"Dubuc","location":{"country":{"code":"us"},"name":"Greater New York City 
+Area"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_fsPnURQBmX9dTUJ2SZAWUMkc2kL6TOe2DObdUZz61GA9Ysxu_y_sz4THGW5JGJWhaMleN0ISaP0g","siteStandardProfileRequest":{"url":"http://www.linkedin.com/p
+rofile/view?id=4930242&authType=name&authToken=b8De&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:4KPS"}]},"
+url":"http://api.linkedin.com/v1/people/izGas_j-XX"},"firstName":"Lawrence","headline":"Industrial Liaison Officer at the NASCENT Engineering Research 
+Center","id":"izGas_j-XX","industry":"Nanotechnology","lastName":"Dunn, Ph.D.","location":{"country":{"code":"us"},"name":"Austin, Texas 
+Area"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_tpExEqGo4DAxaieetOU2EBke4HFxuLJeKjYhEBi4FI17PTaHOVsPXcB998b8fG4kP0eT5rletdtz","siteStandardProfileRequest":{"url":"http://www.linkedin.com/p
+rofile/view?id=14142519&authType=name&authToken=4KPS&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:qkbA"}]},
+"url":"http://api.linkedin.com/v1/people/CY924FefeK"},"firstName":"Xavier","headline":"Industrial Project Manager, Supply Chain Division at Safran 
+Morpho","id":"CY924FefeK","industry":"Defense & 
+Space","lastName":"Durupt","location":{"country":{"code":"fr"},"name":"France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=2965467&authType=name&authToken=qkb
+A&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:UeCH"}]},"url":"http://api.linkedin.com/v1/people/a2Uj9Jtxer
+"},"firstName":"Javier","headline":"Competitive intelligence in the energy sector","id":"a2Uj9Jtxer","industry":"Management 
+Consulting","lastName":"Echeverría","location":{"country":{"code":"es"},"name":"Madrid Area, 
+Spain"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_y9lKkl9lYWnirBHBpK3ik-LCpErhKlHBON5fk1zCi7Xr7z0crrTyoPTu-XK01ndUgzPmwNwSb-rt","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=91209341&authType=name&authToken=UeCH&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:azY7"}]}
+,"url":"http://api.linkedin.com/v1/people/3Y5e3OiCI3"},"firstName":"Gilles","headline":"Chef de projet/web/mobile/tablette","id":"3Y5e3OiCI3","industry":"Information Technology and 
+Services","lastName":"BenZerrouk","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_z4FpD6iFjyf879zwcjq7DkPZxjEKf9zwcy1_Dk-Z8UY8rtGIMOcr_XQnlro7uAqbqRLGGi8JBd53","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=90071114&authType=name&authToken=azY7&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:P7af"}]
+},"url":"http://api.linkedin.com/v1/people/1AA7ZP3YRc"},"firstName":"Philippe","headline":"Product Manager Clio at 
+Renault","id":"1AA7ZP3YRc","industry":"Automotive","lastName":"Egermann","location":{"country":{"code":"fr"},"name":"France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_RSNOt_RbyAH0WKbAR7-3t
+hwLY1g7WK9AMu8TthWzT9Wxnq3lBwk-p8jRKgjKoBcjVmnhgbRk4mWA","siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=7713962&authType=name&authToken=P7af&trk=api*a271173*s2788
+83*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:h7uc"}]},"url":"http://api.linkedin.com/v1/people/GeRY2njzaM"},"firstName":"Hans","
+headline":"PhD in Physics - Research Engineer","id":"GeRY2njzaM","industry":"Research","lastName":"ESSONE OBAME","location":{"country":{"code":"fr"},"name":"Rennes Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_IcAN_I9gasoLKsBMwBrI_W-rmM75tybMdPLI_Wv3l0UvS4KJbA3ZDd3f8NfsAUQvoq1EuabrjoGx","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=105122498&authType=name&authToken=h7uc&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:a9W5"}
+]},"url":"http://api.linkedin.com/v1/people/diLf45xjPS"},"firstName":"Marcos","headline":"Plant Manager at Air Liquide Argentina 
+S.A.","id":"diLf45xjPS","industry":"Chemicals","lastName":"Etcheverrigaray","location":{"country":{"code":"ar"},"name":"Argentina"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_Y5gdzlWybX529IO
+-YGmnz1Ulb_KinDO-pCWnz-ZCZLk1WWdt-_SLUt2uWmrpzo0OxQxcVv6fpYGE","siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=4539492&authType=name&authToken=a9W5&trk=api*a271173
+*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:rcJ3"}]},"url":"http://api.linkedin.com/v1/people/KLwAVmrawm"},"firstName":"H
+élène","headline":"Chargée de Mission","id":"KLwAVmrawm","industry":"Education Management","lastName":"Feau","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_JcF2qhk7P5duO9arMzhPqC5hPi0hY9xrU91PqCvju6IrTteKvAchsG31gSx0jAYp4qL-RLIXTzKf","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=56203989&authType=name&authToken=rcJ3&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:67yv"}]
+},"url":"http://api.linkedin.com/v1/people/6bZABo4XtJ"},"firstName":"Carlo","headline":"Software Development Engineer at Amadeus IT Group","id":"6bZABo4XtJ","industry":"Computer 
+Software","lastName":"Fedeli","location":{"country":{"code":"fr"},"name":"Nice Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=52028538&authType=name&authToken=67yv&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:ILR6"}]},"url":"http://api.linkedin.com/v1/people/GWjP2uMPZg"},"firstName":"Mohamed","headline":"Electrical Engineer chez 
+Schlumberger","id":"GWjP2uMPZg","industry":"Information Technology and Services","lastName":"El hadachy.","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=51057009&authType=name&authToken=ILR6&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:UgKl"}]},"url":"http://api.linkedin.com/v1/people/b3mPzoOBQJ"},"firstName":"Alexis","headline":"Project Manager at 
+3M","id":"b3mPzoOBQJ","industry":"Chemicals","lastName":"Fesidis","location":{"country":{"code":"de"},"name":"Germany"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/vie
+w?id=8002995&authType=name&authToken=UgKl&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:D1Ji"}]},"url":"http
+://api.linkedin.com/v1/people/TBoLSSSo9f"},"firstName":"P. Marco","headline":"Assistant Professor of Surgery, Loyola University Medical Center","id":"TBoLSSSo9f","industry":"Higher 
+Education","lastName":"Fisichella, MD, FACS","location":{"country":{"code":"us"},"name":"Greater Chicago 
+Area"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_SEVdfpsb5s5eIePXf7Rsfxw5bp9XIm-XfHanfxsBZJGqqoLk3uoLT0aMWtnReW1HuW4ch4H-ImBF","siteStandardProfileRequest":{"url":"http://www.linkedin.com/p
+rofile/view?id=31916388&authType=name&authToken=D1Ji&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:M68f"}]},
+"url":"http://api.linkedin.com/v1/people/jKn8fTOmGm"},"firstName":"Jean-Baptiste","headline":"Business development - Renewable energy at BOUYGUES ENERGIES & 
+SERVICES","id":"jKn8fTOmGm","industry":"Renewables & Environment","lastName":"Fournier","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_GNQk24-jhRikYs8dhlbR2shhCUkNYJ3d8PtR2UlggYKkTg9WmtneCRLPuzXwjOhLiBksipfzOiNu","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=4931564&authType=name&authToken=M68f&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:gfWp"}]}
+,"url":"http://api.linkedin.com/v1/people/Rc8oei4z_6"},"firstName":"Derick","headline":"Electrical Engineer","id":"Rc8oei4z_6","industry":"Electrical/Electronic 
+Manufacturing","lastName":"Furquim","location":{"country":{"code":"br"},"name":"Rio de Janeiro Area, 
+Brazil"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_hC1YLgaApaLMn1wqG8P3LOO8Y7rRq1UqC5F3L0ShTdXIIBuNukitwxJaKCKXBqs43TA8oZxyRZ79","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=204257149&authType=name&authToken=gfWp&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:nQsB"}
+]},"url":"http://api.linkedin.com/v1/people/CjJcqMSKnV"},"firstName":"Matteo","headline":"Technology Development Engineer at 
+STMicroelectronics","id":"CjJcqMSKnV","industry":"Semiconductors","lastName":"Fusi","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_sMe3tiFJBr7Th6lA4UHYtTLezng826TA4ZyYt8NJoPWK1Cnl9xZDphhcR4jx738jUsE0gFobVZun","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=15470054&authType=name&authToken=nQsB&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:lUxN"}]}
+,"url":"http://api.linkedin.com/v1/people/Gb1LW0Uxke"},"firstName":"Federico","headline":"Research Assistant at University of Texas at Austin","id":"Gb1LW0Uxke","industry":"Higher 
+Education","lastName":"Gallo","location":{"country":{"code":"us"},"name":"Austin, Texas 
+Area"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=51753951&authType=name&authToken=lUxN&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"
+_total":1,"values":[{"name":"x-li-auth-token","value":"name:KOcl"}]},"url":"http://api.linkedin.com/v1/people/vMCYrysoA-"},"firstName":"Mauro","headline":"Responsable d'exploitation chez 
+Orphéo Group, France","id":"vMCYrysoA-","industry":"Leisure, Travel & Tourism","lastName":"Gazzi","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=125422393&authType=name&authToken=KOcl&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers"
+:{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:3jnQ"}]},"url":"http://api.linkedin.com/v1/people/f_iwsWRDmF"},"firstName":"FRANCOIS","headline":"Chargé de relations médicales 
+chez 3IDI","id":"f_iwsWRDmF","industry":"Pharmaceuticals","lastName":"GIRAUD ESTABLE","location":{"country":{"code":"fr"},"name":"Lyon Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_b-xGLeGPRwozx3SZbvygLoKKcWSZPC2ZLKwgLoT_HuMeu6R4Iq7awEzSJFDbr5DNQAgpoS1K4vnC","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=109387659&authType=name&authToken=3jnQ&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:doaq"}
+]},"url":"http://api.linkedin.com/v1/people/lDkVbhXQAG"},"firstName":"Melanie","headline":"Online Global Finance Campaigner at Rainforest Action 
+Network","id":"lDkVbhXQAG","industry":"Nonprofit Organization Management","lastName":"Gleason","location":{"country":{"code":"us"},"name":"San Francisco Bay 
+Area"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_OurBLBHZ2fqhFgo4y23eLqeBu78aFOo4KHXHLqEbPuNO4sjZtEhUwNOWCFhAkJIq07-WoP4Lvvqg","siteStandardProfileRequest":{"url":"http://www.linkedin.com/p
+rofile/view?id=8388327&authType=name&authToken=doaq&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:-Z-0"}]},"
+url":"http://api.linkedin.com/v1/people/Ej8Wo_k5Ig"},"firstName":"Mélanie","headline":"Ingénieure & MBA, chef de bureau au ministère du budget","id":"Ej8Wo_k5Ig","industry":"Government 
+Administration","lastName":"Goffin","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_IcAN_I9puJJE-y9M5KGw_W53mV75tybMWrLI_Wv3l0UvS4KJbA3ZDd3f8NfsAUQvoq1EuabpTrrx","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=7760112&authType=name&authToken=-Z-0&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:QJos"}]}
+,"url":"http://api.linkedin.com/v1/people/hO0DCD27RU"},"firstName":"Bruno","headline":"Corporate Strategy","id":"hO0DCD27RU","industry":"Management 
+Consulting","lastName":"Gonzalez-Vellon","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_U-ft0kBOVKJ2AL6mUv7T06vxZvwmPLbmJ1RD06b7b1xYuTKacq0YlQ1TnZIlrGQCsADurTMZVNC6","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=3232342&authType=name&authToken=QJos&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:RbNi"}]}
+,"url":"http://api.linkedin.com/v1/people/d9wOppEAbS"},"firstName":"Giampaolo","headline":"Software Engineer and Information Architect","id":"d9wOppEAbS","industry":"Information Technology 
+and Services","lastName":"Grieco","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_5J73_73ossWqTbhzFMDY_DKVnVYcTXTzF4UY_DAoW0EFY8nvd0xDDS5XZNOHGi8JkVS0uEfkW0uy","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=9934959&authType=name&authToken=RbNi&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:wvOr"}]},
+"url":"http://api.linkedin.com/v1/people/Jpo-AlI4QC"},"firstName":"Arnaud","headline":"Consultant at 
+BCG","id":"Jpo-AlI4QC","industry":"Utilities","lastName":"Guérin","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=3637761&authType=name&authToken=wvOr&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{
+"_total":1,"values":[{"name":"x-li-auth-token","value":"name:Ah4s"}]},"url":"http://api.linkedin.com/v1/people/gQ1adKVODC"},"firstName":"Arnaud","headline":"Strategy, Business and Technology 
+Development Director at AREVA","id":"gQ1adKVODC","industry":"Utilities","lastName":"Guérin","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_V24ZqLSIwhR_EmVy4SYIqQuzI8aSoDUyZI2FqQEzq5VgzWupnoHNs6ORLamtWosKRfVQR3ZslC8v","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=4579498&authType=name&authToken=Ah4s&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:OEm7"}]}
+,"url":"http://api.linkedin.com/v1/people/u-k1wJjPm0"},"firstName":"Ludovic","headline":"Directeur d'agence at Orkyn' Groupe Air Liquide","id":"u-k1wJjPm0","industry":"Hospital & Health 
+Care","lastName":"Guitton","location":{"country":{"code":"fr"},"name":"Bordeaux Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_5KCgsm32gCgMlrsCF9-as2Kp0TRUl9sCFBnGsD8uhFfwmtSGdntlqSqCAuUk-AUmkP8_vEtHtPPV","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=5098848&authType=name&authToken=OEm7&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:7bmL"}]}
+,"url":"http://api.linkedin.com/v1/people/10e7_2A6r1"},"firstName":"Morad","headline":"Digital Project Manager - Freelance","id":"10e7_2A6r1","industry":"Marketing and 
+Advertising","lastName":"HACENE","location":{"country":{"code":"fr"},"name":"Lyon Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_jE7gvrsEsLN3FbwPxD0GvteUs_P_bXVPxwUGvPJo5QbPZ8D1luxlR1SXND1yXiRxpWS_sqFGM9YY","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=5600211&authType=name&authToken=7bmL&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:Ba7-"}]}
+,"url":"http://api.linkedin.com/v1/people/ktvcSWzjzT"},"firstName":"Fadi","headline":"Organizational Development and Change Management Senior consultant at European Space 
+Agency","id":"ktvcSWzjzT","industry":"Management Consulting","lastName":"Hammad","location":{"country":{"code":"nl"},"name":"The Hague Area, 
+Netherlands"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=27131521&authType=name&authToken=Ba7-&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"head
+ers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:mBU9"}]},"url":"http://api.linkedin.com/v1/people/SvR3Q8jJx5"},"firstName":"Quirin","headline":"Scientist at 
+IMTEK","id":"SvR3Q8jJx5","industry":"Information Technology and Services","lastName":"Hamp","location":{"country":{"code":"de"},"name":"Freiburg Area, 
+Germany"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_C-W9UsTmoi3q0Sd2hvRdUJTmokLJxHd2hzgWU4GxzTAd8uOuaqMVzZnlXo56pfHh_AwHNxpijpIc","siteStandardProfileRequest":{"url":"http://www.linkedin.co
+m/profile/view?id=5253818&authType=name&authToken=mBU9&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:JdRm"}]
+},"url":"http://api.linkedin.com/v1/people/IspK0yRpSi"},"firstName":"Jermaine","headline":"Cable Reliability Engineer at Comanche Peak Nuclear Power 
+Plant","id":"IspK0yRpSi","industry":"Design","lastName":"Harrison","location":{"country":{"code":"us"},"name":"Dallas/Fort Worth 
+Area"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_Dv0vDR5log-5KukwfK26DMkiHZ6LrfLw7tIoDMN_cg-zfw-ITPfM_JhS69QVPHXb2njwGOEAXVcV","siteStandardProfileRequest":{"url":"http://www.linkedin.com/p
+rofile/view?id=19075790&authType=name&authToken=JdRm&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:17WT"}]},
+"url":"http://api.linkedin.com/v1/people/wbI3Md0QqZ"},"firstName":"Bernhard","headline":"Analyst Energiewirtschaft at 50Hertz Transmission GmbH","id":"wbI3Md0QqZ","industry":"Oil & 
+Energy","lastName":"Hasche","location":{"country":{"code":"de"},"name":"Berlin Area, 
+Germany"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=26436837&authType=name&authToken=17WT&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers"
+:{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:79CM"}]},"url":"http://api.linkedin.com/v1/people/lrACD0CJKI"},"firstName":"Steffen","headline":"Project 
+Manager","id":"lrACD0CJKI","industry":"Construction","lastName":"Hasenauer","location":{"country":{"code":"cu"},"name":"Cuba"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_LQ5WcDmuTXeQRYmlLhkn
+c7YTTCy9UZ0lbbl9cm0pYbe6kpHAW8v5Maw-72pd4xOgX5bB4d3QGizK","siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=83582618&authType=name&authToken=79CM&trk=api*a271173*s27
+8883*"}},{"firstName":"private","id":"private","lastName":"private"},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:XL8R"}]},"url":"http:
+//api.linkedin.com/v1/people/nIQIa5145d"},"firstName":"Matthias","headline":"Retail planning at RWE Vertrieb AG","id":"nIQIa5145d","industry":"Oil & 
+Energy","lastName":"Hoffmann","location":{"country":{"code":"de"},"name":"Cologne Area, 
+Germany"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_jE7gvAov48NuwbwPjedavP4ZshP_bXVPxHUGvPJo5QbPZ8D1luxlR1SXND1yXiRxpWS_sqFwGQDY","siteStandardProfileRequest":{"url":"http://www.linkedin.co
+m/profile/view?id=7705746&authType=name&authToken=XL8R&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:s3CR"}]
+},"url":"http://api.linkedin.com/v1/people/qlDpW1g7Wj"},"firstName":"Albert","headline":"Independent Venture Capital & Private Equity Professional","id":"qlDpW1g7Wj","industry":"Venture 
+Capital & Private Equity","lastName":"Journo","location":{"country":{"code":"gb"},"name":"London, United 
+Kingdom"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_k14DPdirNnsJ0Gh0XPJYPwChnrmJgTl06-2tPwCKWzsdCLQxHzH3jI9YZYa6OQK15rV1y2rlAEXo","siteStandardProfileRequest":{"url":"http://www.linkedin.co
+m/profile/view?id=30881447&authType=name&authToken=s3CR&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:nROZ"}
+]},"url":"http://api.linkedin.com/v1/people/9SbTBCFDtQ"},"firstName":"Natàlia","headline":"Green Solutions at Imtech Deutschland GmbH & Co. KG","id":"9SbTBCFDtQ","industry":"Renewables & 
+Environment","lastName":"Juncà Vicens","location":{"country":{"code":"de"},"name":"Hamburg Area, 
+Germany"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_U-uG03q-nK2aP8lGUvoA0_BON9Vm1LhGJKZg0_bawKaY2TcCcqyali1hsRslKG3asAmprXvaWk4j","siteStandardProfileRequest":{"url":"http://www.linkedin.co
+m/profile/view?id=113258857&authType=name&authToken=nROZ&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:pOm5"
+}]},"url":"http://api.linkedin.com/v1/people/s2z9BX61Ol"},"firstName":"Raphael","headline":"Research Associate at F.R.S - FNRS and Professor at 
+UCLouvain","id":"s2z9BX61Ol","industry":"Research","lastName":"Jungers","location":{"country":{"code":"be"},"name":"Brussels Area, 
+Belgium"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_2weeFyHXQEQ5IuyB2WwUFOoekDrbWEjBmEycF0VJUHXBnaoc8SZkWxmcE_KZoSpUDeEnHZHjb0M8","siteStandardProfileRequest":{"url":"http://www.linkedin.co
+m/profile/view?id=24655865&authType=name&authToken=pOm5&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:pTm_"}
+]},"url":"http://api.linkedin.com/v1/people/Bm_rEuurlj"},"firstName":"James","headline":"Senior Associate at Oliver Wyman","id":"Bm_rEuurlj","industry":"Information Technology and 
+Services","lastName":"Kessel","location":{"country":{"code":"de"},"name":"Cologne Area, 
+Germany"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=5023527&authType=name&authToken=pTm_&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:G1D1"}]},"url":"http://api.linkedin.com/v1/people/-QEqKceZU0"},"firstName":"Antero","headline":"Product Platform 
+Manager","id":"-QEqKceZU0","industry":"Telecommunications","lastName":"Kivi","location":{"country":{"code":"fi"},"name":"Finland"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0__NWrbZr2sacb-XZs
+TKE_bV-8VmCcOXds39g7bRlpLSnF38OVftMpdUL-q6GHgiHnCBwaey7i41t0","siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=629040&authType=name&authToken=G1D1&trk=api*a271173*s
+278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:yo7k"}]},"url":"http://api.linkedin.com/v1/people/2Db3wsHxdi"},"firstName":"Lor
+is","headline":"Consultant et formateur en électrothermie par induction chez SFinduction - Loris Koenig 
+Eurl","id":"2Db3wsHxdi","industry":"Machinery","lastName":"Koenig","location":{"country":{"code":"fr"},"name":"Mulhouse Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_JcF2q3PuPhI3Yv7rRnv1qC63Pi0hY9xrUr1PqCvju6IrTteKvAchsG31gSx0jAYp4qL-RLb5zVif","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=47029137&authType=name&authToken=yo7k&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:0Wnj"}]
+},"url":"http://api.linkedin.com/v1/people/AcBOSGGOLc"},"firstName":"Jörgen","headline":"Chemical Engineer","id":"AcBOSGGOLc","industry":"Oil & 
+Energy","lastName":"Finne","location":{"country":{"code":"se"},"name":"Vasteras, 
+Sweden"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=48980828&authType=name&authToken=0Wnj&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:BdiR"}]},"url":"http://api.linkedin.com/v1/people/er9uaAg125"},"firstName":"Narahari","headline":"Water Treatment Business 
+Development Manager for North America at Lhoist","id":"er9uaAg125","industry":"Environmental Services","lastName":"Kramadhati","location":{"country":{"code":"us"},"name":"Greater Los Angeles 
+Area"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_eMnW9E9Qhh4b20fxEUr99Hk5GGfLu00xoRC99HNqjFRzPUH0XxQ5ZehV2u7Vf4OPWsNBJ7QPK7Ah","siteStandardProfileRequest":{"url":"http://www.linkedin.com/p
+rofile/view?id=8253331&authType=name&authToken=BdiR&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:LXKy"}]},"
+url":"http://api.linkedin.com/v1/people/bSTelQLkv1"},"firstName":"Matthew","headline":"Designer, Writer, 
+Upstart","id":"bSTelQLkv1","industry":"Design","lastName":"Kulp","location":{"country":{"code":"us"},"name":"Greater Boston 
+Area"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_WfMGODUWzPDQwklhWIRgOmWWcnJIwChhwHSgOmI9HrDRN6c8LdWaKax4JUMqH532e2UpAdz8PrHi","siteStandardProfileRequest":{"url":"http://www.linkedin.com/p
+rofile/view?id=107148280&authType=name&authToken=LXKy&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:3pS7"}]}
+,"url":"http://api.linkedin.com/v1/people/rp_KuLpaQb"},"firstName":"Georges","headline":"Business developer","id":"rp_KuLpaQb","industry":"Information Technology and 
+Services","lastName":"Lagardère","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_r4vDWnKQKwtPfBSWKx1OWz9XK75A7-gW-yTtWzlv7dl3KnEdyO53FvLUYCLa2zy5ARB1QtfY0vRh","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=20706755&authType=name&authToken=3pS7&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:xuKz"}]
+},"url":"http://api.linkedin.com/v1/people/vATTgRgK8t"},"firstName":"erica","headline":"libero professionista presso me stessa","id":"vATTgRgK8t","industry":"Civil 
+Engineering","lastName":"lauretti","location":{"country":{"code":"it"},"name":"Latina Area, 
+Italy"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=134913435&authType=name&authToken=xuKz&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:TsWs"}]},"url":"http://api.linkedin.com/v1/people/bstROm5vK0"},"firstName":"André Giovani","headline":"Electrical Engineer at 
+PETROBRAS TRANSPORTE S.A","id":"bstROm5vK0","industry":"Research","lastName":"Leal Furlan","location":{"country":{"code":"br"},"name":"Florianópolis Area, 
+Brazil"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_io443xm5w4kV6mFc_deI3jZdIjA9oDncTD2b3j0zqUL6zWTB72Hq7gwRLrldWoBRGdV6as39WB31","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=147005696&authType=name&authToken=TsWs&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:ahBY"}
+]},"url":"http://api.linkedin.com/v1/people/WFUBFbK_yX"},"firstName":"Arnaud","headline":"Cleantech & NTIC Entrepreneur","id":"WFUBFbK_yX","industry":"Environmental 
+Services","lastName":"Legrand","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_LNotMmlhRGgMtFVi5BIDMDTjR6ZnYkwib9ODMD-gXiuQThy_WtVYcSQPze4Wj_EfXBHunE2-oMb8","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=26828903&authType=name&authToken=ahBY&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:P2zS"}]
+},"url":"http://api.linkedin.com/v1/people/3Ellp83fFF"},"firstName":"Daniela","headline":"Deputy Technical Director bei 
+OICA","id":"3Ellp83fFF","industry":"Automotive","lastName":"Leveratto","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_Z3_74LHj130mntxuVLLK4QVKlLe7qNxuV6Br4bW2m6yxIre2qFP_nFjGxSHKBPY8MGTlchUqsfBf","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=53891617&authType=name&authToken=P2zS&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:q4Pp"}]
+},"url":"http://api.linkedin.com/v1/people/iXtY6ryJRF"},"firstName":"Di","headline":"Étudiant à École Supérieure 
+d'Électricité","id":"iXtY6ryJRF","lastName":"LI","location":{"country":{"code":"fr"},"name":"Metz Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=75211518&authType=name&authToken=q4Pp&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:pY7A"}]},"url":"http://api.linkedin.com/v1/people/G8TCQhkkp9"},"firstName":"Igor","headline":"Contract Administrator at Air 
+Liquide - MBA - MSc Engineering","id":"G8TCQhkkp9","industry":"Chemicals","lastName":"Liberti","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_V24ZqXekWFWToIoyVdJFqQuXIiaSoDUy4e2FqQEzq5VgzWupnoHNs6ORLamtWosKRfVQR3ZSkW8v","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=8154126&authType=name&authToken=pY7A&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:1a47"}]},
+"url":"http://api.linkedin.com/v1/people/_sHa8RyM0O"},"firstName":"Marcos","headline":"Engineer at C.A.F.","id":"_sHa8RyM0O","industry":"Mechanical or Industrial 
+Engineering","lastName":"Lopez","location":{"country":{"code":"es"},"name":"Spain"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=10630595&authType=name&authToke
+n=1a47&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:LysB"}]},"url":"http://api.linkedin.com/v1/people/w6oNp
+wWJcR"},"firstName":"Kais","headline":"Project Manager at AIR LIQUIDE Medical GmbH","id":"w6oNpwWJcR","industry":"Hospital & Health 
+Care","lastName":"Maamar","location":{"country":{"code":"de"},"name":"Cologne Area, 
+Germany"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=4949133&authType=name&authToken=LysB&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:WYAz"}]},"url":"http://api.linkedin.com/v1/people/WIZ28rEw-r"},"firstName":"Luigi","headline":"Postdoc researcher at University 
+of Milan","id":"WIZ28rEw-r","industry":"Information Technology and Services","lastName":"Malagò","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_oivHPaU7Tz2FJZl1eFkRPuR23rOIUYr1eTTBPuIrOnoRkVFPQL5Xj2xOfjYq4MA0IhB9yIMWB1lD","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=2664604&authType=name&authToken=WYAz&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:KvHq"}]},
+"url":"http://api.linkedin.com/v1/people/TC14FOZ3bR"},"firstName":"Giulio","headline":"Device Engineer, Wafer Foundry Outsourcing at 
+STMicroelectronics","id":"TC14FOZ3bR","industry":"Semiconductors","lastName":"Marchesi","location":{"country":{"code":"sg"},"name":"Singapore"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_5P2
+4iolydJWNKDB4IBmIiWGrIxuRKe94FN4bie3aqsZI723ZdvpqSHvhLA2X17cqkKa62fxbWT-P","siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=9967743&authType=name&authToken=KvHq&trk
+=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:hH4K"}]},"url":"http://api.linkedin.com/v1/people/0L2zpyMuFo"},"f
+irstName":"Giovambattista","headline":"M&A Associate Director at HSBC Spain","id":"0L2zpyMuFo","industry":"Investment 
+Banking","lastName":"Marino","location":{"country":{"code":"es"},"name":"Spain"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=1125120&authType=name&authToken=hH
+4K&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:FXcu"}]},"url":"http://api.linkedin.com/v1/people/juzP5DR7D
+s"},"firstName":"Marco","headline":"Electric car software designer","id":"juzP5DR7Ds","industry":"Automotive","lastName":"Marsilia","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=8633045&authType=name&authToken=FXcu&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{
+"_total":1,"values":[{"name":"x-li-auth-token","value":"name:d-XP"}]},"url":"http://api.linkedin.com/v1/people/NnqhhMt_Ie"},"firstName":"Andrea","headline":"M&E Consultant at The World 
+Bank","id":"NnqhhMt_Ie","industry":"Automotive","lastName":"Martin","location":{"country":{"code":"it"},"name":"Venice Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_-1nutqTCAcn10vGjyN5PtB6aPK3YjP-jKlC1tB3luvzmGcLgYzQ8pcvxgOTTYN1A1rNtgr1udKzF","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=117977577&authType=name&authToken=d-XP&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:76Hr"}]
+},"url":"http://api.linkedin.com/v1/people/4kW8mQK6wn"},"firstName":"Andrea","headline":"Manager presso Accenture","id":"4kW8mQK6wn","industry":"Management 
+Consulting","lastName":"Martino","location":{"country":{"code":"it"},"name":"Turin Area, 
+Italy"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=195588107&authType=name&authToken=76Hr&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:QEc0"}]},"url":"http://api.linkedin.com/v1/people/dnc3yplI17"},"firstName":"Letizia","headline":"Sales Rep at Air 
+Liquide","id":"dnc3yplI17","industry":"Chemicals","lastName":"Martorana","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_8LXTPsuh--nZRBTxGkktP4f8Kv_nUBhxGbrOPJYy7KBQk1c02iqSjMotYRiW4K3PT66xyY2wU0rq","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=18658923&authType=name&authToken=QEc0&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:eQ-S"}]
+},"url":"http://api.linkedin.com/v1/people/1PKPFSHLmC"},"firstName":"Nicolas","headline":"Special advisor to the CEO at 
+SYSTRA","id":"1PKPFSHLmC","industry":"Transportation/Trucking/Railroad","lastName":"Massart","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=8064356&authType=name&authToken=eQ-S&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{
+"_total":1,"values":[{"name":"x-li-auth-token","value":"name:lB5_"}]},"url":"http://api.linkedin.com/v1/people/OgKabYj8SA"},"firstName":"Fabio","headline":"International MBA Graduate 2012 at 
+IE Business School","id":"OgKabYj8SA","industry":"Management Consulting","lastName":"Mattiussi","location":{"country":{"code":"us"},"name":"Greater San Diego 
+Area"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_uXLP60HCOe96R1Zzah_86gV7Oa-QMzdzaiA26y4x3D6nQlOvhGzxepulrQtMV-HJSFFSdRoQsSb9","siteStandardProfileRequest":{"url":"http://www.linkedin.com/p
+rofile/view?id=15804452&authType=name&authToken=lB5_&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:LdVS"}]},
+"url":"http://api.linkedin.com/v1/people/-HpLSwg2Y3"},"firstName":"Silvia","headline":"Management consulting presso Sistemi Chiocciola Srl","id":"-HpLSwg2Y3","industry":"Management 
+Consulting","lastName":"Mencaroni","location":{"country":{"code":"it"},"name":"Perugia Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_mLnj-O0A1AckJvBK265m-gJ201tLRPBKuTCC-gZlhvQzXc8rGiQAyj2xAO-VZNny76NijV6kVuLE","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=177883414&authType=name&authToken=LdVS&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:jFFn"}]
+},"url":"http://api.linkedin.com/v1/people/gfNfk2346S"},"firstName":"Emmanuel","headline":"Investment Executive at Duke Street","id":"gfNfk2346S","industry":"Venture Capital & Private 
+Equity","lastName":"Moll","location":{"country":{"code":"gb"},"name":"London, United 
+Kingdom"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_R84qRCV_wia7JIE3J3swRhm2IkU7UDE3Mb2wRhdKqT7xkWgTBQH4v8gYLoRK4owDV_VoqbcKKfOF","siteStandardProfileRequest":{"url":"http://www.linkedin.co
+m/profile/view?id=5792262&authType=name&authToken=jFFn&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:svaS"}]
+},"url":"http://api.linkedin.com/v1/people/O5zYz00pGK"},"firstName":"Paul","headline":"Deputy Head of Business Finance Department at HSBC 
+France","id":"O5zYz00pGK","industry":"Banking","lastName":"Moreno Blosseville","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_uBxCSgBPzgToPkA6mvjAS0bPcRv6PC36aKwjS0v_HOT9u69Qhl7mix3SJvzJr5hoSNgyCZFSRZtg","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=4929969&authType=name&authToken=svaS&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:8np7"}]}
+,"url":"http://api.linkedin.com/v1/people/OQhFTJA7Rw"},"firstName":"Jean-Baptiste","headline":"Hydrogen Mobility Project Leader chez Air Liquide Hydrogen 
+Energy","id":"OQhFTJA7Rw","industry":"Oil & Energy","lastName":"Mossa","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_YFRwQKHT5Diis7uqyTHZQ-UTLHK_Z2yqyhfqQ-MAVIkPbewN-3IbHtD0I8ryRIg4xXJvWvIwYJg0","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=55458073&authType=name&authToken=8np7&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:HuBA"}]
+},"url":"http://api.linkedin.com/v1/people/kHIO-7wF-a"},"firstName":"Cristian","headline":"Managing Partner at The Level 
+Group","id":"kHIO-7wF-a","industry":"Internet","lastName":"Musardo","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_Z3_74LsOAkf0qNxu9X3r4b4rl8e7qNxuV6Br4bW2m6yxIre2qFP_nFjGxSHKBPY8MGTlchcpdCvf","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=1747113&authType=name&authToken=HuBA&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:ira-"}]},
+"url":"http://api.linkedin.com/v1/people/WAr2uKzO5H"},"firstName":"Yves","headline":"Ingénieur 
+Chercheur","id":"WAr2uKzO5H","industry":"Research","lastName":"Neau","location":{"country":{"code":"fr"},"name":"France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/v
+iew?id=72528302&authType=name&authToken=ira-&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:pV_J"}]},"url":"h
+ttp://api.linkedin.com/v1/people/xwdqCPK4VD"},"firstName":"thanh","headline":"Sale & Marketing at Canh Cam Website Provider","id":"xwdqCPK4VD","industry":"Computer 
+Software","lastName":"nguyen quoc 
+truong","location":{"country":{"code":"vn"},"name":"Vietnam"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_k14DPHPCN1Rz0bl0QAZ-Pw3unPmJgTl06-2tPwCKWzsdCLQxHzH3jI9YZYa6OQK15rV1y2pUKgBo","siteSt
+andardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=160320976&authType=name&authToken=pV_J&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"va
+lues":[{"name":"x-li-auth-token","value":"name:2g6i"}]},"url":"http://api.linkedin.com/v1/people/wUOAoqh5Po"},"firstName":"isabelle","headline":"Directeur Architecture & Arbitrage chez 
+SFR","id":"wUOAoqh5Po","industry":"Telecommunications","lastName":"debeaupuis","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=160944340&authType=name&authToken=2g6i&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers"
+:{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:YYfE"}]},"url":"http://api.linkedin.com/v1/people/gmaWj7UndV"},"firstName":"Christian","headline":"Consultant at the Boston 
+Consulting Group","id":"gmaWj7UndV","industry":"Management Consulting","lastName":"Nill","location":{"country":{"code":"de"},"name":"Hamburg Area, 
+Germany"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_U-ft05LKZzy2xL6mJN2T0F9OZ9wmPLbmJzRD06b7b1xYuTKacq0YlQ1TnZIlrGQCsADurTMX_OF6","siteStandardProfileRequest":{"url":"http://www.linkedin.co
+m/profile/view?id=3923490&authType=name&authToken=YYfE&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:ePq5"}]
+},"url":"http://api.linkedin.com/v1/people/_heW1__yvx"},"firstName":"Nicola","headline":"Senior Consultant in Lean Six Sigma at Productivity Group 
+Europe","id":"_heW1__yvx","industry":"Management Consulting","lastName":"Olivetti","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=15452498&authType=name&authToken=ePq5&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:BgE5"}]},"url":"http://api.linkedin.com/v1/people/tieh-XXhV6"},"firstName":"Gabriele","headline":"Strategy Consultant at Oliver 
+Wyman","id":"tieh-XXhV6","industry":"Management Consulting","lastName":"Omassi","location":{"country":{"code":"ae"},"name":"United Arab 
+Emirates"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_sNXFMQb88i2TYOS74Kn4ML5286W8OUS74vrZMLqyxigK30sf9tqIc58tmedxgyu_UB6JnCEocWHr","siteStandardProfileRequest":{"url":"http://www.linkedin.c
+om/profile/view?id=9186589&authType=name&authToken=BgE5&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:wkor"}
+]},"url":"http://api.linkedin.com/v1/people/VFhX-gmC9m"},"firstName":"Alvin","headline":"MPA Candidate at Harvard Kennedy School of Government","id":"VFhX-gmC9m","industry":"Public 
+Policy","lastName":"Oo","location":{"country":{"code":"us"},"name":"Greater Boston 
+Area"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_tm_nI-asmE1fkgeFtH8LIljZ2Ic0X4eFr7BdIlao1aifRyxbOePs5AsXG5Bhb0WIPSTeX9yzihbY","siteStandardProfileRequest":{"url":"http://www.linkedin.com/p
+rofile/view?id=49318161&authType=name&authToken=wkor&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:ZdQp"}]},
+"url":"http://api.linkedin.com/v1/people/LGeAhJHthR"},"firstName":"Thierry","headline":"Ingénieur Chercheur chez 
+EDF","id":"LGeAhJHthR","industry":"Research","lastName":"Pelinski","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_-KgZflQAWyGl1IbX-tfFf1G-IpnOADBXKBWFf-83qJCaaW8kYnSNTtqfLt93tonH1PxQhvYOcOMV","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=110707239&authType=name&authToken=ZdQp&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:hDa_"}
+]},"url":"http://api.linkedin.com/v1/people/w5qILz5y18"},"firstName":"Giulio","headline":"Export Sales Manager at Air Liquide Medical Systems","id":"w5qILz5y18","industry":"Hospital & Health 
+Care","lastName":"Pellegrino","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=12912722&authType=name&authToken=hDa_&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:Q42o"}]},"url":"http://api.linkedin.com/v1/people/Y6UrHNwG1N"},"firstName":"Olivier","headline":"Executive Coach & Leadership 
+Developper","id":"Y6UrHNwG1N","industry":"Professional Training & Coaching","lastName":"Piazza","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_pl4feBkuc2Tu037wytdyezv1Bf6Sx3OwOz2Kez61eW-g85dIKBHi6vtjMGQtp60bjtVAbtqRRaeP","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=2676331&authType=name&authToken=Q42o&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:BbXL"}]}
+,"url":"http://api.linkedin.com/v1/people/7WMxKJcq7s"},"firstName":"Leonard","headline":"Investor at Index Ventures","id":"7WMxKJcq7s","industry":"Venture Capital & Private 
+Equity","lastName":"Picardo","location":{"country":{"code":"gb"},"name":"London, United 
+Kingdom"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_yHCbiz4WiJbT5MrZyD-4iBMMiVT85VhZOdn4in4dpyvKsYc4ratwS9uFDc3x6j3NgI8M2AE32KYE","siteStandardProfileRequest":{"url":"http://www.linkedin.co
+m/profile/view?id=4934697&authType=name&authToken=BbXL&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:TEPs"}]
+},"url":"http://api.linkedin.com/v1/people/zsOONA45ol"},"firstName":"Luigi","headline":"Project Director at Cegid","id":"zsOONA45ol","industry":"Computer 
+Software","lastName":"Pigliacelli","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_itf3qR81c_vzO6gpiBa-qZ1PzQis-5SpTrRYqZG2o_cED3sy7N0Ds4nGRH_5lCurGlD0R0pJCcW4","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=23944462&authType=name&authToken=TEPs&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:4JrJ"}]
+},"url":"http://api.linkedin.com/v1/people/u5aUby7Hm2"},"firstName":"Pierpaolo","headline":"Ingenieur Technico-Commercial chez Acal Bfi France","id":"u5aUby7Hm2","industry":"Mining & 
+Metals","lastName":"Pigliacelli","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_OMZdSnQWXUti2uCoYUW9Sz9oXYLC2utopRunSqczR4At1H5EtxeLiN_RoP5g7wP60sscCPL-Wr0z","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=93792975&authType=name&authToken=4JrJ&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:r9at"}]
+},"url":"http://api.linkedin.com/v1/people/tq6Ah-rC3Y"},"firstName":"Mario","headline":"Commercial Project Portfolio Manager, Siemens 
+Energy","id":"tq6Ah-rC3Y","industry":"Electrical/Electronic Manufacturing","lastName":"Pilz","location":{"country":{"code":"de"},"name":"Berlin Area, 
+Germany"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_-vl8EB31-2GrKBmHrl80EqiGrHQtKlmHKt50EqACfmtC7zMeYPTuXN5uOL6S1n7X1nPY5PiGyrxY","siteStandardProfileRequest":{"url":"http://www.linkedin.co
+m/profile/view?id=4931726&authType=name&authToken=r9at&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:DIsP"}]
+},"url":"http://api.linkedin.com/v1/people/nXYmX1CCIT"},"firstName":"Andrea","headline":"Founder and CEO at 
+Zero-Gravity","id":"nXYmX1CCIT","industry":"Sports","lastName":"Poffe","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_T8jL9VmgXCXNRfYxfkgn9Z0pXX_4cumx_Xds9Mu3RCBHHHM0DQDdZJ4fodiFNw7P8_0RJOtx8jD3","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=114453749&authType=name&authToken=DIsP&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:lH8K"}]
+},"url":"http://api.linkedin.com/v1/people/vpU6JQqHFP"},"firstName":"Andrea","headline":"Ariane 5 Electrical Systems Engineer","id":"vpU6JQqHFP","industry":"Aviation & 
+Aerospace","lastName":"Privitera","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_DBwsjM9YeBqdgwNDDtEWjRcSotb50wNDfzxLjVvYzqPvhf_STlUnPs3KXxFsyuv32NWk-gwoXXOO","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=68528477&authType=name&authToken=lH8K&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:LGGB"}]
+},"url":"http://api.linkedin.com/v1/people/oEpqWfnziz"},"firstName":"Giovanni","headline":"Ha frequentato Università di Bologna","id":"oEpqWfnziz","industry":"Mechanical or Industrial 
+Engineering","lastName":"Puccetti","location":{"country":{"code":"it"},"name":"Bologna Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_dCvykI72rmJ64qHUIiNikWdfpfuE4-4UIhTikeHriWZsFnfR5k5KoHyO-G2vUzJBHTBCwf9IVBSN","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=216601477&authType=name&authToken=LGGB&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:XIeT"}]
+},"url":"http://api.linkedin.com/v1/people/b4lQDbqW2e"},"firstName":"Florent","headline":"Ingénieur de projets - Nucléaire & Déconstruction chez BURGEAP","id":"b4lQDbqW2e","industry":"Oil & 
+Energy","lastName":"Ralincourt","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_mv6Vd4kG2aizygHe2BkddUQm27FLy4Me2N-5dUNO1E1z_ymHGP99bRhrG3bV00Zk7nXX6pEin9T1","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=35264890&authType=name&authToken=XIeT&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:BOL5"}]
+},"url":"http://api.linkedin.com/v1/people/py5zGGg8pu"},"firstName":"Jean-Yves","headline":"Ingénieur Génie Industriel","id":"py5zGGg8pu","industry":"Building 
+Materials","lastName":"Rey","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_YFRwQlwT575TsWuqYGVqQ1V8LHK_Z2yqp5fqQ-MAVIkPbewN-3IbHtD0I8ryRIg4xXJvWvF5eHw0","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=248626496&authType=name&authToken=BOL5&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:2aIn"}
+]},"url":"http://api.linkedin.com/v1/people/Jps1Zdcuvi"},"firstName":"Lydie","headline":"Research Engineer at EDF R&D, PhD in Electrochemistry and 
+Materials","id":"Jps1Zdcuvi","industry":"Oil & Energy","lastName":"Ribeaucourt","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_in1UQM_xf7LnlpRZirrXQVAAfa39lxsZTqFXQR1hrIz6mRS47KiBHUba38Td-ZUNGvA5WyDbdPcZ","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=77003391&authType=name&authToken=2aIn&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:SUUJ"}]
+},"url":"http://api.linkedin.com/v1/people/9W_ye2ZZYO"},"firstName":"Andrea","headline":"Programmable Platform Product Engineer at ST 
+Microelectronics","id":"9W_ye2ZZYO","industry":"Electrical/Electronic Manufacturing","lastName":"Rinaldo","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_OurBLnwMmSLa5gU4KW8kLzJcu78aFOo4yaXHLqEbPuNO4sjZtEhUwNOWCFhAkJIq07-WoPqHmIPg","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=26682247&authType=name&authToken=SUUJ&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:mzZ7"}]}
+,"url":"http://api.linkedin.com/v1/people/LvNcRpCKUL"},"firstName":"Matthias","headline":"Project Manager at Siemens","id":"LvNcRpCKUL","industry":"Oil & 
+Energy","lastName":"Roidl","location":{"country":{"code":"de"},"name":"Nürnberg Area, 
+Germany"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=6455244&authType=name&authToken=mzZ7&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:AZVk"}]},"url":"http://api.linkedin.com/v1/people/SwpWeO-ZgK"},"firstName":"Bianca de Cassia","headline":"Logistics project 
+manager chez Renault","id":"SwpWeO-ZgK","industry":"Automotive","lastName":"Romero","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_SLdsnxsDIhbqM7et7hwLnpepWTlkUWZtfbjLnpRpnk5NkD7-3iJn4y7-bfAU4mMYu6IkMU5gheM6","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=52225664&authType=name&authToken=AZVk&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:kpR8"}]
+},"url":"http://api.linkedin.com/v1/people/5o38xXsaeR"},"firstName":"Rosario","headline":"OR Surgical Specialist Endo Italia presso Smith & Nephew - 
+ASD","id":"5o38xXsaeR","industry":"Medical Devices","lastName":"Russo","location":{"country":{"code":"it"},"name":"Florence Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_fquK8pkpJYCFP5kqSro_8YcpM4KQ15kqD1Zf8YqaQYkn23PN_-yyaO8hBzrMKC54acmm7JoRS5vQ","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=102058110&authType=name&authToken=kpR8&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:Nb0g"}]
+},"url":"http://api.linkedin.com/v1/people/pXJbaZs5gT"},"firstName":"Eugenio","headline":"Key Account Manager (Résponsable Grands Comptes) chez EDF","id":"pXJbaZs5gT","industry":"Oil & 
+Energy","lastName":"Sapora","location":{"country":{"code":"it"},"name":"Turin Area, 
+Italy"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=40742957&authType=name&authToken=Nb0g&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{
+"_total":1,"values":[{"name":"x-li-auth-token","value":"name:qzUw"}]},"url":"http://api.linkedin.com/v1/people/3F9ywCN8gL"},"firstName":"Grégory","headline":"Research Engineer, 
+EDF","id":"3F9ywCN8gL","industry":"Oil & 
+Energy","lastName":"Savidand","location":{"country":{"code":"fr"},"name":"France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_8GEYKyY24cQZM8F-8FMDKOD3Z-rsJLc-CiY3K0aObNXE6Tht2XstOxsrn0K5sG9O
+T3e8xZKTPI71","siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=75830009&authType=name&authToken=qzUw&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"head
+ers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:y_e-"}]},"url":"http://api.linkedin.com/v1/people/KictIhbtPw"},"firstName":"Simone","headline":"IT Turbomachinery OTR 
+Manager at GE Oil & Gas","id":"KictIhbtPw","industry":"Oil & Energy","lastName":"Sceffer","location":{"country":{"code":"it"},"name":"Bologna Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_LNotM7lSMQ0sO3wiF-JDMDhTR6ZnYkwibvODMD-gXiuQThy_WtVYcSQPze4Wj_EfXBHunE2FUiq8","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=3756051&authType=name&authToken=y_e-&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:4J4x"}]},
+"url":"http://api.linkedin.com/v1/people/Zf6kWXumnn"},"firstName":"Gerardo","headline":"Head of MRO Services - Single Component 
+Services","id":"Zf6kWXumnn","industry":"Airlines/Aviation","lastName":"SCIARRILLO","location":{"country":{"code":"ch"},"name":"Zürich Area, 
+Switzerland"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_RNyrI5zxJdfTt_eIMzSfI6BgMewit_dIMve7I6qTQSx1SFOwBtup5Q87B6IpAkHFVBYaXTosjl7-","siteStandardProfileRequest":{"url":"http://www.linkedi
+n.com/profile/view?id=2082125&authType=name&authToken=4J4x&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:1EJ
+C"}]},"url":"http://api.linkedin.com/v1/people/rYgtfvEXWF"},"firstName":"Antonio","headline":"Nuclear Engineering Intern at Westinghouse","id":"rYgtfvEXWF","industry":"Oil & 
+Energy","lastName":"Seminara","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=36542905&authType=name&authToken=1EJC&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{
+"_total":1,"values":[{"name":"x-li-auth-token","value":"name:75vp"}]},"url":"http://api.linkedin.com/v1/people/_EAv0R5kPb"},"firstName":"Nicolas","headline":"Wattconnect","id":"_EAv0R5kPb","in
+dustry":"Oil & Energy","lastName":"Serisé","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_ePvupaB2ptYJOltielN1pS9Sr-Zdp-tioAT1pSkPfNuJin5_Xv58tDrgO049xzPfWKBt1onTCqZb","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=4371579&authType=name&authToken=75vp&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:SaME"}]}
+,"url":"http://api.linkedin.com/v1/people/mPGvcDLyC5"},"firstName":"Francesco","headline":"Project Manager/Leader, Ms Office 2010 & SAP Trainer Technical writer Italian speaking 
+(ing.sgaramella@libero.it)","id":"mPGvcDLyC5","industry":"Information Technology and Services","lastName":"Sgaramella","location":{"country":{"code":"it"},"name":"Turin Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_H1YHLaFpeasLAuSNHNaRLSNgk2jelupNoBEBLSF8UEdZmHIqkzmXwDPmE3gB-wjZdry9oozEhick","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=113787219&authType=name&authToken=SaME&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:eDuK"}]
+},"url":"http://api.linkedin.com/v1/people/F83HzDbYPd"},"firstName":"Francesca","headline":"Graduated at Politecnico di Milano & Ecole Centrale Paris","id":"F83HzDbYPd","industry":"Logistics 
+and Supply 
+Chain","lastName":"Silva","location":{"country":{"code":"it"},"name":"Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_xrBNYA58DP88yR9TgKkFYtkCDznSyjbTjA_IYtQt-PCg_MK319bZr--yi49t0VQSY1vEl
+zZp1T6N","siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=148944911&authType=name&authToken=eDuK&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers"
+:{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:l63Q"}]},"url":"http://api.linkedin.com/v1/people/7v9YuTjKmN"},"firstName":"Olivier","headline":"Vice President at JP 
+Morgan","id":"7v9YuTjKmN","industry":"Investment Banking","lastName":"Simon","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=14986418&authType=name&authToken=l63Q&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:ZccY"}]},"url":"http://api.linkedin.com/v1/people/FwwLPSoRum"},"firstName":"Elena","headline":"Finance&Performance Management at 
+Accenture","id":"FwwLPSoRum","industry":"Financial Services","lastName":"Sokolova","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_yrLwHBXD3WAipVgoO1X4HzCmiu52pMpoYNAqHzLxpolpijIEr9zbQvllDTL1xYj6g1FvFtc61HqL","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=21742522&authType=name&authToken=ZccY&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:vfbI"}]
+},"url":"http://api.linkedin.com/v1/people/cFVixvsJZY"},"firstName":"Aristide","headline":"Engineer at Siemens","id":"cFVixvsJZY","industry":"Electrical/Electronic 
+Manufacturing","lastName":"Spagnolo","location":{"country":{"code":"de"},"name":"Nürnberg Area, 
+Germany"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_oCf8SduPB0uL9h1EHLgxSwoAvRHIq5CEehR0SEw2EOpRI3voQk0uio0GUveqBC_QITDYCDvCz1-m","siteStandardProfileRequest":{"url":"http://www.linkedin.co
+m/profile/view?id=39819933&authType=name&authToken=vfbI&trk=api*a271173*s278883*"}},{"firstName":"private","id":"private","lastName":"private"},{"apiStandardProfileRequest":{"headers":{"_total
+":1,"values":[{"name":"x-li-auth-token","value":"name:9MRS"}]},"url":"http://api.linkedin.com/v1/people/u6GnbKPMOZ"},"firstName":"Patrick","headline":"Investment Professional at H.I.G. 
+Capital","id":"u6GnbKPMOZ","industry":"Venture Capital & Private 
+Equity","lastName":"Stein-Kaempfe","location":{"country":{"code":"de"},"name":"Germany"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_z4FpDFCEgJaPfrNwUxTiD5lXxYEKf9zwB01_Dk-Z8UY8rtGIMOcr_XQnlr
+o7uAqbqRLGGiuuERr3","siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=14451335&authType=name&authToken=9MRS&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":
+{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:PLrr"}]},"url":"http://api.linkedin.com/v1/people/kl9m68V5I4"},"firstName":"Carlo Maria","headline":"Project 
+Technical Manager at EDF","id":"kl9m68V5I4","industry":"Oil & Energy","lastName":"Stoisser","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_ndxXKTSMb9ExFe3-NWfRKGgMFqpKbm8-qwwUKiY64AH8ZoBtVf7HO_oHdsy7XWTOBogVxk2AaWad","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=12075742&authType=name&authToken=PLrr&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:a1H4"}]
+},"url":"http://api.linkedin.com/v1/people/biTbJdqEXQ"},"firstName":"Julien","headline":"Consultant","id":"biTbJdqEXQ","industry":"Management 
+Consulting","lastName":"Sureau","location":{"country":{"code":"fr"},"name":"Dijon Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_gPLYkPThymvmpKwc0zqSkrNCYflmpzUcxcA3krFxTW5YiluBAvztoKPlKGAlx-sRyKF8wBMO-RAD","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=158655938&authType=name&authToken=a1H4&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:x4UQ"}
+]},"url":"http://api.linkedin.com/v1/people/MZiKhMO_HG"},"firstName":"Pierluigi","headline":"Researcher at European Joint Research 
+Centre","id":"MZiKhMO_HG","industry":"Research","lastName":"Taddei","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_imOA6VDqZmc9kbRM3djG6Z2ssSisXTIMSoom6ZaQ5mcERLpJ7eaje4seNL_5bQovGSpfd0p06-ns","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=9933942&authType=name&authToken=x4UQ&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:NLv2"}]},
+"url":"http://api.linkedin.com/v1/people/CDO0nMGhDL"},"firstName":"Richard","headline":"Commercial Director at Air Liquide","id":"CDO0nMGhDL","industry":"Oil & 
+Energy","lastName":"Temple","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_vrCZ-hAx2PEjr06rczTb-CGjm10grsBrctnF-C8flvISfO8KJ9tNyGq38OxCPgnpN18QjLYNslHt","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=8194219&authType=name&authToken=NLv2&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:eoCT"}]}
+,"url":"http://api.linkedin.com/v1/people/4RTAffBYl2"},"firstName":"Giovanni Ivan","headline":"Senior Consultant at Business Integration 
+Partners","id":"4RTAffBYl2","industry":"Telecommunications","lastName":"Termite","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_5R4EHmGFQD0Bma7QIysJHDcd6fZBaSOQbV2zHDrnJWubAdd6djHQQSkZHG4eSE0Ek4VNFEGdcp7w","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=7193973&authType=name&authToken=eoCT&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:ueMA"}]},
+"url":"http://api.linkedin.com/v1/people/2D_ovRgWVF"},"firstName":"Renaud","headline":"Innovative Solution Development Manager at Air Liquide","id":"2D_ovRgWVF","industry":"Oil & 
+Energy","lastName":"THIARD","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=28183979&authType=name&authToken=ueMA&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:A1ca"}]},"url":"http://api.linkedin.com/v1/people/EENFEREOzy"},"firstName":"Benjamin","headline":"Market Development Leader at 
+General Electric","id":"EENFEREOzy","industry":"Electrical/Electronic Manufacturing","lastName":"Thoma","location":{"country":{"code":"gb"},"name":"London, United 
+Kingdom"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_-1nutqQT1vkmjPPjrt60tB3APK3YjP-jKlC1tB3luvzmGcLgYzQ8pcvxgOTTYN1A1rNtgr13NU1F","siteStandardProfileRequest":{"url":"http://www.linkedin.co
+m/profile/view?id=1584370&authType=name&authToken=A1ca&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:_0uB"}]
+},"url":"http://api.linkedin.com/v1/people/0_zF0i3kbw"},"firstName":"Giuseppe","headline":"Animator, fluid dynamics, modeling presso Star Studio","id":"0_zF0i3kbw","industry":"Writing and 
+Editing","lastName":"Tonello","location":{"country":{"code":"it"},"name":"Trieste Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_M5umg6J-nnDSNQA2RT2ggkExNAd3nLA2RkZAgkRawqjAWT6uz_yC1X7hsxWOzGrhZQmKtiWWOxdJ","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=62094519&authType=name&authToken=_0uB&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:T4UU"}]}
+,"url":"http://api.linkedin.com/v1/people/N0he4gAP_o"},"firstName":"Sami","headline":"Offshore wind turbine research engineer at EDF Energy","id":"N0he4gAP_o","industry":"Renewables & 
+Environment","lastName":"Barbouchi","location":{"country":{"code":"gb"},"name":"London, United 
+Kingdom"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_Rm-zu_oQ7Zam6ZkkJuzQuhVsS4UfXjkkM26EuhHQtY70RMPXBeGJG8ye_zRrbV5eVSrI_bnUIkid","siteStandardProfileRequest":{"url":"http://www.linkedin.co
+m/profile/view?id=62777697&authType=name&authToken=T4UU&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:zJh8"}
+]},"url":"http://api.linkedin.com/v1/people/lPmaZwOiyc"},"firstName":"Cong-Toan","headline":"En poste dans secteur null","id":"lPmaZwOiyc","industry":"Oil & 
+Energy","lastName":"Tran","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_OYjMBnqFeiv38ddpY4xQBqBRH3imCuJpyxd6BqbFcbcYgHaytZDvJN1d62_l3w4r0g0bZPzC31b0","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=159453927&authType=name&authToken=zJh8&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:p1dY"}
+]},"url":"http://api.linkedin.com/v1/people/cqsP91XX2t"},"firstName":"François","headline":"VP Strategy & Business Development chez Alstom Renewable 
+Power","id":"cqsP91XX2t","industry":"Renewables & 
+Environment","lastName":"Valmage","location":{"country":{"code":"fr"},"name":"France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_7bH7EYw0zm36MCfkfFZrEjgaBHcbMF0k3iprEjV0eIiBQ_HXiT4_XgmAM8BZ
+VhOemkol5sHDmdBk","siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=4362902&authType=name&authToken=p1dY&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"h
+eaders":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:G-Yf"}]},"url":"http://api.linkedin.com/v1/people/LULRgnqUST"},"firstName":"Daan","headline":"Financial Advisor at GDF 
+Suez - Acquisitions, Investments & Financial Advisory (AI&FA)","id":"LULRgnqUST","industry":"Oil & Energy","lastName":"Van Hoyweghen","location":{"country":{"code":"be"},"name":"Brussels 
+Area, 
+Belgium"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=4931157&authType=name&authToken=G-Yf&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:3i4j"}]},"url":"http://api.linkedin.com/v1/people/lvEoUQgnGZ"},"firstName":"Mike","headline":"Reliability and energy rating of 
+PV installations at EDF","id":"lvEoUQgnGZ","industry":"Renewables & Environment","lastName":"Van Iseghem","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_upscWJvIIflE27UdG4oeWszkdoXou7wdajmeWsLq9frVPIyWhVERFVlVFkkzfeELS0ZdQjRrFHSk","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=1417689&authType=name&authToken=3i4j&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:3-8q"}]}
+,"url":"http://api.linkedin.com/v1/people/pRPtEFFK4w"},"firstName":"Jim","headline":"Principal at Exor","id":"pRPtEFFK4w","industry":"Financial 
+Services","lastName":"Varas","location":{"country":{"code":"it"},"name":"Turin Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_7QQHyxZTGN-LRJACSkXUyjRTC-cbRJKCDTtByjsggciBXgbGi8nX-gaPuyBZZOlmm5k9PsHFiOqp","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=3301802&authType=name&authToken=3-8q&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:Oinw"}]},
+"url":"http://api.linkedin.com/v1/people/0j0Qemaqnu"},"firstName":"Emanuele","headline":"System Administrator presso ICT Managed Services","id":"0j0Qemaqnu","industry":"Information 
+Technology and Services","lastName":"Vecchio","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_wM8zE75s2WOW8yJkdOT6EDk4awUk8JekdRNEE2cHAm7NxgxXFxKJXu_6hLRUiOWeEsCI5wWCrxUx","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=7219200&authType=name&authToken=Oinw&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:zzlX"}]},
+"url":"http://api.linkedin.com/v1/people/LwyqqkVWvD"},"firstName":"Christophe","headline":"Engineer, Principal - Software Development at 
+Broadcom","id":"LwyqqkVWvD","industry":"Telecommunications","lastName":"Verne","location":{"country":{"code":"us"},"name":"San Francisco Bay 
+Area"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=3349864&authType=name&authToken=zzlX&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_
+total":1,"values":[{"name":"x-li-auth-token","value":"name:4zoU"}]},"url":"http://api.linkedin.com/v1/people/Ie8iFXzQW4"},"firstName":"Lara","headline":"Business Analyst for Northern Europe 
+at Sonepar","id":"Ie8iFXzQW4","industry":"Electrical/Electronic Manufacturing","lastName":"Verona","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_8LXTPUD2KlnZRllxC5ctPJZhKv_nUBhxGGrOPJYy7KBQk1c02iqSjMotYRiW4K3PT66xyYuzK36q","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=8539931&authType=name&authToken=4zoU&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:WA_r"}]}
+,"url":"http://api.linkedin.com/v1/people/fY3uHeOVu-"},"firstName":"sebastien","headline":"Responsable production chez Danone","id":"fY3uHeOVu-","industry":"Consumer 
+Goods","lastName":"verwaerde","location":{"country":{"code":"fr"},"name":"Lille Area, 
+France"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=186879163&authType=name&authToken=WA_r&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers"
+:{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:6e6g"}]},"url":"http://api.linkedin.com/v1/people/FeDtfcUT_p"},"firstName":"Balint","headline":"Senior Manager of Inbound Sales 
+and Customer 
+Retention","id":"FeDtfcUT_p","industry":"Telecommunications","lastName":"Veto","location":{"country":{"code":"hu"},"name":"Hungary"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_TLYPQpYh4eqkzi
+Zq_FpuQYaY4wrNB8dqfTE2Qxj8FDXkeXONDimxH0Wm9QKwqbH486ySW4iGtxmO","siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=1597205&authType=name&authToken=6e6g&trk=api*a27117
+3*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:D0-C"}]},"url":"http://api.linkedin.com/v1/people/qRmVCTFzri"},"firstName":"
+Marco","headline":"R&D Engineer presso Microgate Srl / Micro Photon Devices Srl","id":"qRmVCTFzri","industry":"Mechanical or Industrial 
+Engineering","lastName":"Vitali","location":{"country":{"code":"it"},"name":"Trento Area, 
+Italy"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=184815193&authType=name&authToken=D0-C&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":
+{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:7gmB"}]},"url":"http://api.linkedin.com/v1/people/USe08MXgZZ"},"firstName":"Lukas","headline":"Head of Product Management - BUs 
+Infrastructur&Datacom, Energy&Communication chez Leoni","id":"USe08MXgZZ","industry":"Plastics","lastName":"Von Laue","location":{"country":{"code":"ch"},"name":"Zürich Area, 
+Switzerland"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_cDHk-3xbbA4tEIhrcwZB-CxwFnxxHITrv2pR-_7s4Pw7c7nKUI4eyiRNd408w28p9aosjXjXfoYe","siteStandardProfileRequest":{"url":"http://www.linkedi
+n.com/profile/view?id=38357727&authType=name&authToken=7gmB&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:J4
+Rr"}]},"url":"http://api.linkedin.com/v1/people/IccvpcMwjh"},"firstName":"Xiaolu","headline":"Founder, CEO at Beijing QY New Energy Co., Ltd","id":"IccvpcMwjh","industry":"Oil & 
+Energy","lastName":"WANG","location":{"country":{"code":"cn"},"name":"China"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_cDHk-3uWbPwxoelrvfER-_fWFnxxHITrv7pR-_7s4Pw7c7nKUI4eyiRNd408w28p9aosj
+Xllpfme","siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=7760759&authType=name&authToken=J4Rr&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{
+"_total":1,"values":[{"name":"x-li-auth-token","value":"name:u4Ta"}]},"url":"http://api.linkedin.com/v1/people/lGPh81_HG_"},"firstName":"Nicolas","headline":"International Financial 
+Advisor","id":"lGPh81_HG_","industry":"Oil & Energy","lastName":"Wicker","location":{"country":{"code":"de"},"name":"Berlin Area, 
+Germany"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_fXI2TMd3ByvkR5isf_WxTRw7vYCQJ61sSL0PTR4YEUnn6CXV_GRhfUuKUrGMs3-naFd-myEdOzC2","siteStandardProfileRequest":{"url":"http://www.linkedin.co
+m/profile/view?id=5133826&authType=name&authToken=u4Ta&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:-LXA"}]
+},"url":"http://api.linkedin.com/v1/people/6oUDEjXr2N"},"firstName":"Yaoting","headline":"RCD Engineer chez PSA Peugeot 
+Citroën","id":"6oUDEjXr2N","industry":"Research","lastName":"XU","location":{"country":{"code":"fr"},"name":"Paris Area, 
+France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_Wn8k2DnDCRyo1s85WtrB2mADCUJbAJ35IBNR2mnSgYDBag9LLKKeCaG_uzMZtOhWevCsideeMEPW","siteStandardProfileRequest":{"url":"http://www.linkedin.com
+/profile/view?id=93589894&authType=name&authToken=-LXA&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:NkvZ"}]
+},"url":"http://api.linkedin.com/v1/people/jBLmsPwh9s"},"firstName":"Beibei","headline":"Senior Relationship Manager at BNP 
+Paribas","id":"jBLmsPwh9s","industry":"Banking","lastName":"Zhang","location":{"country":{"code":"hk"},"name":"Hong 
+Kong"},"siteStandardProfileRequest":{"url":"http://www.linkedin.com/profile/view?id=30127152&authType=name&authToken=NkvZ&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"
+_total":1,"values":[{"name":"x-li-auth-token","value":"name:Z_pm"}]},"url":"http://api.linkedin.com/v1/people/Nq0g9OYEUi"},"firstName":"Enrico","headline":"Chair Director at 
+Supelec","id":"Nq0g9OYEUi","industry":"Research","lastName":"Zio","location":{"country":{"code":"it"},"name":"Milan Area, 
+Italy"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_ZSvRnLMHaCdmW4IYs7tXnQV5uTD7WORYVuTknbWvPkJxns2Oqw5c4FjUCfSKoJVtMmBLMhBj5lwM","siteStandardProfileRequest":{"url":"http://www.linkedin.com/
+profile/view?id=21330276&authType=name&authToken=Z_pm&trk=api*a271173*s278883*"}}]}

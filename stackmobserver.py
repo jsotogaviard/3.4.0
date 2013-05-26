@@ -21,12 +21,21 @@ STACKMOB_API_SERVER = 'api.stackmob.com'
 class ProxyHandler(SimpleHTTPRequestHandler):
 
     def handle_request(self):
-        if 'X-StackMob-Proxy-Plain' in self.headers:
+    	print "new request--------"
+    	print self.headers
+    	print "pqth "  + self.path
+    	headers = {}
+    	for key_val in self.headers.items():
+ 			headers[ key_val[0].upper() ] = key_val[1]
+                
+#         if 'Access-Control-Request-Headers' in headers.keys() and 'toto' in headers['Access-Control-Request-Headers']:
+# 	if 'toto' in self.headers:
+	if 'http' in self.path:
             # PROXY TO STACKMOB
             self.log_request()
 
             # Determine Path
-            path = 'http://' + STACKMOB_API_SERVER + self.path
+            path = self.path
             print '\nProxying Request to ' + path
 
             # Determine Headers
@@ -35,19 +44,19 @@ class ProxyHandler(SimpleHTTPRequestHandler):
                 headers[ key_val[0].upper() ] = key_val[1]
 
             # Overwrite host header for Proxy
-            netloc = headers['HOST']
-            i = netloc.find(':')
-            if i >= 0:
-                host = netloc[:i], int(netloc[i+1:])
-            else:
-                host = netloc, 80
+           #  netloc = headers['HOST']
+#             i = netloc.find(':')
+#             if i >= 0:
+#                 host = netloc[:i], int(netloc[i+1:])
+#             else:
+#                 host = netloc, 80
 
-            headers['HOST'] = STACKMOB_API_SERVER
-            headers['X-FORWARDED-FOR'] = host[0]
-            headers['X-STACKMOB-FORWARDED-PORT'] = host[1]
-            headers['X-STACKMOB-FORWARDED-HOST'] = host[0]
-            headers['X-FORWARDED-PROTO'] = 'HTTP'
-            headers['VERSION'] = 'HTTP/1.1'
+            # headers['HOST'] = STACKMOB_API_SERVER
+#             headers['X-FORWARDED-FOR'] = host[0]
+#             headers['X-STACKMOB-FORWARDED-PORT'] = host[1]
+#             headers['X-STACKMOB-FORWARDED-HOST'] = host[0]
+#             headers['X-FORWARDED-PROTO'] = 'HTTP'
+#             headers['VERSION'] = 'HTTP/1.1'
 
             print 'Request Headers'
             for key in headers:
@@ -62,9 +71,9 @@ class ProxyHandler(SimpleHTTPRequestHandler):
             # Create Request
             opener = urllib2.build_opener(urllib2.HTTPHandler)
             if data is None:
-                req = urllib2.Request(path, headers=headers)
+                req = urllib2.Request(path[1:], headers=headers)
             else:
-                req = urllib2.Request(path, data, headers)
+                req = urllib2.Request(path[1:], data, headers)
 
             # Connect
             req.get_method = lambda: self.command

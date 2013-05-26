@@ -1,0 +1,28 @@
+[{"name":"Quirin Hamp","id":"126712"},{"name":"Alki Delichatsios","id":"700835"},{"name":"Balint Veto","id":"702615"},{"name":"Julie Potter","id":"1003945"},{"name":"PJ 
+Leonard","id":"2419031"},{"name":"Matteo Castelli","id":"6847500"},{"name":"Jacob Proctor","id":"7959179"},{"name":"Federico Gallo","id":"7959244"},{"name":"Debarshi 
+Basu","id":"7964924"},{"name":"Emmanuel Moll","id":"36901794"},{"name":"Lenny Picardo","id":"36906169"},{"name":"Max Levin","id":"37200674"},{"name":"Damien 
+Coullon","id":"222404223"},{"name":"Pablo Celada","id":"500134309"},{"name":"Marc Bale","id":"500484123"},{"name":"Garry Ianco","id":"502443103"},{"name":"Mathias 
+Domini","id":"506264331"},{"name":"Diana de Rosmini","id":"507374914"},{"name":"Mattia Carlozzo","id":"508141530"},{"name":"Pierpaolo Pigliacelli","id":"516073892"},{"name":"Pier Filippo 
+Rendina","id":"516972127"},{"name":"Daan Van Hoyweghen","id":"520005262"},{"name":"Gianluca Degano","id":"533102348"},{"name":"Giulio Pellegrino","id":"533265907"},{"name":"Nicolas 
+Massart","id":"539921097"},{"name":"Letizia Martorana","id":"541332403"},{"name":"Giovanni Marino","id":"551628923"},{"name":"Bruno Boulay","id":"555034788"},{"name":"Roberto 
+Vazzoler","id":"557460146"},{"name":"Deepak Sharma","id":"557472573"},{"name":"Raphaël Guinabert","id":"560309210"},{"name":"Vincent Dauchy","id":"564140861"},{"name":"Luca 
+Testa","id":"570646230"},{"name":"Paolo Balzarini","id":"591662529"},{"name":"Pietro Bevivino","id":"594112117"},{"name":"Federico Aimaro","id":"598176537"},{"name":"Philippe 
+Egermann","id":"599445072"},{"name":"Mario Pilz","id":"600082904"},{"name":"Marco Marsilia","id":"610991733"},{"name":"Victorien Charnay","id":"613385412"},{"name":"Valeria 
+Fisichella","id":"613858072"},{"name":"Riccardo Aita","id":"613889984"},{"name":"Nicolas ACHARD","id":"624925863"},{"name":"Emmanuel Savoye","id":"626780478"},{"name":"Nicolas 
+Debernardi","id":"627044438"},{"name":"Luigi Pigliacelli","id":"629045185"},{"name":"Marcos Etcheverrigaray","id":"629304114"},{"name":"Patricia Amary","id":"642488453"},{"name":"Tony 
+Leon","id":"649326595"},{"name":"Loic De Boisanger","id":"653954765"},{"name":"Erica Lauretti","id":"654969474"},{"name":"Joan Morey","id":"657984520"},{"name":"Maristella 
+Nigro","id":"662951160"},{"name":"Maja Herberg","id":"665228711"},{"name":"Nicolas Wicker","id":"667141803"},{"name":"Juliana Prelez","id":"670391281"},{"name":"François 
+Valmage","id":"670569121"},{"name":"Paul Moreno","id":"671497778"},{"name":"Michel Savoye","id":"672808505"},{"name":"Daniele Rossi","id":"674190697"},{"name":"Haykel Ben 
+Jamaa","id":"684370131"},{"name":"Lyaysan Vakhitova","id":"685915615"},{"name":"Eduardo Rodrigues","id":"690509648"},{"name":"Sophie El Bori","id":"698437344"},{"name":"Xavier 
+Durupt","id":"701507363"},{"name":"Philippe Poelaert","id":"703479947"},{"name":"Giulio Marchesi","id":"704479584"},{"name":"Jim Varas","id":"721559917"},{"name":"Simone 
+Sceffer","id":"746237781"},{"name":"Andrea Poffe","id":"749700550"},{"name":"Dawn Yeo Poletti","id":"757658890"},{"name":"Jalil Moumni","id":"763475578"},{"name":"Kais 
+Maamar","id":"764437802"},{"name":"Bogdan Tudor","id":"771849997"},{"name":"Nandi Caok","id":"782240991"},{"name":"Igor Liberti","id":"787945961"},{"name":"H.A. 
+Bouricha","id":"787997840"},{"name":"Nicola Olivetti","id":"796693116"},{"name":"Carlo Fedeli","id":"801198683"},{"name":"Elena Segreti","id":"823294783"},{"name":"Bruno 
+Gonzalez","id":"839930404"},{"name":"Renaud Thiard","id":"870145286"},{"name":"Rosario Russo","id":"1015802371"},{"name":"Kaeel Lampi","id":"1044657270"},{"name":"Gianni 
+Candotto","id":"1105221991"},{"name":"Elisa Eli","id":"1132819107"},{"name":"Riccardo Chiarelli","id":"1142254212"},{"name":"Luca Cody","id":"1181839101"},{"name":"Mattia 
+Lucchetta","id":"1275109233"},{"name":"Coc Man","id":"1285850468"},{"name":"Alessandro Bacchin","id":"1290938738"},{"name":"Matteo Battistutta","id":"1353470937"},{"name":"Michele 
+Furlan","id":"1354343996"},{"name":"Federico Vignola","id":"1360407731"},{"name":"Emanuele Vecchio","id":"1389350929"},{"name":"Lorena Manola","id":"1405105709"},{"name":"Stefano 
+Rigonat","id":"1408819002"},{"name":"Dario Mian","id":"1434132830"},{"name":"David Fournier","id":"1458793452"},{"name":"Stefano Portolan","id":"1481906060"},{"name":"Fabio 
+Mattiussi","id":"1484499766"},{"name":"Raffaella Rosso","id":"1487590644"},{"name":"Roberto Perin","id":"1528457803"},{"name":"Giuseppe Tonello","id":"1541882267"},{"name":"Matteo 
+Scarello","id":"1552127953"},{"name":"Davide Rizzatti","id":"1642417846"},{"name":"Hoang Ngoc Hoai Quang","id":"100000121394140"},{"name":"Beibei 
+Zhang","id":"100000682047924"},{"name":"Andrea Cappe","id":"100001528371792"}]
