@@ -78,10 +78,9 @@
 				This page is used to getUserContact:
 				<br>
 				
-				<a  class="button" href="javascript:;" onclick="AppMobi.contacts.getContacts();">Show Contacts from Adressbook and upload to server</a>
-				<a  class="button" href="javascript:;" onclick="AppMobi.contacts.chooseContact();">Choose Contacts from Adressbook</a>
-				<a  class="button" href="#fbcontactspage" onclick="fbContactsImport();">Import Facebook contacts</a>
-				<a  class="button" href="#fbcontactspage" onclick="getLinkedinContacts();">Import Linkedin contacts</a> 
+				<a  class="button" href="javascript:;" onclick="$.ui.showMask(); AppMobi.contacts.getContacts();">Sync Contacts from Adressbook</a>
+				<a  class="button" href="#contactsPage" onclick="$.ui.showMask(); fbContactsImport();">Sync Contacts from Facebook</a>
+				<a  class="button" href="#contactsPage" onclick="$.ui.showMask(); getLinkedinContacts();">Sync Contacts from Linkedin</a> 
 				<a  class="button" href="javascript:;" onclick="smsSend();">Send a test sms</a>
 				<ul >
 				</ul>
@@ -98,16 +97,22 @@
 			<!-- ------------------end of import contacts page------------------------ -->
 
 
-			<!-- ------------------Facebook import contacts page------------------------ -->
+			<!-- ------------------Contacts page------------------------ -->
 
-			<div title="Facebook Contacts" id="fbcontactspage" class="panel"  data-footer='footerui' data-tab="navbar_ui">
-
-				<div id="fbcontacts2">
+			<div title="Contacts" id="contactsPage" class="panel"  data-footer='footerui' data-tab="navbar_ui">
+				<div id="searcharea">
+				<!--
+					<label for="search">live search</label>
+					<p>Enter the contact name</p>
+				-->
+					<input type="search" name="search" id="search" placeholder="search by name" onkeyup="searchContacts()"/>
 				</div>
+				<div id="update"></div>
+				<div id="fbcontacts2"></div>
 				
 			</div>
 
-			<!-- ------------------End of Facebook import contacts page------------------------ -->
+			<!-- ------------------End of contacts page------------------------ -->
 
 
 			<!-- ------------------How it Works page------------------------ -->
@@ -284,24 +289,30 @@
         	The settings
         </div>
 
-        <!-- The setting page -->
-        <div id="contacts_page" title="contacts" class="panel"  data-footer='footerui' data-tab="navbar_ui">
-        	Set here the contacts
-        </div>
-
-        <!-- The setting page -->
+       
+        <!-- The chat page -->
         <div id="chat" title="chat" class="panel"  data-footer='footerui' data-tab="navbar_ui">
         	The chat
         </div>
 
-        <!-- bottom navbar.  Add additional tabs here -->
+        <!-- default botton navbar (footer).  Add additional tabs here -->
         <div id="navbar">
             <a href="#settings" id='navbar_settings' class='icon settings' >Settings</a>
-            <a href="#contacts_page" id='navbar_contacts' class='icon user' >Contacts</a>
+            <a href="#contactsPage" id='navbar_contacts' class='icon user' >Contacts</a>
             <a href="#main" id='navbar_home' class='icon home' >home</a>
             <a href="#dashboard" id='navbar_dashboard' class='icon heart' >Dashboard</a>
             <a href="#chat" id='navbar_others' class='icon chat' >Chat</a>
         </div>
+
+        <!-- custom footer. Add in panel "data-footer='footerid'" to add a custom footer to the panel-->
+
+        <footer id="footerui">
+			<a href="#settings" id='navbar_settings' class='icon settings' >Settings</a>
+            <a href="#contactsPage" id='navbar_contacts' class='icon user' >Contacts</a>
+            <a href="#main" id='navbar_home' class='icon home' >home</a>
+            <a href="#dashboard" id='navbar_dashboard' class='icon heart' >Dashboard</a>
+            <a href="#chat" id='navbar_others' class='icon chat' >Chat</a>
+		</footer>
 
 
         <!-- this is the default left side nav menu -->
@@ -324,7 +335,7 @@
 		   <div class='title'>Contacts</div>
 			<ul>
 			   <li> <a href="#importContacts"  >Import contacts</a></li>
-			   <li><a href="#fbcontactspage" >Show contacts</a></li>
+			   <li><a href="#contactsPage" >Show contacts</a></li>
 			</ul>
 	 	   <div class='title'>Dashboard</div>
 			<ul>
