@@ -190,7 +190,9 @@ function buildContactsTable(contacts){
 		} else {
 			throw new Error(contact.origin + " impossible");
 		}
+		
 		outHTML += "<td class='tableName'><p>" + contact.name + "</p></td>";
+		outHTML += "<td style='display:none' >" + contact.origin +"</td>";
 		outHTML += "<td id=\"" + contact.id + "_tag\" style='display: none'><img src='images/mayo-resized.png'/></td>";
 		outHTML += "</tr>";	                                 
 	}
@@ -443,6 +445,23 @@ function searchContacts() {
 			
 			// This row matches this contact
 			// display it
+			row.style.display= "";
+		}
+	});
+}
+
+function filterContactByOrigin(origin){
+	jq('#contact_table tr').each(function(){
+		row = $(this)[0];
+
+		ddebug(row.cells[2].innerHTML);
+		if (row.cells[2].innerHTML != origin)  {
+			
+			// The search is not the origin we are searching
+			row.style.display= "none";
+		} else {
+			
+			// The search is the origin we are searching for
 			row.style.display= "";
 		}
 	});

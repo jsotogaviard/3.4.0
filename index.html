@@ -78,9 +78,9 @@
 				This page is used to getUserContact:
 				<br>
 				
-				<a  class="button" href="javascript:;" onclick="$.ui.showMask(); AppMobi.contacts.getContacts();">Sync Contacts from Adressbook</a>
-				<a  class="button" href="#contactsPage" onclick="$.ui.showMask(); fbContactsImport();">Sync Contacts from Facebook</a>
-				<a  class="button" href="#contactsPage" onclick="$.ui.showMask(); getLinkedinContacts();">Sync Contacts from Linkedin</a> 
+				<a  class="button" href="javascript:;" onclick="jq.ui.showMask(); AppMobi.contacts.getContacts();">Sync Contacts from Adressbook</a>
+				<a  class="button" href="#contactsPage" onclick="jq.ui.showMask(); fbContactsImport();">Sync Contacts from Facebook</a>
+				<a  class="button" href="#contactsPage" onclick="jq.ui.showMask(); getLinkedinContacts();">Sync Contacts from Linkedin</a> 
 				<a  class="button" href="javascript:;" onclick="smsSend();">Send a test sms</a>
 				<ul >
 				</ul>
@@ -100,6 +100,11 @@
 			<!-- ------------------Contacts page------------------------ -->
 
 			<div title="Contacts" id="contactsPage" class="panel"  data-footer='footerui' data-tab="navbar_ui">
+				<a  class="button"  onclick="filterContactByOrigin(ORIGIN.LINKEDIN);">LN</a>
+				<a  class="button"  onclick="filterContactByOrigin(ORIGIN.FACEBOOK);">FB</a>
+				<a  class="button"  onclick="filterContactByOrigin(ORIGIN.PHONE);">PHONE</a>
+				<br>
+				<br>
 				<div id="searcharea">
 				<!--
 					<label for="search">live search</label>
