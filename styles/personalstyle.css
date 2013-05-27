@@ -1,6 +1,27 @@
-tr.selected { background-color: red; }
-tr.unselected { background-color: transparent; }
+tr.selected {
+	background-color: red;
+}
+
+tr.unselected {
+	background-color: transparent;
+}
 /*
 td.selected { background-color: blue; }
 td.unselected { background-color: green; }
 */
+#searcharea {
+	/* Provide scrollbars if needed and fix the header dimensions */
+	overflow: auto;
+	position: absolute;
+	width: 100%;
+	height: 50px;
+}
+
+#fbcontacts2 {
+	/* Provide scrollbars if needed, position below header, and derive height from top/bottom */
+	overflow: auto;
+	position: absolute;
+	width: 100%;
+	top: 50px;
+	bottom: 0;
+}
