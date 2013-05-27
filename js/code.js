@@ -166,7 +166,7 @@ function sortSaveContacts(contacts){
  */
 function buildContactsTable(contacts){
 
-	var outHTML = "<table id =\"contact_table\"";
+	var outHTML = "<table id =\"contact_table\">";
 	for (var r=0; r< contacts.length; r++) {
 		contact = contacts[r];
 		outHTML += "<tr id='" + contact.id +"' class='unselected' onclick = \"addTag('" + contact.id +"_tag');\">";
