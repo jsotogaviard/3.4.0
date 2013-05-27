@@ -86,7 +86,7 @@ function contactsReceived() {
 	// Update the div content
 	var outHTML = buildContactsTable(contacts);
 	jq.ui.updateContentDiv("fbcontacts2",outHTML);
-	$.ui.hideMask();
+	jq.ui.hideMask();
 	// Remove the listener
 	document.removeEventListener("appMobi.contacts.get");
 }
@@ -122,7 +122,7 @@ document.addEventListener("appMobi.facebook.request.response",function(e) {
 		// And put it in the div
 		var outHTML = buildContactsTable(contacts);
 		jq.ui.updateContentDiv("fbcontacts2",outHTML);
-		$.ui.hideMask();
+		jq.ui.hideMask();
 
 		document.removeEventListener("appMobi.facebook.request.response");      
 	} 
@@ -166,10 +166,10 @@ function sortSaveContacts(contacts){
  */
 function buildContactsTable(contacts){
 
-	var outHTML = "<table>";
+	var outHTML = "<table id =\"contact_table\"";
 	for (var r=0; r< contacts.length; r++) {
 		contact = contacts[r];
-		outHTML += "<tr class='unselected' onclick = \"addTag('" + contact.id +"');\">";
+		outHTML += "<tr id='" + contact.id +"' class='unselected' onclick = \"addTag('" + contact.id +"_tag');\">";
 		if (contact.origin == ORIGIN.FACEBOOK) {
 			
 			// Add the facebook image
@@ -191,7 +191,7 @@ function buildContactsTable(contacts){
 			throw new Error(contact.origin + " impossible");
 		}
 		outHTML += "<td class='tableName'><p>" + contact.name + "</p></td>";
-		outHTML += "<td id=\"" + contact.id + "\" style='display: none'><img src='images/mayo-resized.png'/></td>";
+		outHTML += "<td id=\"" + contact.id + "_tag\" style='display: none'><img src='images/mayo-resized.png'/></td>";
 		outHTML += "</tr>";	                                 
 	}
 	outHTML += "</table>";
@@ -211,8 +211,7 @@ function showHide(obj,objToHide){
 	
 	if(obj.className=="expanded"){
 		obj.className="collapsed";
-	}
-	else{
+	} else {
 		obj.className="expanded";
 	}
 	jq(el).toggle();
@@ -411,7 +410,7 @@ function statusUpdate(evt){
         sortSaveContacts(contacts);
         outHTML = buildContactsTable(contacts);
         jq.ui.updateContentDiv("fbcontacts2",outHTML);
-        $.ui.hideMask();
+        jq.ui.hideMask();
 
 		//Linkedin contacts received
 		AppMobi.notification.alert("Contacts received3","Success","OK");
@@ -430,49 +429,28 @@ document.addEventListener("appMobi.oauth.busy",function(){ ddebug('oAuth busy');
 
 
 function searchContacts() {
-//	console.log($('#search').val());
-	var jsonContacts = AppMobi.cache.getCookie(CONTACTS_COOKIE);
-	contacts2 = JSON.parse(jsonContacts);
-	var searchField = $('#search').val();
+	var searchField = jq('#search').val();
 	var myExp = new RegExp(searchField, "i");
-	var outHTML = '<table class="searchresults">';
-	$.each(contacts2, function(key, contact) {
-		if (contact.name.search(myExp) != -1)  {
-
-				outHTML += "<tr class='unselected' onclick = \"addTag('" + contact.id +"');\">";
-				if (contact.origin == ORIGIN.FACEBOOK) {
-					
-					// Add the facebook image
-					outHTML += "<td><img src='http://graph.facebook.com/" + contact.id + "/picture' info='" + contact.name + "' /></td>";
-				} else if(contact.origin == ORIGIN.PHONE){
-					
-					// Add a random image
-					outHTML += "<td><img src='images/picture.gif'/></td>";
-				} else if(contact.origin == ORIGIN.LINKEDIN){
-					
-					// Add the stored image
-					if (typeof contact.picture === "undefined") {
-						outHTML += "<td><img src='images/picture.gif'/></td>";
-					} else {
-						outHTML += "<td><img style='height:auto; width:auto; max-width:50px; max-height:50px;' src=" + contact.picture + "></td>";
-					}
-					
-				} else {
-					throw new Error(contact.origin + " impossible");
-				}
-				outHTML += "<td class='tableName'><p>" + contact.name + "</p></td>";
-				outHTML += "<td id=\"" + contact.id + "\" style='display: none'><img src='images/mayo-resized.png'/></td>";
-				outHTML += "</tr>";	                                 
-				
+	
+	jq('#contact_table tr').each(function(){
+		row = $(this)[0];
+		if (row.cells[1].innerHTML.search(myExp) == -1)  {
+			
+			// The search does not match this contact
+			// hide it
+			row.style.display= "none";
+		} else {
+			
+			// This row matches this contact
+			// display it
+			row.style.display= "";
 		}
 	});
-	outHTML += "</table>";	
-	$('#fbcontacts2').html(outHTML);
 }
 
 //show a message like "loading content" for a certain duration in milliseconds
 function showMask(text,mseconds){
 
-	$.ui.showMask(text);
-	window.setTimeout(function(){$.ui.hideMask();},mseconds);
+	jq.ui.showMask(text);
+	window.setTimeout(function(){jq.ui.hideMask();},mseconds);
 }
