@@ -1,9 +1,9 @@
 <!-- include touch.js on desktop browsers only -->
 
 if(!((window.DocumentTouch&&document instanceof DocumentTouch)||'ontouchstart' in window)){
-    var script=document.createElement("script");
-    script.src="js/jq.desktopBrowsers.js";
-    var tag=$("head").append(script);
+	var script=document.createElement("script");
+	script.src="js/jq.desktopBrowsers.js";
+	var tag=$("head").append(script);
 }
 
 $(document).ready(function(){
@@ -16,9 +16,9 @@ $(document).ready(function(){
 jq.ui.autoLaunch=false;
 jq.ui.resetScrollers=false;
 var init = function(){
-   jq.ui.backButtonText="Back";  
-   window.setTimeout(function(){jq.ui.launch();},1500);
-   //jq.ui.removeFooterMenu(); This would remove the bottom nav menu
+	jq.ui.backButtonText="Back";  
+	window.setTimeout(function(){jq.ui.launch();},1500);
+	//jq.ui.removeFooterMenu(); This would remove the bottom nav menu
 };
 document.addEventListener("DOMContentLoaded",init,false);  
 jq.ui.ready(function(){console.log('ready');});
@@ -32,12 +32,12 @@ var originFilter = -1;
 /* This code is used to run as soon as appMobi activates */
 var onDeviceReady=function(){
 	AppMobi.device.setRotateOrientation("portrait");
-    AppMobi.device.setAutoRotate(false);
+	AppMobi.device.setAutoRotate(false);
 	//webRoot=AppMobi.webRoot;
-    //hide splash screen
-    AppMobi.device.hideSplashScreen();	
-   
-    //initialize the Facebook helper library
+	//hide splash screen
+	AppMobi.device.hideSplashScreen();	
+
+	//initialize the Facebook helper library
 	facebookAPI.init();
 
 	// Need to load all the contacts
@@ -53,36 +53,56 @@ var onDeviceReady=function(){
 		//if running on XDK
 		AppMobi.contacts.getContacts();	
 	}
-	
+
 };
 document.addEventListener("appMobi.device.ready",onDeviceReady,false); 
 
 //classes
+// Using strings because appmobi
+// does not allow to have the keys 
+// of the cookies starting by a number
 ORIGIN = {
-	FACEBOOK : 0,
-	PHONE : 1,
-	LINKEDIN :2,	
+		FACEBOOK : "fb",
+		PHONE : "ph",
+		LINKEDIN :"ln",	
 }
 
-function Contact (origin, id, name, picture, identificationData) {
+/**
+ * 
+ * @param origin
+ * @param id The id data is facebook and linkedin id
+ * @param name
+ * @param picture
+ * @param emails
+ * @param phones
+ * @param selected
+ * @param matched
+ * @returns
+ */
+function Contact (origin, id, name, picture, emails, phones, selected, matched) {
 	this.origin = origin;
-    this.id = id;
-    this.name = name;
-    this.picture = picture;
-    this.identificationData = identificationData;
+	this.id = id;
+	this.name = name;
+	this.picture = picture;
+	this.emails = emails;
+	this.phones = phones;
+	this.selected = selected;
+	this.matched = matched;
 }
 
 function contactsReceived() {
 	var peeps = AppMobi.contacts.getContactList();
 	var contacts = [];
-	
+
 	for(var i=0;i<peeps.length;i++) {
 		var peep = AppMobi.contacts.getContactData(peeps[i]);	
-		contacts[i] = new Contact(ORIGIN.PHONE, peep.id, peep.name, '');
+		// No identification data is avalaible
+		// The user has not been added or matched
+		contacts[i] = new Contact(ORIGIN.PHONE, peep.id, peep.name, '', createArray(peep.emails), createArray(peep.phones), false, false);
 	}
-	
+
 	// Sort and save contacts
-	sortSaveContacts(contacts);
+	contacts = sortSaveContacts(contacts);
 
 	// Update the div content
 	var outHTML = buildContactsTable(contacts);
@@ -94,31 +114,22 @@ function contactsReceived() {
 document.addEventListener('appMobi.contacts.get', contactsReceived, false);
 
 var facebookUserID = "me";  //me = the user currently logged into Facebook
-
 document.addEventListener("appMobi.facebook.request.response",function(e) {
 	alert("Facebook User Friends Data Returned");
 	jq.ui.loadContent("contactsPage",false,false,"pop");
 
-	// load the data that is in the cache
-	var jsonContacts = AppMobi.cache.getCookie(CONTACTS_COOKIE);
-	contacts = JSON.parse(jsonContacts);
-	
 	if (e.success == true) {
 		var data = e.data.data;
-		
+
 		// add the facebook contacts to 
 		// the contacts array
-		numContacts = contacts.length;
 		for (var r=0; r< data.length; r++) {
-			phones = createArray(peep.phones);
-			emails = createArray(peep.emails);
-			identificationData = phones.concat(emails);
-			contacts[numContacts++] = new Contact(ORIGIN.FACEBOOK, data[r]["id"], data[r]["name"], '', identificationData);
+			contacts[r] = new Contact(ORIGIN.FACEBOOK, data[r]["id"], data[r]["name"], '', '[]', '[]', false, false);
 		}
-		
+
 		// Sort and save contacts
-		sortSaveContacts(contacts);
-		
+		contacts = sortSaveContacts(contacts);
+
 		// Build the table
 		// And put it in the div
 		var outHTML = buildContactsTable(contacts);
@@ -128,6 +139,78 @@ document.addEventListener("appMobi.facebook.request.response",function(e) {
 		document.removeEventListener("appMobi.facebook.request.response");      
 	} 
 },false);
+
+function verifyLinkedinCredentials(){
+	ddebug("verifying credentials");
+	var parameters = new AppMobi.OAuth.ProtectedDataParameters();
+	parameters.service = serviceName;
+	parameters.url = 'http://api.linkedin.com/v1/people/~?format=json';
+	parameters.id = 'ln_get';
+	parameters.method = 'GET';
+
+	AppMobi.oauth.getProtectedData(parameters);
+}
+
+function getLinkedinContacts(){
+	ddebug("getting contacts");
+	var parameters = new AppMobi.OAuth.ProtectedDataParameters();
+	parameters.service = serviceName;
+	parameters.url = 'http://api.linkedin.com/v1/people/~/connections?format=json';
+	parameters.id = 'ln_get_contacts';
+	parameters.method = 'GET';
+
+	AppMobi.oauth.getProtectedData(parameters);
+}
+
+function statusUpdate(evt){
+
+	if (evt.id == "ln_get"){
+		var data = JSON.parse(evt.response);
+		AppMobi.notification.alert("Credentials verified3","Success","OK");
+
+		// TODO Save the linkedin id
+		console.log(data.firstName);
+	}
+
+	if (evt.id == "ln_get_contacts"){
+		var linkedinData = JSON.parse(evt.response);
+		ddebug(linkedinData.values[0]);
+
+		// Get the contacts locally stored
+		for (var r=1; r< linkedinData.values.length; r++) {
+			contact = linkedinData.values[r];
+			contacts[r] = new Contact(
+					ORIGIN.LINKEDIN,
+					contact.id,
+					contact.firstName + " " + contact.lastName,
+					contact.pictureUrl,
+					'[]',
+					'[]',
+					false,
+					false);
+			numContacts++;	                                 
+		}
+
+		contacts = sortSaveContacts(contacts);
+		outHTML = buildContactsTable(contacts);
+		jq.ui.updateContentDiv("fbcontacts2",outHTML);
+		jq.ui.hideMask();
+
+		//Linkedin contacts received
+		AppMobi.notification.alert("Contacts received3","Success","OK");
+	}
+}
+
+function signOutLinkedin(){
+	alert("unauthorizing service");
+	AppMobi.oauth.unauthorizeService(serviceName);
+}
+
+
+//EVENT HANDLERS
+document.addEventListener("appMobi.oauth.protected.data",statusUpdate,false);  // fired when data comes back from oAuth
+document.addEventListener("appMobi.oauth.busy",function(){ ddebug('oAuth busy');  },false);  // fired if we try to use oAuth when oAuth is already busy with another call
+
 
 /* FUNCTIONS */
 
@@ -146,6 +229,21 @@ function createArray(data){
  * Sort and saves the contacts
  */
 function sortSaveContacts(contacts){
+	// Load what is already in the phone
+	keys = AppMobi.cache.getCookie(CONTACTS_COOKIE);
+	if(typeof keys === "undefined"){
+		jsonKeys=[];
+	} else {
+		jsonKeys= JSON.parse(keys);
+	}
+
+	numKeys = contacts.length;
+	for ( var i = 0; i < jsonKeys.length; i++) {
+		contact = AppMobi.cache.getCookie(jsonKeys[i]);
+		jsonContact = JSON.parse(contact);
+		contacts[numKeys++] = jsonContact;
+	}
+
 	// Sort the table
 	contacts.sort(function(a,b){
 		if(a.name.toUpperCase()<b.name.toUpperCase()) return -1;
@@ -154,8 +252,18 @@ function sortSaveContacts(contacts){
 	});
 
 	// Save locally the sorted table
-	// Works if if it's under 5 MB
-	AppMobi.cache.setCookie(CONTACTS_COOKIE,JSON.stringify(contacts),-1);
+	keys = [];
+	for ( var i = 0; i < contacts.length; i++) {
+		contact = contacts[i];
+		key = contact.origin + "-" + contact.id;
+		keys[i] = key;
+		AppMobi.cache.setCookie(key,JSON.stringify(contact),-1);
+	}
+
+	// Save the keys
+	AppMobi.cache.setCookie(CONTACTS_COOKIE,JSON.stringify(keys),-1);
+
+	return contacts;
 }
 
 /**
@@ -170,31 +278,32 @@ function buildContactsTable(contacts){
 	var outHTML = "<table id =\"contact_table\">";
 	for (var r=0; r< contacts.length; r++) {
 		contact = contacts[r];
-		outHTML += "<tr id='" + contact.id +"' class='unselected' onclick = \"addTag('" + contact.id +"_tag');\">";
+		key = contact.id +"-" + contact.origin;
+		outHTML += "<tr id='" + contact.id +"' class='unselected' onclick = \"addTag('" + key + "');\">";
 		if (contact.origin == ORIGIN.FACEBOOK) {
-			
+
 			// Add the facebook image
 			outHTML += "<td><img src='http://graph.facebook.com/" + contact.id + "/picture' info='" + contact.name + "' /></td>";
 		} else if(contact.origin == ORIGIN.PHONE){
-			
+
 			// Add a random image
 			outHTML += "<td><img src='images/picture.gif'/></td>";
 		} else if(contact.origin == ORIGIN.LINKEDIN){
-			
+
 			// Add the stored image
 			if (typeof contact.picture === "undefined") {
 				outHTML += "<td><img src='images/picture.gif'/></td>";
 			} else {
 				outHTML += "<td><img style='height:auto; width:auto; max-width:50px; max-height:50px;' src=" + contact.picture + "></td>";
 			}
-			
+
 		} else {
 			throw new Error(contact.origin + " impossible");
 		}
-		
+
 		outHTML += "<td class='tableName'><p>" + contact.name + "</p></td>";
 		outHTML += "<td style='display:none' >" + contact.origin +"</td>";
-		outHTML += "<td id=\"" + contact.id + "_tag\" style='display: none'><img src='images/mayo-resized.png'/></td>";
+		outHTML += "<td id=\"" + key + "\" style='display: none'><img src='images/mayo-resized.png'/></td>";
 		outHTML += "</tr>";	                                 
 	}
 	outHTML += "</table>";
@@ -211,7 +320,7 @@ function buildContactsTable(contacts){
  */
 function showHide(obj,objToHide){
 	var el=jq("#"+objToHide)[0];
-	
+
 	if(obj.className=="expanded"){
 		obj.className="collapsed";
 	} else {
@@ -249,18 +358,18 @@ function signUp(){
 	}
 
 	jq.ajax({
-          type: "POST",
-          url: "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/rest/mayo/registerUser",
-          data: ({mainEmail:userEmail_, name: familyName_ , password: passwordNew_ , emails:'[]' , phones:'[]'} ),
-          cache: false,
-          dataType: "text",
-          success: function(result) {
-		    alert('ok ' + result);
-		   },
-		   error: function(error){
-		   	 alert('error ' + error.error);
-		   }
-	 });
+		type: "POST",
+		url: "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/rest/mayo/registerUser",
+		data: ({mainEmail:userEmail_, name: familyName_ , password: passwordNew_ , emails:'[]' , phones:'[]'} ),
+		cache: false,
+		dataType: "text",
+		success: function(result) {
+			alert('ok ' + result);
+		},
+		error: function(error){
+			alert('error ' + error.error);
+		}
+	});
 }
 
 
@@ -269,18 +378,18 @@ function login(){
 	var passwd= document.getElementById("loginPassword").value;
 
 	jq.ajax({
-          type: "POST",
-          url: "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/rest/mayo/login",
-          data: ({mainEmail:username_, password: passwd } ),
-          cache: false,
-          dataType: "text",
-          success: function(result) {
-		    alert('ok ' + result);
-		   },
-		   error: function(error){
-		   	 alert('error ' + error.error);
-		   }
-	 });
+		type: "POST",
+		url: "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/rest/mayo/login",
+		data: ({mainEmail:username_, password: passwd } ),
+		cache: false,
+		dataType: "text",
+		success: function(result) {
+			alert('ok ' + result);
+		},
+		error: function(error){
+			alert('error ' + error.error);
+		}
+	});
 }
 
 function logout(){
@@ -297,33 +406,42 @@ function forgotPassword(){
  * The add tag function
  * @param contactid the id of the contact
  */
-function addTag(contactid) {
-	var x=document.getElementById(contactid);
+function addTag(key) {
+	var x=document.getElementById(key);
 	if(x.parentNode.className=="selected"){
 
 		x.parentNode.className="unselected";
 		x.style.display="none";
+
+		// Update the contact stored
+		// on the phone
+		contact = AppMobi.cache.getCookie(key);
+		jsonContact = JSON.parse(contact);
+		jsonContact.selected = false;
+		AppMobi.cache.setCookie(key, JSON.stringify(jsonContact), -1);
 	} else {
 		x.parentNode.className="selected";
 		x.style.display="block";
 
-		var peep = AppMobi.contacts.getContactData(contactid);	
-		jq.ajax({
-          type: "POST",
-          url: "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/rest/mayo/userConnection",
+		contact = AppMobi.cache.getCookie(key);
+		jsonContact = JSON.parse(contact);
+		jsonContact.selected = true;
+		AppMobi.cache.setCookie(key, JSON.stringify(jsonContact), -1);
 
-          // TODO take care of the case of having only one
-          // email or phone
-          data: ({emails: JSON.stringify(peep.emails) , phones:JSON.stringify(peep.phones)} ),
-          cache: false,
-          dataType: "text",
-          success: function(result) {
-		    alert(result);
-		   },
-		   error: function(error){
-		   	console.log(error);
-		   }
-	 });
+		jq.ajax({
+			type: "POST",
+			url: "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/rest/mayo/userConnection",
+
+			data: ({emails: JSON.stringify(jsonContact.emails) , phones:JSON.stringify(jsonContact.phones)} ),
+			cache: false,
+			dataType: "text",
+			success: function(result) {
+				alert(result);
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
 	}
 
 }
@@ -351,102 +469,26 @@ function fbContactsImport(){
 
 var serviceName = "linkedin1";
 
-function ddebug(name)
-{
+function ddebug(name){
 	console.log(name);
 }
-
-function verifyLinkedinCredentials()
-{
-	ddebug("verifying credentials");
-	var parameters = new AppMobi.OAuth.ProtectedDataParameters();
-	parameters.service = serviceName;
-	parameters.url = 'http://api.linkedin.com/v1/people/~?format=json';
-	parameters.id = 'ln_get';
-	parameters.method = 'GET';
-
-	AppMobi.oauth.getProtectedData(parameters);
-}
-
-function getLinkedinContacts(){
-	ddebug("getting contacts");
-	var parameters = new AppMobi.OAuth.ProtectedDataParameters();
-	parameters.service = serviceName;
-	parameters.url = 'http://api.linkedin.com/v1/people/~/connections?format=json';
-	parameters.id = 'ln_get_contacts';
-	parameters.method = 'GET';
-
-	AppMobi.oauth.getProtectedData(parameters);
-}
-
-
-function statusUpdate(evt){
-	ddebug("ID: " + evt.id);
-
-	if (evt.id == "ln_get"){
-		var data = JSON.parse(evt.response);
-		AppMobi.notification.alert("Credentials verified3","Success","OK");
-		console.log(data.firstName);
-	}
-
-	if (evt.id == "ln_get_contacts"){
-		var linkedinData = JSON.parse(evt.response);
-		ddebug(linkedinData.values[0]);
-
-		// Get the contacts locally stored
-		var jsonContacts = AppMobi.cache.getCookie(CONTACTS_COOKIE);
-		contacts = JSON.parse(jsonContacts);
-        numContacts = contacts.length;
-
-        for (var r=1; r< linkedinData.values.length; r++) {
-        	contact = linkedinData.values[r];
-        	ddebug(contact.pictureUrl);
-        	contacts[numContacts] = new Contact(
-        		ORIGIN.LINKEDIN,
-        		numContacts,
-        	 	contact.firstName + " " + contact.lastName,
-        	 	contact.pictureUrl,
-        	 	contact.pictureUrl);
-         	numContacts++;	                                 
-        }
-
-        sortSaveContacts(contacts);
-        outHTML = buildContactsTable(contacts);
-        jq.ui.updateContentDiv("fbcontacts2",outHTML);
-        jq.ui.hideMask();
-
-		//Linkedin contacts received
-		AppMobi.notification.alert("Contacts received3","Success","OK");
-	}
-}
-
-function signOutLinkedin(){
-	alert("unauthorizing service");
-	AppMobi.oauth.unauthorizeService(serviceName);
-}
-	
-
-//EVENT HANDLERS
-document.addEventListener("appMobi.oauth.protected.data",statusUpdate,false);  // fired when data comes back from oAuth
-document.addEventListener("appMobi.oauth.busy",function(){ ddebug('oAuth busy');  },false);  // fired if we try to use oAuth when oAuth is already busy with another call
-
 
 function searchContacts() {
 	var searchField = jq('#search').val();
 	var myExp = new RegExp(searchField, "i");
-	
+
 	jq('#contact_table tr').each(function(){
 		row = $(this)[0];
-		
+
 		// If an origin filter is set
 		// we take into account
 		if (row.cells[1].innerHTML.search(myExp) == -1 || (originFilter != -1 && row.cells[2].innerHTML != originFilter))  {
-			
+
 			// The search does not match this contact
 			// hide it
 			row.style.display= "none";
 		} else {
-			
+
 			// This row matches this contact
 			// display it
 			row.style.display= "";
@@ -457,7 +499,7 @@ function searchContacts() {
 function filterContactByOrigin(origin){
 	// Set the origin context
 	originFilter = origin;
-	
+
 	jq('#contact_table tr').each(function(){
 		row = $(this)[0];
 
@@ -465,11 +507,11 @@ function filterContactByOrigin(origin){
 		// we are clearing the view
 		// We do not want any more filters
 		if (origin != -1 && row.cells[2].innerHTML != origin)  {
-			
+
 			// The search is not the origin we are searching
 			row.style.display= "none";
 		} else {
-			
+
 			// The search is the origin we are searching for
 			row.style.display= "";
 		}

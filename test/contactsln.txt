@@ -1,6 +1,13 @@
-{"_total":190,"values":[{"firstName":"private","id":"private","lastName":"private"},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:g_54"}
-]},"url":"http://api.linkedin.com/v1/people/kYj1Cw7NuY"},"firstName":"Nicolas","headline":"Head of the electrical department - Energy & Construction 
-Fields","id":"kYj1Cw7NuY","industry":"Construction","lastName":"ACHARD","location":{"country":{"code":"fr"},"name":"Paris Area, 
+{"_total":190,"values":
+[{"firstName":"private","id":"private","lastName":"private"},
+{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:g_54"}
+]}
+,"url":"http://api.linkedin.com/v1/people/kYj1Cw7NuY"},
+"firstName":"Nicolas",
+"headline":"Head of the electrical department - Energy & Construction 
+Fields",
+"id":"kYj1Cw7NuY",
+"industry":"Construction","lastName":"ACHARD","location":{"country":{"code":"fr"},"name":"Paris Area, 
 France"},"pictureUrl":"http://m3.licdn.com/mpr/mprx/0_y9lKklkOOeBrr-HBYK3_k-NtpErhKlHBOc5fk1zCi7Xr7z0crrTyoPTu-XK01ndUgzPmwNwqOBqt","siteStandardProfileRequest":{"url":"http://www.linkedin.com
 /profile/view?id=4529022&authType=name&authToken=g_54&trk=api*a271173*s278883*"}},{"apiStandardProfileRequest":{"headers":{"_total":1,"values":[{"name":"x-li-auth-token","value":"name:jnXB"}]}
 ,"url":"http://api.linkedin.com/v1/people/67mb8cQUHS"},"firstName":"Marie","headline":"Independent consultant","id":"67mb8cQUHS","industry":"Renewables & 
