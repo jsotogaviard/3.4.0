@@ -206,6 +206,10 @@ function signOutLinkedin(){
 	AppMobi.oauth.unauthorizeService(serviceName);
 }
 
+function buildKey(contact){
+	return contact.origin + "-" + contact.id;
+}
+
 
 //EVENT HANDLERS
 document.addEventListener("appMobi.oauth.protected.data",statusUpdate,false);  // fired when data comes back from oAuth
@@ -255,7 +259,7 @@ function sortSaveContacts(contacts){
 	keys = [];
 	for ( var i = 0; i < contacts.length; i++) {
 		contact = contacts[i];
-		key = contact.origin + "-" + contact.id;
+		key = buildKey(contact);
 		keys[i] = key;
 		AppMobi.cache.setCookie(key,JSON.stringify(contact),-1);
 	}
@@ -278,7 +282,7 @@ function buildContactsTable(contacts){
 	var outHTML = "<table id =\"contact_table\">";
 	for (var r=0; r< contacts.length; r++) {
 		contact = contacts[r];
-		key = contact.id +"-" + contact.origin;
+		key = buildKey(contact);
 		outHTML += "<tr id='" + contact.id +"' class='unselected' onclick = \"addTag('" + key + "');\">";
 		if (contact.origin == ORIGIN.FACEBOOK) {
 
