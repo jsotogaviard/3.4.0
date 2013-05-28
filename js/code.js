@@ -169,13 +169,14 @@ function statusUpdate(evt){
 		AppMobi.notification.alert("Credentials verified3","Success","OK");
 
 		// TODO Save the linkedin id
-		console.log(data.firstName);
+		console.log(data);
 	}
 
 	if (evt.id == "ln_get_contacts"){
 		var linkedinData = JSON.parse(evt.response);
 		ddebug(linkedinData.values[0]);
 
+		contacts = [];
 		// Get the contacts locally stored
 		for (var r=1; r< linkedinData.values.length; r++) {
 			contact = linkedinData.values[r];
@@ -187,8 +188,7 @@ function statusUpdate(evt){
 					'[]',
 					'[]',
 					false,
-					false);
-			numContacts++;	                                 
+					false);                                 
 		}
 
 		contacts = sortSaveContacts(contacts);
@@ -245,7 +245,7 @@ function sortSaveContacts(contacts){
 	for ( var i = 0; i < jsonKeys.length; i++) {
 		contact = AppMobi.cache.getCookie(jsonKeys[i]);
 		jsonContact = JSON.parse(contact);
-		contacts[numKeys++] = jsonContact;
+		contacts[numKeys + i] = jsonContact;
 	}
 
 	// Sort the table
@@ -259,9 +259,15 @@ function sortSaveContacts(contacts){
 	keys = [];
 	for ( var i = 0; i < contacts.length; i++) {
 		contact = contacts[i];
-		key = buildKey(contact);
-		keys[i] = key;
-		AppMobi.cache.setCookie(key,JSON.stringify(contact),-1);
+		ddebug(i + contact);
+		if (typeof contact === "undefined") {
+			ddebug(contact);
+		} else {
+			key = buildKey(contact);
+			keys[i] = key;
+			AppMobi.cache.setCookie(key,JSON.stringify(contact),-1);
+		}
+	}
 	}
 
 	// Save the keys
