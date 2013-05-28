@@ -25,6 +25,7 @@ jq.ui.ready(function(){console.log('ready');});
 
 /* Variables */
 var CONTACTS_COOKIE = "CONTACT_COOKIE";
+var originFilter = -1;
 
 /* FUNCTIONS RELATED TO EVENTS */
 
@@ -436,7 +437,10 @@ function searchContacts() {
 	
 	jq('#contact_table tr').each(function(){
 		row = $(this)[0];
-		if (row.cells[1].innerHTML.search(myExp) == -1)  {
+		
+		// If an origin filter is set
+		// we take into account
+		if (row.cells[1].innerHTML.search(myExp) == -1 || (originFilter != -1 && row.cells[2].innerHTML != originFilter))  {
 			
 			// The search does not match this contact
 			// hide it
@@ -451,11 +455,16 @@ function searchContacts() {
 }
 
 function filterContactByOrigin(origin){
+	// Set the origin context
+	originFilter = origin;
+	
 	jq('#contact_table tr').each(function(){
 		row = $(this)[0];
 
-		ddebug(row.cells[2].innerHTML);
-		if (row.cells[2].innerHTML != origin)  {
+		// if the origin is -1 it means that 
+		// we are clearing the view
+		// We do not want any more filters
+		if (origin != -1 && row.cells[2].innerHTML != origin)  {
 			
 			// The search is not the origin we are searching
 			row.style.display= "none";
