@@ -1,0 +1,50 @@
+                                                                     
+                                                                     
+                                                                     
+                                             
+CREDENTIALS:
+
+FACEBOOK:
+Facebook App ID:
+197384377051969
+
+Protocol Handler:
+fb197384377051969
+
+LINKEDIN:
+
+Service Name:
+linkedin1
+
+Verb
+POST
+
+AppKey
+fz6xl5au2tlg
+
+SecretKey
+sjPt5SxBVDmagP0A
+
+RequestTokenEndpoint
+https://api.linkedin.com/uas/oauth/requestToken
+
+AuthorizeEndpoint:	
+https://api.linkedin.com/uas/oauth/authenticate
+
+AccessTokenEndpoint:	
+https://api.linkedin.com/uas/oauth/accessToken
+
+---------------------
+BUILD CONFIGURATION (ANDROID):
+FACEBOOK APPLICATION ID:
+197384377051969
+FACEBOOK APPLICATION SIGNATURE:
+wZomNCK5nXolXOaHbTtiMkeCg7E=
+
+SET UP GOOGLE CLOUD MESSAGING (GCM):
+PROJECT ID:
+834634644050
+API KEY:
+AIzaSyDD4BZM7ARjgaI10RakaO3ztU66eJcGb5w
+
+

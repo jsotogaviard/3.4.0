@@ -1,0 +1,11 @@
+ Object {firstName: "jonathan", headline: "MIT", lastName: "SOTO", siteStandardProfileRequest: Object}
+
+    firstName: "jonathan"
+    headline: "MIT"
+    lastName: "SOTO"
+    siteStandardProfileRequest: Object
+        url: "http://www.linkedin.com/profile/view?id=60289958&authType=name&authToken=1A1p&trk=api*a271173*s278883*"
+        __proto__: Object
+
+
+

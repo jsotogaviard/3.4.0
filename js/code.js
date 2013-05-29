@@ -36,6 +36,12 @@ var onDeviceReady=function(){
 	//webRoot=AppMobi.webRoot;
 	//hide splash screen
 	AppMobi.device.hideSplashScreen();	
+	
+	if (AppMobi.oauthAvailable == true) {
+        ddebug("oAuth is available in this application");
+	} else {
+		 ddebug("oAuth is not available in this application");
+	}
 
 	//initialize the Facebook helper library
 	facebookAPI.init();
@@ -163,7 +169,7 @@ function getLinkedinContacts(){
 }
 
 function statusUpdate(evt){
-
+	ddebug(evt);
 	if (evt.id == "ln_get"){
 		var data = JSON.parse(evt.response);
 		AppMobi.notification.alert("Credentials verified3","Success","OK");
@@ -214,6 +220,8 @@ function buildKey(contact){
 //EVENT HANDLERS
 document.addEventListener("appMobi.oauth.protected.data",statusUpdate,false);  // fired when data comes back from oAuth
 document.addEventListener("appMobi.oauth.busy",function(){ ddebug('oAuth busy');  },false);  // fired if we try to use oAuth when oAuth is already busy with another call
+document.addEventListener("appMobi.oauth.unavailable",function(){ ddebug('oAuth unavalaible');  },false);  // Fired when attempting to access oauth data before initialization is complete.
+document.addEventListener("appMobi.oauth.setup",function(){ ddebug('oAuth ready to go ');  },false);  // Fired when attempting to access oauth data before initialization is complete.
 
 
 /* FUNCTIONS */
@@ -251,8 +259,7 @@ function sortSaveContacts(contacts){
 	// Sort the table
 	contacts.sort(function(a,b){
 		if(a.name.toUpperCase()<b.name.toUpperCase()) return -1;
-		if(a.name.toUpperCase()>b.name.toUpperCase()) return 1;
-		return 0;
+		if(a.name.toUpperCase()>=b.name.toUpperCase()) return 1;
 	});
 
 	// Save locally the sorted table
@@ -260,14 +267,9 @@ function sortSaveContacts(contacts){
 	for ( var i = 0; i < contacts.length; i++) {
 		contact = contacts[i];
 		ddebug(i + contact);
-		if (typeof contact === "undefined") {
-			ddebug(contact);
-		} else {
-			key = buildKey(contact);
-			keys[i] = key;
-			AppMobi.cache.setCookie(key,JSON.stringify(contact),-1);
-		}
-	}
+		key = buildKey(contact);
+		keys[i] = key;
+		AppMobi.cache.setCookie(key,JSON.stringify(contact),-1);
 	}
 
 	// Save the keys
