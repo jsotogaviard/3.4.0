@@ -187,7 +187,7 @@ function statusUpdate(evt){
 		// Get the contacts locally stored
 		for (var r=1; r< linkedinData.values.length; r++) {
 			contact = linkedinData.values[r];
-			contacts[r] = new Contact(
+			contacts[r - 1] = new Contact(
 					ORIGIN.LINKEDIN,
 					contact.id,
 					contact.firstName + " " + contact.lastName,
