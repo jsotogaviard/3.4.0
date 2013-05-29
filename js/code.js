@@ -105,7 +105,9 @@ function contactsReceived() {
 		var peep = AppMobi.contacts.getContactData(peeps[i]);	
 		// No identification data is avalaible
 		// The user has not been added or matched
-		contacts[i] = new Contact(ORIGIN.PHONE, peep.id, peep.name, '', createArray(peep.emails), createArray(peep.phones), false, false);
+		id = peep.id.replace(".","");
+		contacts[i] = new Contact(ORIGIN.PHONE, id, peep.name, '', createArray(peep.emails), createArray(peep.phones), false, false);
+		
 	}
 
 	// Sort and save contacts
