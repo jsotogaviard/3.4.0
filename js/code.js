@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded",init,false);
 jq.ui.ready(function(){console.log('ready');});
 
 /* Variables */
+var AWS_SERVER = "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/mayo/rest/mayo/";
 var CONTACTS_COOKIE = "CONTACT_COOKIE";
 var originFilter = -1;
 
@@ -371,7 +372,7 @@ function signUp(){
 
 	jq.ajax({
 		type: "POST",
-		url: "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/rest/mayo/registerUser",
+		url: AWS_SERVER + "registerUser",
 		data: ({mainEmail:userEmail_, name: familyName_ , password: passwordNew_ , emails:'[]' , phones:'[]'} ),
 		cache: false,
 		dataType: "text",
@@ -391,12 +392,13 @@ function login(){
 
 	jq.ajax({
 		type: "POST",
-		url: "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/rest/mayo/login",
-		data: ({mainEmail:username_, password: passwd } ),
+		url: AWS_SERVER + "login",
+		data: ({mainEmail:username_, password: passwd} ),
 		cache: false,
 		dataType: "text",
 		success: function(result) {
 			alert('ok ' + result);
+			jq.ui.loadContent("login",false, false, "pop");
 		},
 		error: function(error){
 			alert('error ' + error.error);
@@ -442,7 +444,7 @@ function addTag(key) {
 
 		jq.ajax({
 			type: "POST",
-			url: "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/rest/mayo/userConnection",
+			url: AWS_SERVER + "userConnection",
 
 			data: ({emails: JSON.stringify(jsonContact.emails) , phones:JSON.stringify(jsonContact.phones)} ),
 			cache: false,

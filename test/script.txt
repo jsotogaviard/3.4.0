@@ -1,0 +1,23 @@
+ #!/bin/bash
+echo "Stopping server "
+cd /home/ubuntu/apache-tomcat-7.0.40/bin
+./shutdown.sh
+echo "Moving"
+cd /home/ubuntu/workspace/mayo-server/
+echo "Refresh"
+git pull
+echo "Clean install"
+mvn clean install 2>/dev/console -DskipTests
+echo "Removing"
+rm /home/ubuntu/apache-tomcat-7.0.40/webapps/mayo.war
+rm -r /home/ubuntu/apache-tomcat-7.0.40/webapps/mayo
+ls /home/ubuntu/apache-tomcat-7.0.40/webapps/
+echo "Copy"
+cp /home/ubuntu/workspace/mayo-server/target/mayo-1.0.0-SNAPSHOT.war /home/ubuntu/apache-tomcat-7.0.40/webapps
+mv /home/ubuntu/apache-tomcat-7.0.40/webapps/mayo-1.0.0-SNAPSHOT.war /home/ubuntu/apache-tomcat-7.0.40/webapps/mayo.war 
+echo "Verify war"
+ls /home/ubuntu/apache-tomcat-7.0.40/webapps/
+echo "Start server"
+cd /home/ubuntu/apache-tomcat-7.0.40/bin
+./startup.sh
+
