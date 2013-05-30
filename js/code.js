@@ -55,8 +55,10 @@ var onDeviceReady=function(){
 	// 	AppMobi.contacts.getContacts() is too long (10-20s) to be executed on the device at startup
 	if ($.os.android || $.os.iphone) {
 		//do nothing
-	}
-	else {
+	} else {
+		// Clear the cookies
+		AppMobi.cache.clearAllCookies();
+
 		//if running on XDK
 		AppMobi.contacts.getContacts();	
 	}
