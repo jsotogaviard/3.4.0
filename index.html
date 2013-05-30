@@ -64,13 +64,18 @@
 			 <li><a  class="button" href="javascript:;" onclick="logout();">logout</a></li>
 			</ul> 
 		    </div> -->
-		    <div title='Mayo' id="main" class="panel" style="background-image:url('images/blake-dit-au-revoir-a-serena.jpg');background-repeat:no-repeat;">
+		    <div title='Mayo' id="main" class="panel" style="background-image:url('images/blake-dit-au-revoir-a-serena.jpg');background-repeat:no-repeat;" data-tab="none">
 				<div id='facebookLogin' class="img">
 					<a href="#facebookPageLogin">
-						<img 
-						src="images/facebooklogin.png" 
+						<img src="images/facebooklogin.png" 
 						style='height:auto; width:auto; max-width:198px; max-height:45px;'
 						alt="Facebook login"></a>
+				</div>
+				<div id='linkedinLogin' class="img">
+					<a href="#linkedinPageLogin">
+						<img src="images/linkedin.jpg" 
+						style='height:auto; width:auto; max-width:198px; max-height:45px;'
+						alt="Linkedin login"></a>
 				</div>
 				<div id='mainLogin' class="img">
 					 <a href="#login">
@@ -79,7 +84,6 @@
 				<div id='mainNewAccount' class="img">
 					 <a href="#newaccount"><img src="images/newAccount.jpg" alt="New Account" width="90" height="80" style='height:auto; width:auto; max-width:90px; max-height:80px;'></a>
 				</div>
-				<!-- <hr> -->
 		    </div>
 
 
@@ -175,19 +179,24 @@
 
 
 			<!-- ------------------Login page------------------------ -->
-
-			<div id="login" title="Login" class="panel" data-footer='footerui'>
-			
+			<div id="facebookPageLogin">
+				<br>
+				<br>
 				<a  class="button" href="javascript:;" onclick="facebookAPI.login(loginComplete);">Login with Facebook</a>
 				<a  class="button" href="javascript:;" onclick="facebookAPI.logout(logoutComplete);">Logout with Facebook</a>
+			</div>
 
+			<div id="linkedinPageLogin">
 				<br>
 				<br>
-				
 				<a  class="button" href="javascript:;" onclick="verifyLinkedinCredentials();">Login with Linkedin</a>
 				<a  class="button" href="javascript:;" onclick="signOutLinkedin();">Logout with Linkedin</a>
 				
 				<br>
+			</div>
+			
+
+			<div id="login" title="Login" class="panel" data-footer='footerui'>
  
 				<form>
 				    <fieldset>
