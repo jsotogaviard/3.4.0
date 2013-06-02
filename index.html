@@ -50,6 +50,7 @@
         <!-- this is the header div //top right button for to expland the left navigation sidebar -->
         <div id="header">
          <a id='menubadge' onclick='jq.ui.toggleSideMenu()' style='float:right;margin-top:4px' class='menuButton'></a>
+         <!-- <a id='logout' onclick='logout()' style='float:left;margin-top:4px' class='button'>logout</a> -->
         </div>
 
         
@@ -64,7 +65,7 @@
 			 <li><a  class="button" href="javascript:;" onclick="logout();">logout</a></li>
 			</ul> 
 		    </div> -->
-		    <div title='Mayo' id="main" class="panel" style="background-image:url('images/blake-dit-au-revoir-a-serena.jpg');background-repeat:no-repeat;" data-tab="none">
+		    <div title='Mayo' id="main" class="panel" style="background-image:url('images/blake-dit-au-revoir-a-serena1.jpg');background-repeat:no-repeat;" data-footer="none">
 				<div id='facebookLogin' class="img">
 					<a href="#facebookPageLogin">
 						<img src="images/facebooklogin.png" 
@@ -91,7 +92,7 @@
 		
 		
 			<!-- ------------------import contacts page------------------------ -->
-			<div title="Import Contacts" id="importContacts" class="panel"  data-footer='footerui' data-tab="navbar_ui">
+			<div title="Settings" id="settings" class="panel"  data-footer='footerui' data-tab="navbar_ui">
 				
 				<h2 class='expanded' onclick='showHide(this,"jqui_info");'>General information</h2><p id='jqui_info'>
 				---Under constuction----<br>
@@ -104,13 +105,6 @@
 				<a  class="button" href="javascript:;" onclick="smsSend();">Send a test sms</a>
 				<ul >
 				</ul>
-				
-				<!-- 
-				<table id="contacts" border="1" width="100%"><caption>Contact List</caption></table>
-				-->
-				<div id="contacts">
-				</div>
-
 			
 			</div>
 
@@ -123,7 +117,11 @@
 				<a  class="button"  onclick="filterContactByOrigin(ORIGIN.LINKEDIN);">LN</a>
 				<a  class="button"  onclick="filterContactByOrigin(ORIGIN.FACEBOOK);">FB</a>
 				<a  class="button"  onclick="filterContactByOrigin(ORIGIN.PHONE);">PHONE</a>
-				<a  class="button"  onclick="filterContactByOrigin(-1);">CLEAR</a>
+				<a  class="button"  onclick="filterContactByOrigin(-1);">ALL</a>
+				<a  id="selectedUsers" class="button" onclick="sendSelectedToServer()">OK</a>
+				<!-- <div id="selectedUsers" style='display:none'>
+					<a  class="button" onclick="sendSelectedToServer()">OK</a>
+				</div> -->
 				<br>
 				<br>
 				<div id="searcharea">
@@ -179,14 +177,14 @@
 
 
 			<!-- ------------------Login page------------------------ -->
-			<div id="facebookPageLogin">
+			<div id="facebookPageLogin" data-footer="none">
 				<br>
 				<br>
 				<a  class="button" href="javascript:;" onclick="facebookAPI.login(loginComplete);">Login with Facebook</a>
 				<a  class="button" href="javascript:;" onclick="facebookAPI.logout(logoutComplete);">Logout with Facebook</a>
 			</div>
 
-			<div id="linkedinPageLogin">
+			<div id="linkedinPageLogin" data-footer="none">
 				<br>
 				<br>
 				<a  class="button" href="javascript:;" onclick="verifyLinkedinCredentials();">Login with Linkedin</a>
@@ -196,7 +194,7 @@
 			</div>
 			
 
-			<div id="login" title="Login" class="panel" data-footer='footerui'>
+			<div id="login" title="Login" class="panel" data-footer='none'>
  
 				<form>
 				    <fieldset>
@@ -218,23 +216,6 @@
 				   
 				   	</fieldset>
 				</form>
-				
-				<br>
-				<br>
-				<br>
-					<ul>
-					<li><a href="#newaccount" >Create new Account</a></li>
-					<li><a href="#forgot_password" >Forgot password ? </a></li>
-					</ul>
-				<br>
-				<br>
-				<br>
-
-
-					<!-- <table id="fbcontacts" border="1" width="100%"><caption>Contact List</caption></table> -->
-
-
-
 			</div>
 			<!-- ------------------End of login page------------------------ -->
 
@@ -250,7 +231,7 @@
 
 			<!-- ------------------New account page------------------------ -->
 
-			<div title="New account" id="newaccount" class="panel"  data-footer='footerui' data-tab="navbar_ui">
+			<div title="New account" id="newaccount" class="panel"  data-footer='none' data-tab="navbar_ui">
 				<form>
 				    <fieldset>
 				        <legend>Create new account</legend>
@@ -294,12 +275,12 @@
 						<p>
 				            <input type="checkbox" value="check" id="checkGUC" checked class="jq-ui-forms"
 				            />
-				            <label for="check2">I've read General Use Conditions</label>
+				            <label for="checkGUC">I've read General Use Conditions</label>
 				        </p>
 						<p>
 				            <input type="checkbox" value="check" id="checkAge" checked class="jq-ui-forms"
 				            />
-				            <label for="check2">I certify I'm more than 16 years</label>
+				            <label for="checkAge">I certify I'm more than 16 years</label>
 				        </p>
 						
 						<a  class="button" href="javascript:;" onclick="signUp();">Create account</a>
@@ -314,11 +295,6 @@
 
 
         </div> <!-- content -->
-
-        <!-- The setting page -->
-        <div id="settings" title="settings" class="panel"  data-footer='footerui' data-tab="navbar_ui">
-        	The settings
-        </div>
 
        
         <!-- The chat page -->
@@ -340,7 +316,7 @@
         <footer id="footerui">
 			<a href="#settings" id='navbar_settings' class='icon settings' >Settings</a>
             <a href="#contactsPage" id='navbar_contacts' class='icon user' >Contacts</a>
-            <a href="#main" id='navbar_home' class='icon home' >home</a>
+            <a href="#home" id='navbar_home' class='icon home' >home</a>
             <a href="#dashboard" id='navbar_dashboard' class='icon heart' >Dashboard</a>
             <a href="#chat" id='navbar_others' class='icon chat' >Chat</a>
 		</footer>
@@ -365,7 +341,7 @@
 			</ul>
 		   <div class='title'>Contacts</div>
 			<ul>
-			   <li> <a href="#importContacts"  >Import contacts</a></li>
+			   <li> <a href="#settings"  >Import contacts</a></li>
 			   <li><a href="#contactsPage" >Show contacts</a></li>
 			</ul>
 	 	   <div class='title'>Dashboard</div>
