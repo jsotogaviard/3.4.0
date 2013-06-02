@@ -2,6 +2,10 @@ tr.selected {
 	background-color: red;
 }
 
+tr.matched {
+	background-color: green;
+}
+
 tr.unselected {
 	background-color: transparent;
 }

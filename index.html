@@ -22,9 +22,8 @@
 <script type="text/javascript" charset="utf-8" src="./js/facebook.js"></script> 
 <script type="text/javascript" charset="utf-8" src="./js/code.js"></script> 
 
-<!--
+
 <script src="http://debug-software.intel.com/target/target-script-min.js#6b5cba14-8dbd-a797-7733-fc79aac96cbf"></script>
--->
 
 
 </head>
@@ -61,14 +60,13 @@
 			<ul>
 			 <li><a href="#howitworks" class='icon info big'>How it works</a></li>
 			 <li><a href="#login" class='icon user big'>Login</a></li>
-			  <li><a  class="button" href="javascript:;" onclick="logout();">logout</a></li>
-			 <li><a  class="button" href="javascript:;" onclick="testParse();">test</a></li>
+			 
 			</ul> 
-		    </div>
-
+	    </div>
 
 			<!-- ------------------end of landing page------------------------ -->
 		
+
 		
 			<!-- ------------------import contacts page------------------------ -->
 			<div title="Import Contacts" id="importContacts" class="panel"  data-footer='footerui' data-tab="navbar_ui">
@@ -77,11 +75,19 @@
 				---Under constuction----<br>
 				This page is used to getUserContact:
 				<br>
-				
-				<a  class="button" href="javascript:;" onclick="jq.ui.showMask(); AppMobi.contacts.getContacts();">Sync Contacts from Adressbook</a>
-				<a  class="button" href="#contactsPage" onclick="jq.ui.showMask(); fbContactsImport();">Sync Contacts from Facebook</a>
-				<a  class="button" href="#contactsPage" onclick="jq.ui.showMask(); getLinkedinContacts();">Sync Contacts from Linkedin</a> 
-				<a  class="button" href="javascript:;" onclick="smsSend();">Send a test sms</a>
+				<!--
+				<a  class="button" href="javascript:;" onclick="AppMobi.contacts.getContacts();">Sync Contacts from Adressbook</a>
+				<a  class="button" href="#contactsPage" onclick="fbContactsImport();">Sync Contacts from Facebook</a>
+				<a  class="button" href="#contactsPage" onclick="getLinkedinContacts();">Sync Contacts from Linkedin</a> 
+				<br>
+				<br>
+				<br>
+				-->
+				<br>
+				<a  class="button" href="javascript:;" onclick="jq.ui.showMask('loading telephone contacts'); AppMobi.contacts.getContacts();">Sync Contacts from Adressbook</a>
+				<a  class="button" href="#contactsPage" onclick="jq.ui.showMask('loading FB Contacts'); fbContactsImport();">Sync Contacts from Facebook</a>
+				<a  class="button" href="#contactsPage" onclick="jq.ui.showMask('loading LN contacts'); getLinkedinContacts();">Sync Contacts from Linkedin</a> 
+				<!-- <a  class="button" href="javascript:;" onclick="smsSend();">Send a test sms</a>-->
 				<ul >
 				</ul>
 				
@@ -96,7 +102,25 @@
 
 			<!-- ------------------end of import contacts page------------------------ -->
 
-
+	        <!-- The setting page -->
+        	<div id="settings" title="settings" class="panel"  data-footer='footerui' data-tab="navbar_ui">
+        	<br>
+			<ul>
+			<li><a  class="button" href="javascript:;" onclick="jq.ui.showMask('loading telephone contacts'); AppMobi.contacts.getContacts();">Sync Contacts from Adressbook</a></li>
+			<li><a  class="button" href="#contactsPage" onclick="jq.ui.showMask('loading FB Contacts'); fbContactsImport();">Sync Contacts from Facebook</a></li>
+			<li><a  class="button" href="#contactsPage" onclick="jq.ui.showMask('loading LN contacts'); getLinkedinContacts();">Sync Contacts from Linkedin</a> </li>
+				<!-- <a  class="button" href="javascript:;" onclick="smsSend();">Send a test sms</a>-->
+	      	
+	     
+	      	<br>
+			 <li><a  class="button" href="javascript:;" onclick="logout();">logout</a></li>
+			 <li><a  class="button" href="javascript:;" onclick="facebookAPI.logout(logoutComplete);">Logout from Facebook</a></li>
+			 <li><a  class="button" href="javascript:;" onclick="signOutLinkedin();">Logout from Linkedin</a></li>
+			</ul> 
+        	
+	        </div>
+    	    <!-- End of the setting page -->
+    
 			<!-- ------------------Contacts page------------------------ -->
 
 			<div title="Contacts" id="contactsPage" class="panel"  data-footer='footerui' data-tab="navbar_ui">
@@ -149,7 +173,10 @@
 			<!-- ------------------Dashboard page------------------------ -->
 
 			<div title="Dashboard" id="dashboard" class="panel"  data-footer='footerui' data-tab="navbar_ui">
-				---Under constuction----<br>
+				<br>
+				<h2>Tagged list (red) & matched list(green)</h2> <br>
+				<div id="taggedListTable"></div>
+
 
 
 
@@ -163,49 +190,34 @@
 			<div id="login" title="Login" class="panel" data-footer='footerui'>
 			
 				<a  class="button" href="javascript:;" onclick="facebookAPI.login(loginComplete);">Login with Facebook</a>
-				<a  class="button" href="javascript:;" onclick="facebookAPI.logout(logoutComplete);">Logout with Facebook</a>
-
-				<br>
-				<br>
-				
 				<a  class="button" href="javascript:;" onclick="verifyLinkedinCredentials();">Login with Linkedin</a>
-				<a  class="button" href="javascript:;" onclick="signOutLinkedin();">Logout with Linkedin</a>
 				
 				<br>
  
 				<form>
 				    <fieldset>
-				        <legend>Login</legend>
-				        <label for="name">User</label>
-				        <br/>
-				        <input type="text" id="loginName" class='jq-ui-forms' />
-				        <br/>
-				        <label for="password">Password</label>
-				        <br/>	<span><input type="password" id="loginPassword" class='jq-ui-forms' /></span>
+				        <legend>Registered User</legend>
+				        <!-- <label for="name">User</label>-->
+				        <input type="text" id="loginName" placeholder="User" class='jq-ui-forms' />
+				        <!-- <label for="password">Password</label> -->
+						<span><input type="password" id="loginPassword" placeholder="Password" class='jq-ui-forms' /></span>
 				        <!-- span is needed for android password fix -->
-				        <br/>
 			  			<p>
 			            <input type="checkbox" value="check" id="check2" checked class="jq-ui-forms" />
 			            <label for="check2">Keep me logged-in</label>
 				        </p>
-						<a  class="button" href="javascript:;" onclick="login();">Login</a>
+						<a class="button" href="javascript:;" onclick="login();">Login</a>
+						<a href="#forgot_password" >Forgot password ? </a>
 
 				   
 				   	</fieldset>
-				</form>
+				</form>	
 				
-				<br>
-				<br>
-				<br>
-					<ul>
-					<li><a href="#newaccount" >Create new Account</a></li>
-					<li><a href="#forgot_password" >Forgot password ? </a></li>
-					</ul>
-				<br>
-				<br>
-				<br>
-
-
+				<ul>
+				<li><a href="#newaccount" >Create new Account</a></li>
+				<!-- <li><a href="#forgot_password" >Forgot password ? </a></li>-->
+				</ul>
+					
 					<!-- <table id="fbcontacts" border="1" width="100%"><caption>Contact List</caption></table> -->
 
 
@@ -213,12 +225,12 @@
 			</div>
 			<!-- ------------------End of login page------------------------ -->
 
-			<div title="forgot password" id="forgot_password" class="panel"  data-footer='footerui' data-tab="navbar_ui">
-					<legend>Forgot password </legend>
-			        <label for="email"><h4>email</h4></label>
-			        <br/>
-			        <input type="text" id="email" class='jq-ui-forms' />
-			        <br/>
+			<div title="Forgot Password" id="forgot_password" class="panel"  data-footer='footerui' data-tab="navbar_ui">
+					<!-- <legend>Forgot password </legend>
+			        <label for="email"><h4>email</h4></label> -->
+			        
+			        <input type="text" id="email" placeholder="Email" class='jq-ui-forms' />
+			        
 			        <a  class="button" href="javascript:;" onclick="forgotPassword();">Retrieve password</a>
 			</div>
 
@@ -229,52 +241,33 @@
 				<form>
 				    <fieldset>
 				        <legend>Create new account</legend>
-				        <label for="familyName"><h4>Family name</h4></label>
-				        <br/>
-				        <input type="text" id="familyName" class='jq-ui-forms' />
-				        <br/>
-						<label for="firstName"><h4>First name</h4></label>
-				        <br/>
-				        <input type="text" id="firstName" class='jq-ui-forms' />
-				        <br/>
-						 	<h4>Gender:</h4>
-
-				        <br>
+				        <input type="text" id="familyName" placeholder="Family name" class='jq-ui-forms' />
+				        <input type="text" id="firstName" placeholder="First name" class='jq-ui-forms' />
+					 	<h4>Gender:</h4>
 				        <p>
-				            <input type="radio" value="male" id="male" name="gender" class="jq-ui-forms"
-				            />
+				            <input type="radio" value="male" id="male" name="gender" class="jq-ui-forms"/>
 				            <label for="male">Male</label>
 				        </p>
 				        <p>
-				            <input type="radio" value="Female" id="female" name="gender" class="jq-ui-forms"
-				            />
+				            <input type="radio" value="Female" id="female" name="gender" class="jq-ui-forms"/>
 				            <label for="female">Female</label>
 				        </p>
 						
 						<label for="birthDate"><h4>Birth Date</h4></label>
-				        <br/>
 				        <input type="date" id="birthDate" class='jq-ui-forms' />
 				        <br/>
 						
-						<label for="userEmail"><h4>Email</h4></label>
-				        <br/>
-				        <input type="text" id="userEmail" class='jq-ui-forms' />
-				        <br/>
-						<label for="password"><h4>Password</h4></label>
-				        <br/>	<span><input type="password" id="passwordNew" class='jq-ui-forms' /></span>
-				        <br/>
-						<label for="passwordConfirmed"><h4>Confirm Password</h4></label>
-				        <br/>	<span><input type="password" id="passwordConfirmed" class='jq-ui-forms' /></span>
-				        <br/>
+					    <input type="text" id="userEmail" placeholder="Email" class='jq-ui-forms' />
+				     	<span><input type="password" id="passwordNew" placeholder="Password" class='jq-ui-forms' /></span>
+				        <span><input type="password" id="passwordConfirmed" placeholder="Confirm Password" class='jq-ui-forms' /></span>
+				        
 						<p>
-				            <input type="checkbox" value="check" id="checkGUC" checked class="jq-ui-forms"
-				            />
-				            <label for="check2">I've read General Use Conditions</label>
+				            <input type="checkbox" value="check" id="checkGUC" checked class="jq-ui-forms"/>
+				            <label for="checkGUC">I've read General Use Conditions</label>
 				        </p>
 						<p>
-				            <input type="checkbox" value="check" id="checkAge" checked class="jq-ui-forms"
-				            />
-				            <label for="check2">I certify I'm more than 16 years</label>
+				            <input type="checkbox" value="check" id="checkAge" checked class="jq-ui-forms"/>
+				            <label for="checkAge">I certify I'm more than 16 years</label>
 				        </p>
 						
 						<a  class="button" href="javascript:;" onclick="signUp();">Create account</a>
@@ -290,10 +283,7 @@
 
         </div> <!-- content -->
 
-        <!-- The setting page -->
-        <div id="settings" title="settings" class="panel"  data-footer='footerui' data-tab="navbar_ui">
-        	The settings
-        </div>
+
 
        
         <!-- The chat page -->

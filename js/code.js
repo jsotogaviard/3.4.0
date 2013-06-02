@@ -58,7 +58,19 @@ var onDeviceReady=function(){
 	}
 	else {
 		//if running on XDK
-		AppMobi.contacts.getContacts();	
+		//AppMobi.contacts.getContacts();	
+	}
+
+	//update tables from Local Storage Content
+	if(localStorage.getItem(CONTACTS_COOKIE) === null){
+		   	console.log("cookie do not exist");
+		   	//alert("cookie do not exist");
+		   	return 0;
+	} else {
+	   	console.log("cookie exists");
+	var contactsFromStorage = loadContactFromLocalStorage();
+	jq.ui.updateContentDiv("fbcontacts2",buildContactsTable(contactsFromStorage));	
+	jq.ui.updateContentDiv("taggedListTable",buildDashboardTable(contactsFromStorage));
 	}
 
 };
@@ -103,24 +115,33 @@ function contactsReceived() {
 
 	for(var i=0;i<peeps.length;i++) {
 		var peep = AppMobi.contacts.getContactData(peeps[i]);	
+		ddebug("peep" + peep.name);
 		// No identification data is avalaible
 		// The user has not been added or matched
 		id = peep.id.replace(".","");
 		contacts[i] = new Contact(ORIGIN.PHONE, id, peep.name, '', createArray(peep.emails), createArray(peep.phones), false, false);
-		
+		ddebug("peep" + contacts[i]);
 	}
+	//console.log("contatti telefono" + contacts);
+	//console.log("fine contatti telefono");
 
 	// Sort and save contacts
 	contacts = sortSaveContacts(contacts);
+
+	//console.log("contatti telefono sorted" + contacts);
+
 
 	// Update the div content
 	var outHTML = buildContactsTable(contacts);
 	jq.ui.updateContentDiv("fbcontacts2",outHTML);
 	jq.ui.hideMask();
+	//console.log("contatti telefono HTML" + outHTML);
+
 	// Remove the listener
 	document.removeEventListener("appMobi.contacts.get");
 }
 document.addEventListener('appMobi.contacts.get', contactsReceived, false);
+
 
 var facebookUserID = "me";  //me = the user currently logged into Facebook
 document.addEventListener("appMobi.facebook.request.response",function(e) {
@@ -136,12 +157,18 @@ document.addEventListener("appMobi.facebook.request.response",function(e) {
 			contacts[r] = new Contact(ORIGIN.FACEBOOK, data[r]["id"], data[r]["name"], '', '[]', '[]', false, false);
 		}
 
+		console.log("contatti FB" + contacts);
+
 		// Sort and save contacts
 		contacts = sortSaveContacts(contacts);
+
+		console.log("contatti FB sorted" + contacts);
 
 		// Build the table
 		// And put it in the div
 		var outHTML = buildContactsTable(contacts);
+		console.log("contatti FB HTML" + outHTML);
+
 		jq.ui.updateContentDiv("fbcontacts2",outHTML);
 		jq.ui.hideMask();
 
@@ -175,7 +202,7 @@ function statusUpdate(evt){
 	ddebug(evt);
 	if (evt.id == "ln_get"){
 		var data = JSON.parse(evt.response);
-		AppMobi.notification.alert("Credentials verified3","Success","OK");
+		AppMobi.notification.alert("LN credentials verified","Success","OK");
 
 		// TODO Save the linkedin id
 		console.log(data);
@@ -200,13 +227,18 @@ function statusUpdate(evt){
 					false);                                 
 		}
 
+		console.log("contatti LN" + contacts);
 		contacts = sortSaveContacts(contacts);
+		console.log("contatti LN sorted" + contacts);
+
 		outHTML = buildContactsTable(contacts);
 		jq.ui.updateContentDiv("fbcontacts2",outHTML);
+		console.log("contatti LN HTML" + outHTML);
+
 		jq.ui.hideMask();
 
 		//Linkedin contacts received
-		AppMobi.notification.alert("Contacts received3","Success","OK");
+		AppMobi.notification.alert("LN Contacts received","Success","OK");
 	}
 }
 
@@ -240,23 +272,63 @@ function createArray(data){
 	}
 }
 
+function loadContactFromLocalStorage(){
+	console.log("loadContactPageFromLocalStorage...");
+	
+	// Load what is already in the phone
+	keys = localStorage.getItem(CONTACTS_COOKIE);
+	//ddebug(keys);
+	jsonKeys= JSON.parse(keys);
+	var contacts=[];
+	for ( var i = 0; i < jsonKeys.length; i++) {
+		//console.log("jsonKeys[i]: " + jsonKeys[i]);
+
+		contact = localStorage.getItem(jsonKeys[i]);
+		
+		//console.log("sortsavecontact: " + contact);
+		
+		jsonContact = JSON.parse(contact);
+		contacts[i] = jsonContact;
+	}
+	return contacts;
+
+}
+	
+
 /**
  * Sort and saves the contacts
  */
 function sortSaveContacts(contacts){
-	// Load what is already in the phone
-	keys = AppMobi.cache.getCookie(CONTACTS_COOKIE);
-	if(typeof keys === "undefined"){
-		jsonKeys=[];
-	} else {
-		jsonKeys= JSON.parse(keys);
+	console.log("sortSaveContacts...");
+	if(localStorage.getItem(CONTACTS_COOKIE) === null){
+		   	console.log("cookie do not exist");
+		   	//alert("cookie do not exist");
+		   	jsonKeys=[];
+			
 	}
+	else {
+    	console.log("cookie exist");
+		// Load what is already in the phone
+		keys = localStorage.getItem(CONTACTS_COOKIE);
+		//ddebug(keys);
+		jsonKeys= JSON.parse(keys);
+		
+		numKeys = contacts.length;
+		//console.log("contacts.length: " + contacts.length);
+		//console.log("jsonKeys.length: " + jsonKeys.length);
 
-	numKeys = contacts.length;
-	for ( var i = 0; i < jsonKeys.length; i++) {
-		contact = AppMobi.cache.getCookie(jsonKeys[i]);
-		jsonContact = JSON.parse(contact);
-		contacts[numKeys + i] = jsonContact;
+
+
+		for ( var i = 0; i < jsonKeys.length; i++) {
+			//console.log("jsonKeys[i]: " + jsonKeys[i]);
+
+			contact = localStorage.getItem(jsonKeys[i]);
+			
+			//console.log("sortsavecontact: " + contact);
+			
+			jsonContact = JSON.parse(contact);
+			contacts[numKeys + i] = jsonContact;
+		}
 	}
 
 	// Sort the table
@@ -264,7 +336,7 @@ function sortSaveContacts(contacts){
 		if(a.name.toUpperCase()<b.name.toUpperCase()) return -1;
 		if(a.name.toUpperCase()>=b.name.toUpperCase()) return 1;
 	});
-
+	
 	// Save locally the sorted table
 	keys = [];
 	for ( var i = 0; i < contacts.length; i++) {
@@ -272,11 +344,13 @@ function sortSaveContacts(contacts){
 		ddebug(i + contact);
 		key = buildKey(contact);
 		keys[i] = key;
-		AppMobi.cache.setCookie(key,JSON.stringify(contact),-1);
+		localStorage.setItem(key,JSON.stringify(contact));
 	}
-
+	//console.log(keys);
 	// Save the keys
-	AppMobi.cache.setCookie(CONTACTS_COOKIE,JSON.stringify(keys),-1);
+	localStorage.setItem(CONTACTS_COOKIE,JSON.stringify(keys));
+	console.log("sortSaveContacts finished");
+
 
 	return contacts;
 }
@@ -294,7 +368,17 @@ function buildContactsTable(contacts){
 	for (var r=0; r< contacts.length; r++) {
 		contact = contacts[r];
 		key = buildKey(contact);
-		outHTML += "<tr id='" + contact.id +"' class='unselected' onclick = \"addTag('" + key + "');\">";
+		if (contact.selected==false){
+			outHTML += "<tr id='" + contact.id +"' class='unselected' onclick = \"addTag('" + key + "');\">";
+		}
+		else {
+			if (contact.matched==false){
+				outHTML += "<tr id='" + contact.id +"' class='selected' onclick = \"addTag('" + key + "');\">";	
+			}
+			else {
+				outHTML += "<tr id='" + contact.id +"' class='matched' onclick = \"addTag('" + key + "');\">";	
+			}
+		}
 		if (contact.origin == ORIGIN.FACEBOOK) {
 
 			// Add the facebook image
@@ -318,12 +402,75 @@ function buildContactsTable(contacts){
 
 		outHTML += "<td class='tableName'><p>" + contact.name + "</p></td>";
 		outHTML += "<td style='display:none' >" + contact.origin +"</td>";
-		outHTML += "<td id=\"" + key + "\" style='display: none'><img src='images/mayo-resized.png'/></td>";
+		if (contact.selected==false){
+			outHTML += "<td id=\"" + key + "\" style='display: none'><img src='images/mayo-resized.png'/></td>";
+		}
+		else {
+			if (contact.matched==false){
+				outHTML += "<td id=\"" + key + "\" style='display: block'><img src='images/mayo-resized.png'/></td>";
+			}
+		 	 else {
+				outHTML += "<td id=\"" + key + "\" style='display: block'><img src='images/mayo-resized.png'/></td>"; //to do: change picture
+		 	 }
+		}
+		
 		outHTML += "</tr>";	                                 
 	}
 	outHTML += "</table>";
 	return outHTML;
 }
+
+function buildDashboardTable(contacts){
+
+	var outHTML = "<table id =\"dashboard_table\">";
+	for (var r=0; r< contacts.length; r++) {
+		contact = contacts[r];
+		key = buildKey(contact);
+		if (contact.selected==true){
+			if (contact.matched==false){
+				outHTML += "<tr id='" + contact.id +"' class='selected' onclick = \"addTag('" + key + "');\">";	
+			}
+			else {
+				outHTML += "<tr id='" + contact.id +"' class='matched' onclick = \"addTag('" + key + "');\">";	
+			}
+			if (contact.origin == ORIGIN.FACEBOOK) {
+
+				// Add the facebook image
+				outHTML += "<td><img src='http://graph.facebook.com/" + contact.id + "/picture' info='" + contact.name + "' /></td>";
+			} else if(contact.origin == ORIGIN.PHONE){
+
+				// Add a random image
+				outHTML += "<td><img src='images/picture.gif'/></td>";
+			} else if(contact.origin == ORIGIN.LINKEDIN){
+
+				// Add the stored image
+				if (typeof contact.picture === "undefined") {
+					outHTML += "<td><img src='images/picture.gif'/></td>";
+				} else {
+					outHTML += "<td><img style='height:auto; width:auto; max-width:50px; max-height:50px;' src=" + contact.picture + "></td>";
+				}
+
+			} else {
+				throw new Error(contact.origin + " impossible");
+			}
+
+		outHTML += "<td class='tableName'><p>" + contact.name + "</p></td>";
+		outHTML += "<td style='display:none' >" + contact.origin +"</td>";
+
+		if (contact.matched==false){
+			outHTML += "<td id=\"" + key + "\" style='display: block'><img src='images/mayo-resized.png'/></td>";
+			}
+		 else {
+			outHTML += "<td id=\"" + key + "\" style='display: block'><img src='images/mayo-resized.png'/></td>"; //to do: change picture
+		 }
+		}
+		
+		outHTML += "</tr>";	                                 
+	}
+	outHTML += "</table>";
+	return outHTML;
+}
+
 
 /**
  * Show hide function
@@ -344,18 +491,8 @@ function showHide(obj,objToHide){
 	jq(el).toggle();
 }
 
-function testParse(){
-	alert("about to log into facebook");
-	document.addEventListener("appMobi.facebook.login",function(e){
-		if (e.success == true) {
-			console.log("Facebook Log in Successful"); 
-		} else {
-			console.log("Unsuccessful Login"); 
-		}
-	},false); 
-	AppMobi.facebook.login("publish_stream,publish_actions,offline_access");
 
-}
+
 
 function signUp(){
 
@@ -409,7 +546,9 @@ function login(){
 }
 
 function logout(){
-	AppMobi.cache.clearAllCookies();
+	//AppMobi.cache.clearAllCookies();
+	localStorage.clear();
+	ddebug("localStorage cleared");
 }
 
 function forgotPassword(){
@@ -431,18 +570,18 @@ function addTag(key) {
 
 		// Update the contact stored
 		// on the phone
-		contact = AppMobi.cache.getCookie(key);
+		contact = localStorage.getItem(key);
 		jsonContact = JSON.parse(contact);
 		jsonContact.selected = false;
-		AppMobi.cache.setCookie(key, JSON.stringify(jsonContact), -1);
+		localStorage.setItem(key, JSON.stringify(jsonContact));
 	} else {
 		x.parentNode.className="selected";
 		x.style.display="block";
 
-		contact = AppMobi.cache.getCookie(key);
+		contact = localStorage.getItem(key);
 		jsonContact = JSON.parse(contact);
 		jsonContact.selected = true;
-		AppMobi.cache.setCookie(key, JSON.stringify(jsonContact), -1);
+		localStorage.setItem(key, JSON.stringify(jsonContact));
 
 		jq.ajax({
 			type: "POST",
@@ -459,6 +598,9 @@ function addTag(key) {
 			}
 		});
 	}
+	
+	jq.ui.updateContentDiv("taggedListTable",buildDashboardTable(loadContactFromLocalStorage()));
+
 
 }
 
