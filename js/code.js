@@ -176,6 +176,14 @@ document.addEventListener("appMobi.facebook.request.response",function(e) {
 	} 
 },false);
 
+function size(obj) {
+    var size = 0, key;
+    for (key in obj) {
+        if (obj.hasOwnProperty(key)) size++;
+    }
+    return size;
+};
+
 function verifyLinkedinCredentials(){
 	ddebug("verifying credentials");
 	var parameters = new AppMobi.OAuth.ProtectedDataParameters();
@@ -581,14 +589,12 @@ function addTag(key) {
 		jsonContact.selected = false;
 		localStorage.setItem(key, JSON.stringify(jsonContact));
 
-		//TODO remove from selected users map
-		selectedUsers.remove(key);
-		//selectedUsers.length--;
+		delete selectedUsers[key];
 
 		// Make the selected button availaible
-		if (selectedUsers.length > 0 ) {
+		if (size(selectedUsers) > 0 ) {
 			jq('#selectedUsers').show();
-			jq.ui.updateBadge("#selectedUsers",selectedUsers.length,"bl");
+			jq.ui.updateBadge("#selectedUsers",size(selectedUsers),"bl");
 		} else {
 			jq('#selectedUsers').hide();
 		}
@@ -603,13 +609,10 @@ function addTag(key) {
 		localStorage.setItem(key, JSON.stringify(jsonContact));
 
 		selectedUsers[key] =  jsonContact;
-		//selectedUsers.length++;
 
 		// Make the selected button availaible
 		jq('#selectedUsers').show();
-		jq.ui.updateBadge("#selectedUsers",selectedUsers.length,"bl");
-
-		
+		jq.ui.updateBadge("#selectedUsers",size(selectedUsers),"bl");
 	}
 
 }
@@ -684,12 +687,12 @@ function searchContacts() {
 
 			// The search does not match this contact
 			// hide it
-			row.style.display= "none";
+			$(this).hide();
 		} else {
 
 			// This row matches this contact
 			// display it
-			row.style.display= "";
+			$(this).show();
 		}
 	});
 }
