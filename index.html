@@ -49,27 +49,51 @@
         <!-- this is the header div //top right button for to expland the left navigation sidebar -->
         <div id="header">
          <a id='menubadge' onclick='jq.ui.toggleSideMenu()' style='float:right;margin-top:4px' class='menuButton'></a>
+         <!-- <a id='logout' onclick='logout()' style='float:left;margin-top:4px' class='button'>logout</a> -->
         </div>
 
         
         <div id="content">
 	        <!-- here is where you can add your panels -->
-	        <div title='Home' id="main" class="panel" selected="true" data-load="loadedPanel" data-unload="unloadedPanel" data-tab="navbar_home">
+	       <!--  <div title='Home' id="main" class="panel" selected="true" data-load="loadedPanel" data-unload="unloadedPanel" data-tab="navbar_home">
 			<h2 class='expanded' onclick='showHide(this,"main_info");'>Welcome</h2>
 			<p id='main_info'>Welcome to Mayo!<br>Mayo is blabla...<br>To get started please select an option from below.</p>
 			<ul>
 			 <li><a href="#howitworks" class='icon info big'>How it works</a></li>
 			 <li><a href="#login" class='icon user big'>Login</a></li>
-			 
 			</ul> 
 	    </div>
+			 <li><a  class="button" href="javascript:;" onclick="logout();">logout</a></li>
+			</ul> 
+		    </div> -->
+		    <div title='Mayo' id="main" class="panel" style="background-image:url('images/blake-dit-au-revoir-a-serena.jpg');background-repeat:no-repeat;" data-footer="none">
+				<div id='facebookLogin' class="img">
+					<a href="#facebookPageLogin">
+						<img src="images/facebooklogin.png" 
+						style='height:auto; width:auto; max-width:198px; max-height:45px;'
+						alt="Facebook login"></a>
+				</div>
+				<div id='linkedinLogin' class="img">
+					<a href="#linkedinPageLogin">
+						<img src="images/linkedin.jpg" 
+						style='height:auto; width:auto; max-width:198px; max-height:45px;'
+						alt="Linkedin login"></a>
+				</div>
+				<div id='mainLogin' class="img">
+					 <a href="#login">
+					 	<img src="images/login.jpg" style='height:auto; width:auto; max-width:90px; max-height:80px;' alt="Login" ></a>
+				</div>
+				<div id='mainNewAccount' class="img">
+					 <a href="#newaccount"><img src="images/newAccount.jpg" alt="New Account" width="90" height="80" style='height:auto; width:auto; max-width:90px; max-height:80px;'></a>
+				</div>
+		    </div>
 
 			<!-- ------------------end of landing page------------------------ -->
 		
 
 		
 			<!-- ------------------import contacts page------------------------ -->
-			<div title="Import Contacts" id="importContacts" class="panel"  data-footer='footerui' data-tab="navbar_ui">
+			<div title="Settings" id="settings" class="panel"  data-footer='footerui' data-tab="navbar_ui">
 				
 				<h2 class='expanded' onclick='showHide(this,"jqui_info");'>General information</h2><p id='jqui_info'>
 				---Under constuction----<br>
@@ -84,19 +108,12 @@
 				<br>
 				-->
 				<br>
-				<a  class="button" href="javascript:;" onclick="jq.ui.showMask('loading telephone contacts'); AppMobi.contacts.getContacts();">Sync Contacts from Adressbook</a>
+				<a  class="button" href="#contactsPage" onclick="jq.ui.showMask('loading telephone contacts'); AppMobi.contacts.getContacts();">Sync Contacts from Adressbook</a>
 				<a  class="button" href="#contactsPage" onclick="jq.ui.showMask('loading FB Contacts'); fbContactsImport();">Sync Contacts from Facebook</a>
 				<a  class="button" href="#contactsPage" onclick="jq.ui.showMask('loading LN contacts'); getLinkedinContacts();">Sync Contacts from Linkedin</a> 
 				<!-- <a  class="button" href="javascript:;" onclick="smsSend();">Send a test sms</a>-->
 				<ul >
 				</ul>
-				
-				<!-- 
-				<table id="contacts" border="1" width="100%"><caption>Contact List</caption></table>
-				-->
-				<div id="contacts">
-				</div>
-
 			
 			</div>
 
@@ -106,11 +123,9 @@
         	<div id="settings" title="settings" class="panel"  data-footer='footerui' data-tab="navbar_ui">
         	<br>
 			<ul>
-			<li><a  class="button" href="javascript:;" onclick="jq.ui.showMask('loading telephone contacts'); AppMobi.contacts.getContacts();">Sync Contacts from Adressbook</a></li>
+			<li><a  class="button" href="#contactsPage" onclick="jq.ui.showMask('loading telephone contacts'); AppMobi.contacts.getContacts();">Sync Contacts from Adressbook</a></li>
 			<li><a  class="button" href="#contactsPage" onclick="jq.ui.showMask('loading FB Contacts'); fbContactsImport();">Sync Contacts from Facebook</a></li>
 			<li><a  class="button" href="#contactsPage" onclick="jq.ui.showMask('loading LN contacts'); getLinkedinContacts();">Sync Contacts from Linkedin</a> </li>
-				<!-- <a  class="button" href="javascript:;" onclick="smsSend();">Send a test sms</a>-->
-	      	
 	     
 	      	<br>
 			 <li><a  class="button" href="javascript:;" onclick="logout();">logout</a></li>
@@ -127,7 +142,11 @@
 				<a  class="button"  onclick="filterContactByOrigin(ORIGIN.LINKEDIN);">LN</a>
 				<a  class="button"  onclick="filterContactByOrigin(ORIGIN.FACEBOOK);">FB</a>
 				<a  class="button"  onclick="filterContactByOrigin(ORIGIN.PHONE);">PHONE</a>
-				<a  class="button"  onclick="filterContactByOrigin(-1);">CLEAR</a>
+				<a  class="button"  onclick="filterContactByOrigin(-1);">ALL</a>
+				<a  id="selectedUsers" class="button" onclick="sendSelectedToServer()">OK</a>
+				<!-- <div id="selectedUsers" style='display:none'>
+					<a  class="button" onclick="sendSelectedToServer()">OK</a>
+				</div> -->
 				<br>
 				<br>
 				<div id="searcharea">
@@ -186,13 +205,23 @@
 
 
 			<!-- ------------------Login page------------------------ -->
-
-			<div id="login" title="Login" class="panel" data-footer='footerui'>
-			
+			<div id="facebookPageLogin" data-footer="none">
+				<br>
+				<br>
 				<a  class="button" href="javascript:;" onclick="facebookAPI.login(loginComplete);">Login with Facebook</a>
+				<a  class="button" href="javascript:;" onclick="facebookAPI.logout(logoutComplete);">Logout with Facebook</a>
+			</div>
+
+			<div id="linkedinPageLogin" data-footer="none">
+				<br>
+				<br>
 				<a  class="button" href="javascript:;" onclick="verifyLinkedinCredentials();">Login with Linkedin</a>
 				
 				<br>
+			</div>
+			
+
+			<div id="login" title="Login" class="panel" data-footer='none'>
  
 				<form>
 				    <fieldset>
@@ -237,7 +266,7 @@
 
 			<!-- ------------------New account page------------------------ -->
 
-			<div title="New account" id="newaccount" class="panel"  data-footer='footerui' data-tab="navbar_ui">
+			<div title="New account" id="newaccount" class="panel"  data-footer='none' data-tab="navbar_ui">
 				<form>
 				    <fieldset>
 				        <legend>Create new account</legend>
@@ -283,9 +312,6 @@
 
         </div> <!-- content -->
 
-
-
-       
         <!-- The chat page -->
         <div id="chat" title="chat" class="panel"  data-footer='footerui' data-tab="navbar_ui">
         	The chat
@@ -305,7 +331,7 @@
         <footer id="footerui">
 			<a href="#settings" id='navbar_settings' class='icon settings' >Settings</a>
             <a href="#contactsPage" id='navbar_contacts' class='icon user' >Contacts</a>
-            <a href="#main" id='navbar_home' class='icon home' >home</a>
+            <a href="#home" id='navbar_home' class='icon home' >home</a>
             <a href="#dashboard" id='navbar_dashboard' class='icon heart' >Dashboard</a>
             <a href="#chat" id='navbar_others' class='icon chat' >Chat</a>
 		</footer>
@@ -330,7 +356,7 @@
 			</ul>
 		   <div class='title'>Contacts</div>
 			<ul>
-			   <li> <a href="#importContacts"  >Import contacts</a></li>
+			   <li> <a href="#settings"  >Import contacts</a></li>
 			   <li><a href="#contactsPage" >Show contacts</a></li>
 			</ul>
 	 	   <div class='title'>Dashboard</div>

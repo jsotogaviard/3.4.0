@@ -18,7 +18,8 @@ jq.ui.resetScrollers=false;
 var init = function(){
 	jq.ui.backButtonText="Back";  
 	window.setTimeout(function(){jq.ui.launch();},1500);
-	//jq.ui.removeFooterMenu(); This would remove the bottom nav menu
+	//jq.ui.removeFooterMenu();
+	jq.ui.toggleNavMenu();
 };
 document.addEventListener("DOMContentLoaded",init,false);  
 jq.ui.ready(function(){console.log('ready');});
@@ -47,30 +48,27 @@ var onDeviceReady=function(){
 	//initialize the Facebook helper library
 	facebookAPI.init();
 
-	// Need to load all the contacts
-	// to the local memory in order to use
-	// the get contact data method
-	// FIXME
-
 	// 	AppMobi.contacts.getContacts() is too long (10-20s) to be executed on the device at startup
 	if ($.os.android || $.os.iphone) {
 		//do nothing
-	}
-	else {
+	} else {
+		// Clear the cookies
+		AppMobi.cache.clearAllCookies();
+
 		//if running on XDK
 		//AppMobi.contacts.getContacts();	
 	}
 
 	//update tables from Local Storage Content
 	if(localStorage.getItem(CONTACTS_COOKIE) === null){
-		   	console.log("cookie do not exist");
-		   	//alert("cookie do not exist");
-		   	return 0;
+	   	console.log("cookie do not exist");
+	   	//alert("cookie do not exist");
+	   	return 0;
 	} else {
 	   	console.log("cookie exists");
-	var contactsFromStorage = loadContactFromLocalStorage();
-	jq.ui.updateContentDiv("fbcontacts2",buildContactsTable(contactsFromStorage));	
-	jq.ui.updateContentDiv("taggedListTable",buildDashboardTable(contactsFromStorage));
+		var contactsFromStorage = loadContactFromLocalStorage();
+		jq.ui.updateContentDiv("fbcontacts2",buildContactsTable(contactsFromStorage));	
+		jq.ui.updateContentDiv("taggedListTable",buildDashboardTable(contactsFromStorage));
 	}
 
 };
@@ -85,6 +83,9 @@ ORIGIN = {
 		PHONE : "ph",
 		LINKEDIN :"ln",	
 }
+
+// The selected users
+selectedUsers = {};
 
 /**
  * 
@@ -120,7 +121,6 @@ function contactsReceived() {
 		// The user has not been added or matched
 		id = peep.id.replace(".","");
 		contacts[i] = new Contact(ORIGIN.PHONE, id, peep.name, '', createArray(peep.emails), createArray(peep.phones), false, false);
-		ddebug("peep" + contacts[i]);
 	}
 	//console.log("contatti telefono" + contacts);
 	//console.log("fine contatti telefono");
@@ -175,6 +175,14 @@ document.addEventListener("appMobi.facebook.request.response",function(e) {
 		document.removeEventListener("appMobi.facebook.request.response");      
 	} 
 },false);
+
+function size(obj) {
+    var size = 0, key;
+    for (key in obj) {
+        if (obj.hasOwnProperty(key)) size++;
+    }
+    return size;
+};
 
 function verifyLinkedinCredentials(){
 	ddebug("verifying credentials");
@@ -537,10 +545,16 @@ function login(){
 		dataType: "text",
 		success: function(result) {
 			alert('ok ' + result);
-			jq.ui.loadContent("login",false, false, "pop");
+			jq.ui.loadContent("contactsPage",false, false, "pop");
+			jq.ui.clearHistory();
 		},
 		error: function(error){
 			alert('error ' + error.error);
+
+			// TODO remove this 
+			// only for test
+			jq.ui.loadContent("contactsPage",false, false, "pop");
+			jq.ui.clearHistory();
 		}
 	});
 }
@@ -574,6 +588,17 @@ function addTag(key) {
 		jsonContact = JSON.parse(contact);
 		jsonContact.selected = false;
 		localStorage.setItem(key, JSON.stringify(jsonContact));
+
+		delete selectedUsers[key];
+
+		// Make the selected button availaible
+		if (size(selectedUsers) > 0 ) {
+			jq('#selectedUsers').show();
+			jq.ui.updateBadge("#selectedUsers",size(selectedUsers),"bl");
+		} else {
+			jq('#selectedUsers').hide();
+		}
+		
 	} else {
 		x.parentNode.className="selected";
 		x.style.display="block";
@@ -582,6 +607,20 @@ function addTag(key) {
 		jsonContact = JSON.parse(contact);
 		jsonContact.selected = true;
 		localStorage.setItem(key, JSON.stringify(jsonContact));
+
+		selectedUsers[key] =  jsonContact;
+
+		// Make the selected button availaible
+		jq('#selectedUsers').show();
+		jq.ui.updateBadge("#selectedUsers",size(selectedUsers),"bl");
+	}
+
+}
+
+function sendSelectedToServer(){
+	for (var key in selectedUsers) {
+		// TODO Send groupes contacts
+		jsonContact = selectedUsers[key];
 
 		jq.ajax({
 			type: "POST",
@@ -601,7 +640,11 @@ function addTag(key) {
 	
 	jq.ui.updateContentDiv("taggedListTable",buildDashboardTable(loadContactFromLocalStorage()));
 
+	// Clean the selected users
+	selectedUsers={};
 
+	// Hide the ok button
+	jq('#selectedUsers').hide();
 }
 
 function smsSend(){
@@ -644,12 +687,12 @@ function searchContacts() {
 
 			// The search does not match this contact
 			// hide it
-			row.style.display= "none";
+			$(this).hide();
 		} else {
 
 			// This row matches this contact
 			// display it
-			row.style.display= "";
+			$(this).show();
 		}
 	});
 }
