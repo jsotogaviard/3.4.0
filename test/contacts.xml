@@ -19,8 +19,6 @@
 <country>Country 2</country>
 </addresses>
 <first>&quot;Ryan</first>
-<phones>phone number 1</phones>
-<phones>phone number 2</phones>
 </contact>
 
 <contact>
@@ -42,8 +40,6 @@
 <city>City 2</city>
 </addresses>
 <first>Bobby</first>
-<phones>phone number 1</phones>
-<phones>phone number 2</phones>
 </contact>
 
 <contact>
@@ -65,8 +61,6 @@
 <city>City 2</city>
 </addresses>
 <first>Jane</first>
-<phones>phone number 1</phones>
-<phones>phone number 2</phones>
 </contact>
 
 <contact>
@@ -88,8 +82,6 @@
 <city>City 2</city>
 </addresses>
 <first>Joe</first>
-<phones>phone number 1</phones>
-<phones>phone number 2</phones>
 </contact>
 
 <contact>
@@ -111,8 +103,6 @@
 <city>City 2</city>
 </addresses>
 <first>Larry</first>
-<phones>phone number 1</phones>
-<phones>phone number 2</phones>
 </contact>
 
 <contact>
@@ -134,8 +124,6 @@
 <city>City 2</city>
 </addresses>
 <first>Marilyn</first>
-<phones>phone number 1</phones>
-<phones>phone number 2</phones>
 </contact>
 
 <contact>
@@ -157,8 +145,6 @@
 <city>City 2</city>
 </addresses>
 <first>Michael</first>
-<phones>phone number 1</phones>
-<phones>phone number 2</phones>
 </contact>
 
 <contact>
@@ -180,8 +166,6 @@
 <country>Country 2</country>
 </addresses>
 <first>jonathan 2</first>
-<phones>phone number 1</phones>
-<phones>phone number 2</phones>
 </contact>
 
 <contact>
@@ -203,53 +187,7 @@
 <country>Country 2</country>
 </addresses>
 <first>jonathan</first>
-<phones>phone number 10</phones>
-<phones>phone number 11</phones>
-</contact>
-<contact>
-<id>3</id>
-<last>a</last>
-<name>a</name>
-<emails>a</emails>
-<emails>a</emails>
-<addresses><zip>zip 1</zip>
-<street>Street 1</street>
-<state>State 1</state>
-<city>City 1</city>
-<country>Country 1</country>
-</addresses>
-<addresses><zip>zip 2</zip>
-<street>Street 2</street>
-<state>State 2</state>
-<city>City 2</city>
-<country>Country 2</country>
-</addresses>
-<first>a</first>
-<phones>phone number 1</phones>
-<phones>phone number 2</phones>
 </contact>
 
-<contact>
-<id>4</id>
-<last>b</last>
-<name>b</name>
-<emails>b</emails>
-<emails>b</emails>
-<addresses><zip>zip 1</zip>
-<street>Street 1</street>
-<state>State 1</state>
-<city>City 1</city>
-<country>Country 1</country>
-</addresses>
-<addresses><zip>zip 2</zip>
-<street>Street 2</street>
-<state>State 2</state>
-<city>City 2</city>
-<country>Country 2</country>
-</addresses>
-<first>b</first>
-<phones>phone number 1</phones>
-<phones>phone number 2</phones>
-</contact>
 
 </contacts>

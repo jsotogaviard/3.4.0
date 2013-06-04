@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded",init,false);
 jq.ui.ready(function(){console.log('ready');});
 
 /* Variables */
-var AWS_SERVER = "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/mayo/rest/mayo/";
+//var AWS_SERVER = "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/mayo/rest/mayo/";
+var AWS_SERVER = "http://localhost:9090/rest/mayo/";
 var CONTACTS_COOKIE = "CONTACT_COOKIE";
 var originFilter = -1;
 
@@ -122,20 +123,14 @@ function contactsReceived() {
 		id = peep.id.replace(".","");
 		contacts[i] = new Contact(ORIGIN.PHONE, id, peep.name, '', createArray(peep.emails), createArray(peep.phones), false, false);
 	}
-	//console.log("contatti telefono" + contacts);
-	//console.log("fine contatti telefono");
 
 	// Sort and save contacts
 	contacts = sortSaveContacts(contacts);
-
-	//console.log("contatti telefono sorted" + contacts);
-
 
 	// Update the div content
 	var outHTML = buildContactsTable(contacts);
 	jq.ui.updateContentDiv("fbcontacts2",outHTML);
 	jq.ui.hideMask();
-	//console.log("contatti telefono HTML" + outHTML);
 
 	// Remove the listener
 	document.removeEventListener("appMobi.contacts.get");
@@ -154,7 +149,7 @@ document.addEventListener("appMobi.facebook.request.response",function(e) {
 		// add the facebook contacts to 
 		// the contacts array
 		for (var r=0; r< data.length; r++) {
-			contacts[r] = new Contact(ORIGIN.FACEBOOK, data[r]["id"], data[r]["name"], '', '[]', '[]', false, false);
+			contacts[r] = new Contact(ORIGIN.FACEBOOK, data[r]["id"], data[r]["name"], '', [], [], false, false);
 		}
 
 		console.log("contatti FB" + contacts);
@@ -229,8 +224,8 @@ function statusUpdate(evt){
 					contact.id,
 					contact.firstName + " " + contact.lastName,
 					contact.pictureUrl,
-					'[]',
-					'[]',
+					[],
+					[],
 					false,
 					false);                                 
 		}
@@ -275,6 +270,8 @@ document.addEventListener("appMobi.oauth.setup",function(){ ddebug('oAuth ready 
 function createArray(data){
 	if (data instanceof Array) {
 		return data;
+	} else if(typeof data === "undefined") {
+		return [];
 	} else {
 		return [data];
 	}
@@ -322,17 +319,9 @@ function sortSaveContacts(contacts){
 		jsonKeys= JSON.parse(keys);
 		
 		numKeys = contacts.length;
-		//console.log("contacts.length: " + contacts.length);
-		//console.log("jsonKeys.length: " + jsonKeys.length);
-
-
 
 		for ( var i = 0; i < jsonKeys.length; i++) {
-			//console.log("jsonKeys[i]: " + jsonKeys[i]);
-
 			contact = localStorage.getItem(jsonKeys[i]);
-			
-			//console.log("sortsavecontact: " + contact);
 			
 			jsonContact = JSON.parse(contact);
 			contacts[numKeys + i] = jsonContact;
@@ -524,7 +513,8 @@ function signUp(){
 		cache: false,
 		dataType: "text",
 		success: function(result) {
-			alert('ok ' + result);
+			alert('Verify your email');
+			jq.ui.loadContent("login",false, false, "pop");
 		},
 		error: function(error){
 			alert('error ' + error.error);
@@ -544,7 +534,6 @@ function login(){
 		cache: false,
 		dataType: "text",
 		success: function(result) {
-			alert('ok ' + result);
 			jq.ui.loadContent("contactsPage",false, false, "pop");
 			jq.ui.clearHistory();
 		},
@@ -620,19 +609,26 @@ function addTag(key) {
 function sendSelectedToServer(){
 	for (var key in selectedUsers) {
 		// TODO Send groupes contacts
-		jsonContact = selectedUsers[key];
+		var jsonContact = selectedUsers[key];
 
 		jq.ajax({
 			type: "POST",
 			url: AWS_SERVER + "userConnection",
 
-			data: ({emails: JSON.stringify(jsonContact.emails) , phones:JSON.stringify(jsonContact.phones)} ),
+			data: ({name: jsonContact.name, emails: JSON.stringify(jsonContact.emails) , phones:JSON.stringify(jsonContact.phones)} ),
 			cache: false,
 			dataType: "text",
 			success: function(result) {
-				alert(result);
+				alert(jsonContact.name + ' tagged');
 			},
 			error: function(error){
+				
+				// This user has not been added
+				// to the database
+				contact = localStorage.getItem(key);
+				jsonContact = JSON.parse(contact);
+				jsonContact.selected = false;
+				localStorage.setItem(key, JSON.stringify(jsonContact));
 				console.log(error);
 			}
 		});
