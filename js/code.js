@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded",init,false);
 jq.ui.ready(function(){console.log('ready');});
 
 /* Variables */
-//var AWS_SERVER = "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/mayo/rest/mayo/";
-var AWS_SERVER = "http://localhost:9090/rest/mayo/";
+var AWS_SERVER = "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/mayo/rest/mayo/";
+//var AWS_SERVER = "http://localhost:9090/rest/mayo/";
 var CONTACTS_COOKIE = "CONTACT_COOKIE";
 var originFilter = -1;
 
