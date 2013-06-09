@@ -68,14 +68,16 @@
 		    </div> -->
 		    <div title='Mayo' id="main" class="panel" style="background-image:url('images/blake-dit-au-revoir-a-serena.jpg');background-repeat:no-repeat;" data-footer="none">
 				<div id='facebookLogin' class="img">
-					<a href="#facebookPageLogin">
+					<!-- <a href="#facebookPageLogin"> -->
+					<a href="javascript:;" onclick="facebookAPI.login(loginComplete);">
 						<img src="images/facebooklogin.png" 
 						style='height:auto; width:auto; max-width:198px; max-height:45px;'
 						alt="Facebook login"></a>
 				</div>
 				<div id='linkedinLogin' class="img">
-					<a href="#linkedinPageLogin">
-						<img src="images/linkedin.jpg" 
+					<!-- <a href="#linkedinPageLogin"> -->
+					<a	href="javascript:;" onclick="verifyLinkedinCredentials();">
+						<img src="images/login_with_linkedin.png" 
 						style='height:auto; width:auto; max-width:198px; max-height:45px;'
 						alt="Linkedin login"></a>
 				</div>
@@ -120,7 +122,7 @@
 			<!-- ------------------end of import contacts page------------------------ -->
 
 	        <!-- The setting page -->
-        	<div id="settings" title="settings" class="panel"  data-footer='footerui' data-tab="navbar_ui">
+        	<div id="developpement" title="settings" class="panel"  data-footer='footerui' data-tab="navbar_ui">
         	<br>
 			<ul>
 			<li><a  class="button" href="#contactsPage" onclick="jq.ui.showMask('loading telephone contacts'); AppMobi.contacts.getContacts();">Sync Contacts from Adressbook</a></li>
@@ -205,6 +207,7 @@
 
 
 			<!-- ------------------Login page------------------------ -->
+<!--			
 			<div id="facebookPageLogin" data-footer="none">
 				<br>
 				<br>
@@ -220,7 +223,7 @@
 				<br>
 			</div>
 			
-
+-->
 			<div id="login" title="Login" class="panel" data-footer='none'>
  
 				<form>
@@ -369,6 +372,7 @@
 			   <li><a href="#pageXX" >Invite a friend</a></li>
 			   <li> <a href="#pageXX"  >Send feedback</a></li>
 			   <li><a href="#pageXX"  >General use conditions</a></li>
+			    <li><a href="#developpement"  >Developpement</a></li>
 			</ul>
         </nav>
 
