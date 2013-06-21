@@ -25,10 +25,18 @@ document.addEventListener("DOMContentLoaded",init,false);
 jq.ui.ready(function(){console.log('ready');});
 
 /* Variables */
-var AWS_SERVER = "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/mayo/rest/mayo/";
-//var AWS_SERVER = "http://localhost:9090/rest/mayo/";
+//var AWS_SERVER = "http://ec2-54-214-124-166.us-west-2.compute.amazonaws.com:9090/mayo/rest/mayo/";
+var AWS_SERVER = "http://localhost:9090/rest/mayo/";
 var CONTACTS_COOKIE = "CONTACT_COOKIE";
+
+/** The current filter*/
 var originFilter = -1;
+
+/** Log in with linkedin */
+var linkedinLogged = false;
+
+/** Log in with facebook */
+var facebookLogged = false;
 
 /* FUNCTIONS RELATED TO EVENTS */
 
@@ -100,13 +108,14 @@ selectedUsers = {};
  * @param matched
  * @returns
  */
-function Contact (origin, id, name, picture, emails, phones, selected, matched) {
+function Contact (origin, id, name, picture, emails, phones, socialId, selected, matched) {
 	this.origin = origin;
 	this.id = id;
 	this.name = name;
 	this.picture = picture;
 	this.emails = emails;
 	this.phones = phones;
+	this.socialId = socialId;
 	this.selected = selected;
 	this.matched = matched;
 }
@@ -121,7 +130,7 @@ function contactsReceived() {
 		// No identification data is avalaible
 		// The user has not been added or matched
 		id = peep.id.replace(".","");
-		contacts[i] = new Contact(ORIGIN.PHONE, id, peep.name, '', createArray(peep.emails), createArray(peep.phones), false, false);
+		contacts[i] = new Contact(ORIGIN.PHONE, id, peep.name, '', createArray(peep.emails), createArray(peep.phones), [], false, false);
 	}
 
 	// Sort and save contacts
@@ -149,7 +158,7 @@ document.addEventListener("appMobi.facebook.request.response",function(e) {
 		// add the facebook contacts to 
 		// the contacts array
 		for (var r=0; r< data.length; r++) {
-			contacts[r] = new Contact(ORIGIN.FACEBOOK, data[r]["id"], data[r]["name"], '', [], [], false, false);
+			contacts[r] = new Contact(ORIGIN.FACEBOOK, data[r]["id"], data[r]["name"], '', [], [], [data[r]["id"]], false, false);
 		}
 
 		console.log("contatti FB" + contacts);
@@ -183,7 +192,7 @@ function verifyLinkedinCredentials(){
 	ddebug("verifying credentials");
 	var parameters = new AppMobi.OAuth.ProtectedDataParameters();
 	parameters.service = serviceName;
-	parameters.url = 'http://api.linkedin.com/v1/people/~?format=json';
+	parameters.url = 'http://api.linkedin.com/v1/people/~:(id)?format=json';
 	parameters.id = 'ln_get';
 	parameters.method = 'GET';
 
@@ -191,6 +200,13 @@ function verifyLinkedinCredentials(){
 }
 
 function getLinkedinContacts(){
+	if(!linkedinLogged){
+		
+		// If there has not been any log in with linkedin
+		// do it now to get the linkedin id
+		verifyLinkedinCredentials();
+	}
+	
 	ddebug("getting contacts");
 	var parameters = new AppMobi.OAuth.ProtectedDataParameters();
 	parameters.service = serviceName;
@@ -205,9 +221,27 @@ function statusUpdate(evt){
 	ddebug(evt);
 	if (evt.id == "ln_get"){
 		var data = JSON.parse(evt.response);
+		
+		// Set the login with linkedin to true
+		linkedinLogged = true;
+		
+		// Publish it to the user 
 		AppMobi.notification.alert("LN credentials verified","Success","OK");
 
-		// TODO Save the linkedin id
+		socialIds = createArray(data["id"]);
+		jq.ajax({
+			type: "POST",
+			url: AWS_SERVER + "updateUserInformation",
+			data: ({emails:'[]' , phones:'[]', socialId: JSON.stringify(socialIds)} ),
+			cache: false,
+			dataType: "text",
+			success: function(result) {
+				console.log('sucess update user information');
+			},
+			error: function(error){
+				alert('linkedin connection went wrong ' + error.error);
+			}
+		});
 		console.log(data);
 	}
 
@@ -226,6 +260,7 @@ function statusUpdate(evt){
 					contact.pictureUrl,
 					[],
 					[],
+					[contact.id],
 					false,
 					false);                                 
 		}
@@ -305,45 +340,53 @@ function loadContactFromLocalStorage(){
  */
 function sortSaveContacts(contacts){
 	console.log("sortSaveContacts...");
-	if(localStorage.getItem(CONTACTS_COOKIE) === null){
-		   	console.log("cookie do not exist");
-		   	//alert("cookie do not exist");
-		   	jsonKeys=[];
-			
+	mergedContacts = {};
+	
+	// Load the new contacts
+	for ( var i = 0; i < contacts.length; i++) {
+		contact = contacts[i];
+		key = buildKey(contact);
+		mergedContacts[key] = contact;
 	}
-	else {
-    	console.log("cookie exist");
-		// Load what is already in the phone
-		keys = localStorage.getItem(CONTACTS_COOKIE);
-		//ddebug(keys);
-		jsonKeys= JSON.parse(keys);
-		
-		numKeys = contacts.length;
 
+	// Merge them with the ones in the local storage
+	if(localStorage.getItem(CONTACTS_COOKIE) != null){
+    	console.log("cookie exist");
+    	
+		// Override them with what is already in the phone
+		keys = localStorage.getItem(CONTACTS_COOKIE);
+		jsonKeys = JSON.parse(keys);
 		for ( var i = 0; i < jsonKeys.length; i++) {
-			contact = localStorage.getItem(jsonKeys[i]);
-			
+			key = jsonKeys[i];
+			contact = localStorage.getItem(key);
 			jsonContact = JSON.parse(contact);
-			contacts[numKeys + i] = jsonContact;
+			mergedContacts[key] = jsonContact;
 		}
 	}
 
+	// Put the merged contacts in an array
+	contactArray=[];
+	j = 0;
+	for (var key in mergedContacts) {
+		contactArray[j++] = mergedContacts[key];
+	}
+	
 	// Sort the table
-	contacts.sort(function(a,b){
+	contactArray.sort(function(a,b){
 		if(a.name.toUpperCase()<b.name.toUpperCase()) return -1;
 		if(a.name.toUpperCase()>=b.name.toUpperCase()) return 1;
 	});
 	
 	// Save locally the sorted table
 	keys = [];
-	for ( var i = 0; i < contacts.length; i++) {
-		contact = contacts[i];
+	for ( var i = 0; i < contactArray.length; i++) {
+		contact = contactArray[i];
 		ddebug(i + contact);
 		key = buildKey(contact);
 		keys[i] = key;
 		localStorage.setItem(key,JSON.stringify(contact));
 	}
-	//console.log(keys);
+
 	// Save the keys
 	localStorage.setItem(CONTACTS_COOKIE,JSON.stringify(keys));
 	console.log("sortSaveContacts finished");
@@ -367,12 +410,10 @@ function buildContactsTable(contacts){
 		key = buildKey(contact);
 		if (contact.selected==false){
 			outHTML += "<tr id='" + contact.id +"' class='unselected' onclick = \"addTag('" + key + "');\">";
-		}
-		else {
+		} else {
 			if (contact.matched==false){
 				outHTML += "<tr id='" + contact.id +"' class='selected' onclick = \"addTag('" + key + "');\">";	
-			}
-			else {
+			} else {
 				outHTML += "<tr id='" + contact.id +"' class='matched' onclick = \"addTag('" + key + "');\">";	
 			}
 		}
@@ -401,16 +442,13 @@ function buildContactsTable(contacts){
 		outHTML += "<td style='display:none' >" + contact.origin +"</td>";
 		if (contact.selected==false){
 			outHTML += "<td id=\"" + key + "\" style='display: none'><img src='images/mayo-resized.png'/></td>";
-		}
-		else {
+		} else {
 			if (contact.matched==false){
 				outHTML += "<td id=\"" + key + "\" style='display: block'><img src='images/mayo-resized.png'/></td>";
-			}
-		 	 else {
+			} else {
 				outHTML += "<td id=\"" + key + "\" style='display: block'><img src='images/mayo-resized.png'/></td>"; //to do: change picture
 		 	 }
 		}
-		
 		outHTML += "</tr>";	                                 
 	}
 	outHTML += "</table>";
@@ -456,10 +494,9 @@ function buildDashboardTable(contacts){
 
 		if (contact.matched==false){
 			outHTML += "<td id=\"" + key + "\" style='display: block'><img src='images/mayo-resized.png'/></td>";
-			}
-		 else {
+		} else {
 			outHTML += "<td id=\"" + key + "\" style='display: block'><img src='images/mayo-resized.png'/></td>"; //to do: change picture
-		 }
+		}
 		}
 		
 		outHTML += "</tr>";	                                 
@@ -551,6 +588,8 @@ function login(){
 function logout(){
 	//AppMobi.cache.clearAllCookies();
 	localStorage.clear();
+	linkedinLogged = false;
+	facebookLogged = false;
 	ddebug("localStorage cleared");
 }
 
@@ -592,11 +631,6 @@ function addTag(key) {
 		x.parentNode.className="selected";
 		x.style.display="block";
 
-		contact = localStorage.getItem(key);
-		jsonContact = JSON.parse(contact);
-		jsonContact.selected = true;
-		localStorage.setItem(key, JSON.stringify(jsonContact));
-
 		selectedUsers[key] =  jsonContact;
 
 		// Make the selected button availaible
@@ -615,20 +649,20 @@ function sendSelectedToServer(){
 			type: "POST",
 			url: AWS_SERVER + "userConnection",
 
-			data: ({name: jsonContact.name, emails: JSON.stringify(jsonContact.emails) , phones:JSON.stringify(jsonContact.phones)} ),
+			data: ({name: jsonContact.name, emails: JSON.stringify(jsonContact.emails) , phones:JSON.stringify(jsonContact.phones), socialId:JSON.stringify(jsonContact.socialId)} ),
 			cache: false,
 			dataType: "text",
 			success: function(result) {
+				
+				// Set the selection to true
+				contact = localStorage.getItem(key);
+				jsonContact = JSON.parse(contact);
+				jsonContact.selected = true;
+				localStorage.setItem(key, JSON.stringify(jsonContact));
+				
 				alert(jsonContact.name + ' tagged');
 			},
 			error: function(error){
-				
-				// This user has not been added
-				// to the database
-				contact = localStorage.getItem(key);
-				jsonContact = JSON.parse(contact);
-				jsonContact.selected = false;
-				localStorage.setItem(key, JSON.stringify(jsonContact));
 				console.log(error);
 			}
 		});

@@ -118,11 +118,15 @@
 				</ul>
 			
 			</div>
+			
+			<div title='logout' id='logout' class="panel" data-footer='footerui'>
+				<a class="button" href="#login" onclick="logout()">logout</a>
+			</div>
 
 			<!-- ------------------end of import contacts page------------------------ -->
 
 	        <!-- The setting page -->
-        	<div id="developpement" title="settings" class="panel"  data-footer='footerui' data-tab="navbar_ui">
+        	<div id="developpement" title="settings" class="panel"  data-footer='footerui'>
         	<br>
 			<ul>
 			<li><a  class="button" href="#contactsPage" onclick="jq.ui.showMask('loading telephone contacts'); AppMobi.contacts.getContacts();">Sync Contacts from Adressbook</a></li>
@@ -327,16 +331,17 @@
             <a href="#main" id='navbar_home' class='icon home' >home</a>
             <a href="#dashboard" id='navbar_dashboard' class='icon heart' >Dashboard</a>
             <a href="#chat" id='navbar_others' class='icon chat' >Chat</a>
+            <a href="#logout" id='navbar_logout' class='icon chat' >logout</a>
         </div>
 
         <!-- custom footer. Add in panel "data-footer='footerid'" to add a custom footer to the panel-->
-
         <footer id="footerui">
 			<a href="#settings" id='navbar_settings' class='icon settings' >Settings</a>
             <a href="#contactsPage" id='navbar_contacts' class='icon user' >Contacts</a>
             <a href="#home" id='navbar_home' class='icon home' >home</a>
             <a href="#dashboard" id='navbar_dashboard' class='icon heart' >Dashboard</a>
-            <a href="#chat" id='navbar_others' class='icon chat' >Chat</a>
+            <a href="#chat" id='navbar_others' class='icon chat' >Chot</a>
+            <a href="#logout" id='navbar_logout' class='icon chat' >logout</a>
 		</footer>
 
 
@@ -353,6 +358,7 @@
 		   <div class='title'>Settings</div>
 			<ul>
 			   <li><a href="#login" >Login</a></li>
+			    <li><a href="#logout" >logout</a></li>
 			   <li><a href="#pageXX" >Profile</a></li>
 			   <li><a href="#pageXX"  >Add your references</a></li>
 			   <li><a href="#pageXX" >Account preferences</a></li>
